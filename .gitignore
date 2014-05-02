@@ -1,2 +1,5 @@
 AGame/Debug/
 AGameEngineGUI-Win/obj/
+AGameEngineCore/ipch/
+AGameEngineWindows-Shell/Debug/
+AGameEngineCore/Debug/

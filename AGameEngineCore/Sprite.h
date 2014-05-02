@@ -6,14 +6,9 @@ class Sprite :
 {
 public:
 	string texture;
-
-	Sprite(void);
-	Sprite(string spriteName);
-	
-	~Sprite(void);
-	
+		
 	void SetTexture(string textureFile);
 
-
+	virtual void Update() override;
 };
 

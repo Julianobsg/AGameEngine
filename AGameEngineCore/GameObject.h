@@ -10,7 +10,7 @@ class GameObject
 public:
 	string name;
 	GameObject(void);
-	~GameObject(void);
-	void Update();
+	virtual ~GameObject(void);
+	virtual void Update();
 };
 

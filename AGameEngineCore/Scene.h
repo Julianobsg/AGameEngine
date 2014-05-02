@@ -9,11 +9,11 @@ using namespace std;
 class Scene
 {
 public:
-	list<GameObject> gameObjects;
+	list<GameObject*> gameObjects;
 
 	Scene(void);
 	~Scene(void);
-	void AddGameObject(GameObject go);
+	void AddGameObject(GameObject* go);
 
 	string name;
 };

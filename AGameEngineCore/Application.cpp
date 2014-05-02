@@ -14,12 +14,12 @@ Application::~Application(void)
 
 void Application::Run()
 {
-	list<GameObject> sceneObjects = scenes[currentScene].gameObjects;
-	for (std::list<GameObject>::iterator it = sceneObjects.begin(); it != sceneObjects.end(); it++) 
+	list<GameObject*> sceneObjects = scenes[currentScene].gameObjects;
+	/*for (std::list<GameObject>::iterator it = sceneObjects.begin(); it != sceneObjects.end(); it++) 
 	{
-		it->Update();
-		Draw(*it);
-	}
+	it->Update();
+	Draw(*it);
+	}*/
 }
 
 void Application::AddScene(Scene scene)

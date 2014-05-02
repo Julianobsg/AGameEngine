@@ -10,6 +10,7 @@
 #include "DXUTgui.h"
 #include "SDKmisc.h"
 #include "WICTextureLoader.h"
+#include "Sprite.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
@@ -24,7 +25,7 @@ public:
 
 	void Init();
 	
-	void InitTextures();
+	HRESULT InitTextures();
 	
 	std::unique_ptr<SpriteBatch> toolkitSpriteBatch;
 	
@@ -32,8 +33,8 @@ public:
 
 	void Release();
 private:
-	ID3D11ShaderResourceView* g_pTextureRV1;
-	CDXUTDialogResourceManager  g_DialogResourceManager;
-
+	list<ID3D11ShaderResourceView*> inGameTextures;
+	ID3D11Device* pd3dDevice;
+	ID3D11DeviceContext* dx11DeviceContext;
 };
 

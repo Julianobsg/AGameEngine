@@ -57,6 +57,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionPath)/..;$(WindowsSDK_IncludePath);$(SolutionDir)\..\AGame;DXUT\Core;DirectXTK\Inc;DXUT\Optional;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>DXUT.h</PrecompiledHeaderFile>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -3,9 +3,9 @@
 #include "MainGame.h"
 
 
-MainGame::MainGame(Application* app)
+MainGame::MainGame(void)
 {
-	this->application = app;
+	this->application = new Application();
 }
 
 MainGame::~MainGame(void)
@@ -34,4 +34,10 @@ void MainGame::Init()
 	}
 	application->AddScene(scene1);
 
+}
+
+
+int MainGame::Run()
+{
+	return application->Run();
 }

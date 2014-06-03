@@ -8,7 +8,7 @@ class Graphics2D
 public:
 	Graphics2D(void);
 	~Graphics2D(void);
-	virtual void LoadTexture(string textureName);
-	virtual void Draw();
+	void LoadTexture(string textureName);
+	void Draw();
 };
 

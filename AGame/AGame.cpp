@@ -2,10 +2,13 @@
 //
 
 #include "stdafx.h"
+#include "MainGame.h"
 
-
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
-	return 0;
-}
+	MainGame mainGame;
+ 
+	mainGame.Init();
 
+	return mainGame.Run();
+}

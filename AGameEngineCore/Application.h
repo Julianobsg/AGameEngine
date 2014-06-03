@@ -4,6 +4,9 @@
 #include <list>
 #include <vector>
 #include "Scene.h"
+#include <SDL.h>
+#include <iostream>
+
 using namespace std;
 
 class Application
@@ -12,12 +15,12 @@ public:
 	bool isRunning;
 	
 	Application(void);
-	~Application(void);
-	void Run();
+	virtual ~Application(void);
+	int Run();
 	void AddScene(Scene);
 
 	void Update();
-	virtual void Draw(GameObject);
+	void Draw(GameObject);
 protected:
 	vector<Scene> scenes;	
 	int currentScene;

@@ -8,10 +8,11 @@
 class MainGame
 {
 public:
-	MainGame(Application*);
+	MainGame(void);
 	~MainGame(void);
 
 	void Init();
+	int Run();
 private:
 	Application* application;
 };

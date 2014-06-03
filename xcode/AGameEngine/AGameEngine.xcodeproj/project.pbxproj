@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047829B7193E324C005D6323 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829B6193E324C005D6323 /* SDL2.framework */; };
+		04A110E0192E5542005DB424 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110DF192E5542005DB424 /* Cocoa.framework */; };
+		04A110EA192E5542005DB424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A110E8192E5542005DB424 /* InfoPlist.strings */; };
+		04A110EC192E5542005DB424 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A110EB192E5542005DB424 /* main.cpp */; };
+		04A110F0192E5542005DB424 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 04A110EE192E5542005DB424 /* Credits.rtf */; };
+		04A110F6192E5542005DB424 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A110F4192E5542005DB424 /* MainMenu.xib */; };
+		04A110F8192E5542005DB424 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A110F7192E5542005DB424 /* Images.xcassets */; };
+		04A110FF192E5542005DB424 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110FE192E5542005DB424 /* XCTest.framework */; };
+		04A11100192E5542005DB424 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110DF192E5542005DB424 /* Cocoa.framework */; };
+		04A11108192E5542005DB424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A11106192E5542005DB424 /* InfoPlist.strings */; };
+		04A1110A192E5542005DB424 /* AGameEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A11109192E5542005DB424 /* AGameEngineTests.m */; };
+		04A11128192E55A1005DB424 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11115192E55A1005DB424 /* Application.cpp */; };
+		04A11129192E55A1005DB424 /* EngineGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11117192E55A1005DB424 /* EngineGlobal.cpp */; };
+		04A1112A192E55A1005DB424 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11119192E55A1005DB424 /* GameObject.cpp */; };
+		04A1112B192E55A1005DB424 /* Graphics2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A1111B192E55A1005DB424 /* Graphics2D.cpp */; };
+		04A1112D192E55A1005DB424 /* PlatformConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A1111F192E55A1005DB424 /* PlatformConfig.cpp */; };
+		04A1112E192E55A1005DB424 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11122192E55A1005DB424 /* Scene.cpp */; };
+		04A1112F192E55A1005DB424 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11124192E55A1005DB424 /* Sprite.cpp */; };
+		04A11130192E55A1005DB424 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11126192E55A1005DB424 /* Timer.cpp */; };
+		04A11139192E55F7005DB424 /* MainGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11133192E55F7005DB424 /* MainGame.cpp */; };
+		04A1113A192E55F7005DB424 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A11135192E55F7005DB424 /* stdafx.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04A11101192E5542005DB424 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04A110D4192E5542005DB424 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04A110DB192E5542005DB424;
+			remoteInfo = AGameEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		047829B6193E324C005D6323 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Libs/Mac/SDL2.framework; sourceTree = "<group>"; };
+		04A110DC192E5542005DB424 /* AGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A110DF192E5542005DB424 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		04A110E2192E5542005DB424 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		04A110E3192E5542005DB424 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04A110E4192E5542005DB424 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04A110E7192E5542005DB424 /* AGameEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AGameEngine-Info.plist"; sourceTree = "<group>"; };
+		04A110E9192E5542005DB424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04A110EB192E5542005DB424 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		04A110ED192E5542005DB424 /* AGameEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AGameEngine-Prefix.pch"; sourceTree = "<group>"; };
+		04A110EF192E5542005DB424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		04A110F5192E5542005DB424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		04A110F7192E5542005DB424 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		04A110FD192E5542005DB424 /* AGameEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGameEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A110FE192E5542005DB424 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		04A11105192E5542005DB424 /* AGameEngineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AGameEngineTests-Info.plist"; sourceTree = "<group>"; };
+		04A11107192E5542005DB424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04A11109192E5542005DB424 /* AGameEngineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGameEngineTests.m; sourceTree = "<group>"; };
+		04A11115192E55A1005DB424 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Application.cpp; path = ../../../AGameEngineCore/Application.cpp; sourceTree = "<group>"; };
+		04A11116192E55A1005DB424 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Application.h; path = ../../../AGameEngineCore/Application.h; sourceTree = "<group>"; };
+		04A11117192E55A1005DB424 /* EngineGlobal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EngineGlobal.cpp; path = ../../../AGameEngineCore/EngineGlobal.cpp; sourceTree = "<group>"; };
+		04A11118192E55A1005DB424 /* EngineGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EngineGlobal.h; path = ../../../AGameEngineCore/EngineGlobal.h; sourceTree = "<group>"; };
+		04A11119192E55A1005DB424 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../../../AGameEngineCore/GameObject.cpp; sourceTree = "<group>"; };
+		04A1111A192E55A1005DB424 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = ../../../AGameEngineCore/GameObject.h; sourceTree = "<group>"; };
+		04A1111B192E55A1005DB424 /* Graphics2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Graphics2D.cpp; path = ../../../AGameEngineCore/Graphics2D.cpp; sourceTree = "<group>"; };
+		04A1111C192E55A1005DB424 /* Graphics2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Graphics2D.h; path = ../../../AGameEngineCore/Graphics2D.h; sourceTree = "<group>"; };
+		04A1111F192E55A1005DB424 /* PlatformConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlatformConfig.cpp; path = ../../../AGameEngineCore/PlatformConfig.cpp; sourceTree = "<group>"; };
+		04A11120192E55A1005DB424 /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformConfig.h; path = ../../../AGameEngineCore/PlatformConfig.h; sourceTree = "<group>"; };
+		04A11121192E55A1005DB424 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../../../AGameEngineCore/resource.h; sourceTree = "<group>"; };
+		04A11122192E55A1005DB424 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = ../../../AGameEngineCore/Scene.cpp; sourceTree = "<group>"; };
+		04A11123192E55A1005DB424 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = ../../../AGameEngineCore/Scene.h; sourceTree = "<group>"; };
+		04A11124192E55A1005DB424 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sprite.cpp; path = ../../../AGameEngineCore/Sprite.cpp; sourceTree = "<group>"; };
+		04A11125192E55A1005DB424 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sprite.h; path = ../../../AGameEngineCore/Sprite.h; sourceTree = "<group>"; };
+		04A11126192E55A1005DB424 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = ../../../AGameEngineCore/Timer.cpp; sourceTree = "<group>"; };
+		04A11127192E55A1005DB424 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../../../AGameEngineCore/Timer.h; sourceTree = "<group>"; };
+		04A11133192E55F7005DB424 /* MainGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainGame.cpp; path = ../../../AGame/MainGame.cpp; sourceTree = "<group>"; };
+		04A11134192E55F7005DB424 /* MainGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainGame.h; path = ../../../AGame/MainGame.h; sourceTree = "<group>"; };
+		04A11135192E55F7005DB424 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../AGame/stdafx.cpp; sourceTree = "<group>"; };
+		04A11136192E55F7005DB424 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../AGame/stdafx.h; sourceTree = "<group>"; };
+		04A11137192E55F7005DB424 /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../AGame/targetver.h; sourceTree = "<group>"; };
+		04A1113B192E58DD005DB424 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../lib/SDL2.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04A110D9192E5542005DB424 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047829B7193E324C005D6323 /* SDL2.framework in Frameworks */,
+				04A110E0192E5542005DB424 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A110FA192E5542005DB424 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A11100192E5542005DB424 /* Cocoa.framework in Frameworks */,
+				04A110FF192E5542005DB424 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04A110D3192E5542005DB424 = {
+			isa = PBXGroup;
+			children = (
+				04A110E5192E5542005DB424 /* AGameEngine */,
+				04A11103192E5542005DB424 /* AGameEngineTests */,
+				04A110DE192E5542005DB424 /* Frameworks */,
+				04A110DD192E5542005DB424 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04A110DD192E5542005DB424 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04A110DC192E5542005DB424 /* AGameEngine.app */,
+				04A110FD192E5542005DB424 /* AGameEngineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04A110DE192E5542005DB424 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				047829B6193E324C005D6323 /* SDL2.framework */,
+				04A1113B192E58DD005DB424 /* SDL2.framework */,
+				04A110DF192E5542005DB424 /* Cocoa.framework */,
+				04A110FE192E5542005DB424 /* XCTest.framework */,
+				04A110E1192E5542005DB424 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04A110E1192E5542005DB424 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04A110E2192E5542005DB424 /* AppKit.framework */,
+				04A110E3192E5542005DB424 /* CoreData.framework */,
+				04A110E4192E5542005DB424 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		04A110E5192E5542005DB424 /* AGameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				04A11131192E55E0005DB424 /* AGame */,
+				04A11114192E557F005DB424 /* AGameEngineLibSDL */,
+				04A11113192E5565005DB424 /* AGameEngineCore */,
+				04A110F4192E5542005DB424 /* MainMenu.xib */,
+				04A110F7192E5542005DB424 /* Images.xcassets */,
+				04A110E6192E5542005DB424 /* Supporting Files */,
+			);
+			path = AGameEngine;
+			sourceTree = "<group>";
+		};
+		04A110E6192E5542005DB424 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04A110E7192E5542005DB424 /* AGameEngine-Info.plist */,
+				04A110E8192E5542005DB424 /* InfoPlist.strings */,
+				04A110EB192E5542005DB424 /* main.cpp */,
+				04A110ED192E5542005DB424 /* AGameEngine-Prefix.pch */,
+				04A110EE192E5542005DB424 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04A11103192E5542005DB424 /* AGameEngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				04A11109192E5542005DB424 /* AGameEngineTests.m */,
+				04A11104192E5542005DB424 /* Supporting Files */,
+			);
+			path = AGameEngineTests;
+			sourceTree = "<group>";
+		};
+		04A11104192E5542005DB424 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04A11105192E5542005DB424 /* AGameEngineTests-Info.plist */,
+				04A11106192E5542005DB424 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04A11113192E5565005DB424 /* AGameEngineCore */ = {
+			isa = PBXGroup;
+			children = (
+				04A11115192E55A1005DB424 /* Application.cpp */,
+				04A11116192E55A1005DB424 /* Application.h */,
+				04A11117192E55A1005DB424 /* EngineGlobal.cpp */,
+				04A11118192E55A1005DB424 /* EngineGlobal.h */,
+				04A11119192E55A1005DB424 /* GameObject.cpp */,
+				04A1111A192E55A1005DB424 /* GameObject.h */,
+				04A1111B192E55A1005DB424 /* Graphics2D.cpp */,
+				04A1111C192E55A1005DB424 /* Graphics2D.h */,
+				04A1111F192E55A1005DB424 /* PlatformConfig.cpp */,
+				04A11120192E55A1005DB424 /* PlatformConfig.h */,
+				04A11121192E55A1005DB424 /* resource.h */,
+				04A11122192E55A1005DB424 /* Scene.cpp */,
+				04A11123192E55A1005DB424 /* Scene.h */,
+				04A11124192E55A1005DB424 /* Sprite.cpp */,
+				04A11125192E55A1005DB424 /* Sprite.h */,
+				04A11126192E55A1005DB424 /* Timer.cpp */,
+				04A11127192E55A1005DB424 /* Timer.h */,
+			);
+			name = AGameEngineCore;
+			sourceTree = "<group>";
+		};
+		04A11114192E557F005DB424 /* AGameEngineLibSDL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AGameEngineLibSDL;
+			sourceTree = "<group>";
+		};
+		04A11131192E55E0005DB424 /* AGame */ = {
+			isa = PBXGroup;
+			children = (
+				04A11133192E55F7005DB424 /* MainGame.cpp */,
+				04A11134192E55F7005DB424 /* MainGame.h */,
+				04A11135192E55F7005DB424 /* stdafx.cpp */,
+				04A11136192E55F7005DB424 /* stdafx.h */,
+				04A11137192E55F7005DB424 /* targetver.h */,
+			);
+			name = AGame;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04A110DB192E5542005DB424 /* AGameEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A1110D192E5542005DB424 /* Build configuration list for PBXNativeTarget "AGameEngine" */;
+			buildPhases = (
+				04A110D8192E5542005DB424 /* Sources */,
+				04A110D9192E5542005DB424 /* Frameworks */,
+				04A110DA192E5542005DB424 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AGameEngine;
+			productName = AGameEngine;
+			productReference = 04A110DC192E5542005DB424 /* AGameEngine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04A110FC192E5542005DB424 /* AGameEngineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A11110192E5542005DB424 /* Build configuration list for PBXNativeTarget "AGameEngineTests" */;
+			buildPhases = (
+				04A110F9192E5542005DB424 /* Sources */,
+				04A110FA192E5542005DB424 /* Frameworks */,
+				04A110FB192E5542005DB424 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04A11102192E5542005DB424 /* PBXTargetDependency */,
+			);
+			name = AGameEngineTests;
+			productName = AGameEngineTests;
+			productReference = 04A110FD192E5542005DB424 /* AGameEngineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04A110D4192E5542005DB424 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AGame;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = AGameEngine;
+				TargetAttributes = {
+					04A110FC192E5542005DB424 = {
+						TestTargetID = 04A110DB192E5542005DB424;
+					};
+				};
+			};
+			buildConfigurationList = 04A110D7192E5542005DB424 /* Build configuration list for PBXProject "AGameEngine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04A110D3192E5542005DB424;
+			productRefGroup = 04A110DD192E5542005DB424 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04A110DB192E5542005DB424 /* AGameEngine */,
+				04A110FC192E5542005DB424 /* AGameEngineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04A110DA192E5542005DB424 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A110EA192E5542005DB424 /* InfoPlist.strings in Resources */,
+				04A110F8192E5542005DB424 /* Images.xcassets in Resources */,
+				04A110F0192E5542005DB424 /* Credits.rtf in Resources */,
+				04A110F6192E5542005DB424 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A110FB192E5542005DB424 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A11108192E5542005DB424 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04A110D8192E5542005DB424 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A11139192E55F7005DB424 /* MainGame.cpp in Sources */,
+				04A11129192E55A1005DB424 /* EngineGlobal.cpp in Sources */,
+				04A1112F192E55A1005DB424 /* Sprite.cpp in Sources */,
+				04A110EC192E5542005DB424 /* main.cpp in Sources */,
+				04A11130192E55A1005DB424 /* Timer.cpp in Sources */,
+				04A11128192E55A1005DB424 /* Application.cpp in Sources */,
+				04A1112B192E55A1005DB424 /* Graphics2D.cpp in Sources */,
+				04A1112E192E55A1005DB424 /* Scene.cpp in Sources */,
+				04A1113A192E55F7005DB424 /* stdafx.cpp in Sources */,
+				04A1112D192E55A1005DB424 /* PlatformConfig.cpp in Sources */,
+				04A1112A192E55A1005DB424 /* GameObject.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A110F9192E5542005DB424 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A1110A192E5542005DB424 /* AGameEngineTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04A11102192E5542005DB424 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04A110DB192E5542005DB424 /* AGameEngine */;
+			targetProxy = 04A11101192E5542005DB424 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04A110E8192E5542005DB424 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A110E9192E5542005DB424 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04A110EE192E5542005DB424 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A110EF192E5542005DB424 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		04A110F4192E5542005DB424 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A110F5192E5542005DB424 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		04A11106192E5542005DB424 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A11107192E5542005DB424 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04A1110B192E5542005DB424 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		04A1110C192E5542005DB424 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		04A1110E192E5542005DB424 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mac/Documents/AGameEngine/lib,
+					/Users/mac/Documents/AGameEngine/Libs/Mac,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AGameEngine/AGameEngine-Prefix.pch";
+				INFOPLIST_FILE = "AGameEngine/AGameEngine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04A1110F192E5542005DB424 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mac/Documents/AGameEngine/lib,
+					/Users/mac/Documents/AGameEngine/Libs/Mac,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AGameEngine/AGameEngine-Prefix.pch";
+				INFOPLIST_FILE = "AGameEngine/AGameEngine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		04A11111192E5542005DB424 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AGameEngine.app/Contents/MacOS/AGameEngine";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AGameEngine/AGameEngine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AGameEngineTests/AGameEngineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		04A11112192E5542005DB424 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AGameEngine.app/Contents/MacOS/AGameEngine";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AGameEngine/AGameEngine-Prefix.pch";
+				INFOPLIST_FILE = "AGameEngineTests/AGameEngineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04A110D7192E5542005DB424 /* Build configuration list for PBXProject "AGameEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A1110B192E5542005DB424 /* Debug */,
+				04A1110C192E5542005DB424 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04A1110D192E5542005DB424 /* Build configuration list for PBXNativeTarget "AGameEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A1110E192E5542005DB424 /* Debug */,
+				04A1110F192E5542005DB424 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04A11110192E5542005DB424 /* Build configuration list for PBXNativeTarget "AGameEngineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A11111192E5542005DB424 /* Debug */,
+				04A11112192E5542005DB424 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04A110D4192E5542005DB424 /* Project object */;
+}

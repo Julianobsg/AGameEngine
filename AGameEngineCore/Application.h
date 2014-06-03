@@ -4,7 +4,11 @@
 #include <list>
 #include <vector>
 #include "Scene.h"
+#ifdef __APPLE__
+#include <SDL2/SDL.h>
+#else
 #include <SDL.h>
+#endif
 #include <iostream>
 
 using namespace std;

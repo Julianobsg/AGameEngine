@@ -23,8 +23,19 @@ public:
 	int Run();
 	void AddScene(Scene);
 
-	void Update();
-	void Draw(GameObject);
+
+private:
+
+    SDL_Renderer *renderer;
+    SDL_Window *win;
+        
+    int Init();
+    
+    void CheckInputs();
+    
+    void Update();
+	void Draw();
+    
 protected:
 	vector<Scene> scenes;	
 	int currentScene;

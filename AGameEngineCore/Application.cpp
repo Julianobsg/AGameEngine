@@ -15,44 +15,49 @@ Application::~Application(void)
 
 int Application::Init()
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
+	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
 		return 1;
 	}
-    
+	
 	SDL_Window *win = SDL_CreateWindow("Hello World!", 100, 100, 640, 480,
-                                       SDL_WINDOW_SHOWN);
+									   SDL_WINDOW_SHOWN);
 	if (win == nullptr){
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
 		return 1;
 	}
 	renderer = SDL_CreateRenderer(win, -1,
-                                  SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    if (renderer == nullptr){
-        renderer = SDL_GetRenderer(win);
+								  SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	if (renderer == nullptr){
+		renderer = SDL_GetRenderer(win);
 	}
-    
+	
 	if (renderer == nullptr){
 		std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
 		return 1;
 	}
-    
-    return 0;
+
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
+		std::cout << "IMG_Init";
+		return 1;
+	}
+
+	return 0;
 }
 
 int Application::Run()
 {
-    
-    if (Init()) {
-        return 1;
-    }
-    
+	
+	if (Init()) {
+		return 1;
+	}
+	
 	while (isRunning){
-        CheckInputs();
+		CheckInputs();
 		//Render the scene
-        Draw();
-        
-        Update();
+		Draw();
+		
+		Update();
 	}
 
 	SDL_DestroyRenderer(renderer);
@@ -68,17 +73,17 @@ void Application::AddScene(Scene scene)
 
 void Application::CheckInputs()
 {
-    SDL_Event e;
+	SDL_Event e;
 
-    while (SDL_PollEvent(&e)){
-        if (e.type == SDL_QUIT)
-            isRunning = false;
-        if (e.type == SDL_KEYDOWN)
-            isRunning = false;
-        if (e.type == SDL_MOUSEBUTTONDOWN)
-            isRunning = false;
-    }
-    
+	while (SDL_PollEvent(&e)){
+		if (e.type == SDL_QUIT)
+			isRunning = false;
+		if (e.type == SDL_KEYDOWN)
+			isRunning = false;
+		if (e.type == SDL_MOUSEBUTTONDOWN)
+			isRunning = false;
+	}
+	
 }
 
 void Application::Update()
@@ -88,11 +93,11 @@ void Application::Update()
 
 void Application::Draw()
 {
-    list<GameObject*> sceneObjects = scenes[currentScene].gameObjects;
+	list<GameObject*> sceneObjects = scenes[currentScene].gameObjects;
 
-    SDL_RenderClear(renderer);
-    
-    //Add draw code here...
-    
-    SDL_RenderPresent(renderer);
+	SDL_RenderClear(renderer);
+	
+	//Add draw code here...
+	
+	SDL_RenderPresent(renderer);
 }

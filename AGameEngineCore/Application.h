@@ -9,6 +9,8 @@
 #else
 #include <SDL.h>
 #endif
+#include "SDL_Image\SDL_image.h"
+
 #include <iostream>
 
 using namespace std;

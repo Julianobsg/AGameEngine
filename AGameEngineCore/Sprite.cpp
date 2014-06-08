@@ -10,12 +10,10 @@
 
 void Sprite::SetTexture(string textureFile)
 {
-	this->texture = textureFile;
 }
 
 void Sprite::Update()
 {
 
 }
-
 

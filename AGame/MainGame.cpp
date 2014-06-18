@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 #include "MainGame.h"
+#include "Fall.h"
 
 
 MainGame::MainGame(void)
@@ -20,9 +21,9 @@ void MainGame::Init()
 	scene1.name = "Scene 1 ";
 	Sprite* helloWorld = new Sprite;
 	helloWorld->name = "Hello World";
-	//Sprite helloWorld = Sprite("Hello World");
+	Fall* fall = new Fall();
+	helloWorld->AddBehaviour(fall);
 	helloWorld->SetTexture("helloworld.jpg");
-	scene1.AddGameObject(helloWorld);
 	scene1.AddGameObject(helloWorld);
 
 	GameObject* go = new Sprite;

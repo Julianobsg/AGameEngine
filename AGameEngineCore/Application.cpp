@@ -90,18 +90,23 @@ void Application::CheckInputs()
 
 void Application::Update()
 {
+	GameObject* go;
 
+	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
+	{
+		go = *it;
+		go->Update();
+	}
 }
 
 void Application::Draw()
 {
-	list<GameObject*> sceneObjects = scenes[currentScene].gameObjects;
 
 	SDL_RenderClear(renderer);
 	
 	GameObject* go;
-	//Add draw code here...
-	for (std::list<GameObject*>::iterator it = sceneObjects.begin(); it != sceneObjects.end(); it++)
+
+	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
 	{
 		go = *it;
 		Sprite* sprite = dynamic_cast<Sprite*>(go);
@@ -117,17 +122,20 @@ void Application::LoadScene(int loadedScene)
 {
 	this->currentScene = loadedScene;
 
-	list<GameObject*> sceneObjects = scenes[currentScene].gameObjects;
+	currentSceneObjects = scenes[currentScene].gameObjects;
 
 	GameObject* go;
-	//Add draw code here...
-	for (std::list<GameObject*>::iterator it = sceneObjects.begin(); it != sceneObjects.end(); it++)
+
+	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
 	{
 		go = *it;
 		Sprite* sprite = dynamic_cast<Sprite*>(go);
 		if (sprite != NULL)
 		{
 			sprite->Init(renderer);
+		} else
+		{
+			go->Init();
 		}
 	}
 }

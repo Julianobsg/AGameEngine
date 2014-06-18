@@ -25,7 +25,8 @@ private:
 
 	SDL_Renderer *renderer;
 	SDL_Window *win;
-		
+	list<GameObject*> currentSceneObjects;
+
 	int Init();
 	
 	void CheckInputs();

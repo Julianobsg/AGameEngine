@@ -45,7 +45,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_image-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>EngineGlobal.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -53,10 +53,10 @@
       <AdditionalDependencies>d2d1.lib;WindowsCodecs.lib;dwrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>..\Libs\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\Libs\SDL2-2.0.3\lib\x86;..\Libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -77,38 +77,21 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="BasicMath.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Graphics2D.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="PlatformConfig.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="SDL_Image\miniz.h" />
-    <ClInclude Include="SDL_Image\SDL_image.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="EngineGlobal.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Graphics2D.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="PlatformConfig.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="SDL_Image\IMG.c" />
-    <ClCompile Include="SDL_Image\IMG_bmp.c" />
-    <ClCompile Include="SDL_Image\IMG_gif.c" />
-    <ClCompile Include="SDL_Image\IMG_jpg.c" />
-    <ClCompile Include="SDL_Image\IMG_lbm.c" />
-    <ClCompile Include="SDL_Image\IMG_pcx.c" />
-    <ClCompile Include="SDL_Image\IMG_png.c" />
-    <ClCompile Include="SDL_Image\IMG_pnm.c" />
-    <ClCompile Include="SDL_Image\IMG_tga.c" />
-    <ClCompile Include="SDL_Image\IMG_tif.c" />
-    <ClCompile Include="SDL_Image\IMG_webp.c" />
-    <ClCompile Include="SDL_Image\IMG_xcf.c" />
-    <ClCompile Include="SDL_Image\IMG_xpm.c" />
-    <ClCompile Include="SDL_Image\IMG_xv.c" />
-    <ClCompile Include="SDL_Image\IMG_xxx.c" />
-    <ClCompile Include="SDL_Image\showimage.c" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="EngineGlobal.cpp" />
     <ClCompile Include="Timer.cpp" />

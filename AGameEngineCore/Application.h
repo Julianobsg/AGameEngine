@@ -4,14 +4,9 @@
 #include <list>
 #include <vector>
 #include "Scene.h"
-#ifdef __APPLE__
-#include <SDL2/SDL.h>
-#else
-#include <SDL.h>
-#endif
-#include "SDL_Image\SDL_image.h"
 
 #include <iostream>
+#include "Sprite.h"
 
 using namespace std;
 
@@ -28,16 +23,17 @@ public:
 
 private:
 
-    SDL_Renderer *renderer;
-    SDL_Window *win;
-        
-    int Init();
-    
-    void CheckInputs();
-    
-    void Update();
+	SDL_Renderer *renderer;
+	SDL_Window *win;
+		
+	int Init();
+	
+	void CheckInputs();
+	
+	void Update();
 	void Draw();
-    
+	void LoadScene(int loadedScene);
+
 protected:
 	vector<Scene> scenes;	
 	int currentScene;

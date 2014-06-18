@@ -1,15 +1,19 @@
 #pragma once
 #include "GameObject.h"
-#include "Graphics2D.h"
+#include "Texture.h"
 
 class Sprite :
 	public GameObject
 {
 public:
-	Graphics2D texture;
+	Texture texture;
 		
 	void SetTexture(string textureFile);
-
 	virtual void Update() override;
+	void Init(SDL_Renderer* renderer);
+
+	void Draw();
+private:
+	string texturePath;
 };
 

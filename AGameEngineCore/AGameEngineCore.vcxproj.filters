@@ -25,14 +25,8 @@
     <Filter Include="Header Files\APICore">
       <UniqueIdentifier>{a61d1347-c17d-40ff-9ec2-c465d21e0afa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SDL_Image">
-      <UniqueIdentifier>{1d5d8a76-ef8c-48cc-b3d6-abca18eec25a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graphics2D.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="PlatformConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,17 +54,14 @@
     <ClInclude Include="EngineGlobal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDL_Image\miniz.h">
-      <Filter>SDL_Image</Filter>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="SDL_Image\SDL_image.h">
-      <Filter>SDL_Image</Filter>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files\APICore</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Graphics2D.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="PlatformConfig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -92,53 +83,8 @@
     <ClCompile Include="EngineGlobal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SDL_Image\IMG.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_bmp.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_gif.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_jpg.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_lbm.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_pcx.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_png.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_pnm.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_tga.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_tif.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_webp.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_xcf.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_xpm.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_xv.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\IMG_xxx.c">
-      <Filter>SDL_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL_Image\showimage.c">
-      <Filter>SDL_Image</Filter>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

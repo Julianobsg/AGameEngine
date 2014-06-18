@@ -37,10 +37,10 @@ int Application::Init()
 		return 1;
 	}
 
-	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
-		std::cout << "IMG_Init";
-		return 1;
-	}
+	//if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
+	//	std::cout << "IMG_Init"  << SDL_GetError() << std::endl;
+	//	return 1;
+	//}
 
 	return 0;
 }
@@ -52,6 +52,8 @@ int Application::Run()
 		return 1;
 	}
 	
+	LoadScene(0);
+
 	while (isRunning){
 		CheckInputs();
 		//Render the scene
@@ -97,7 +99,35 @@ void Application::Draw()
 
 	SDL_RenderClear(renderer);
 	
+	GameObject* go;
 	//Add draw code here...
-	
+	for (std::list<GameObject*>::iterator it = sceneObjects.begin(); it != sceneObjects.end(); it++)
+	{
+		go = *it;
+		Sprite* sprite = dynamic_cast<Sprite*>(go);
+		if (sprite != NULL)
+		{
+			sprite->Draw();
+		}
+	}
 	SDL_RenderPresent(renderer);
+}
+
+void Application::LoadScene(int loadedScene)
+{
+	this->currentScene = loadedScene;
+
+	list<GameObject*> sceneObjects = scenes[currentScene].gameObjects;
+
+	GameObject* go;
+	//Add draw code here...
+	for (std::list<GameObject*>::iterator it = sceneObjects.begin(); it != sceneObjects.end(); it++)
+	{
+		go = *it;
+		Sprite* sprite = dynamic_cast<Sprite*>(go);
+		if (sprite != NULL)
+		{
+			sprite->Init(renderer);
+		}
+	}
 }

@@ -28,10 +28,7 @@ void MainGame::Init()
 	GameObject* go = new Sprite;
 	
 	Sprite* sprite = dynamic_cast<Sprite*>(go);
-	if (sprite != NULL)
-	{
-		sprite->texture = "TESTE";
-	}
+
 	application->AddScene(scene1);
 
 }

@@ -23,7 +23,6 @@ void MainGame::Init()
 	Sprite* bat = new Sprite;
 	bat->name = "batafire";
 	Bat* fall = new Bat();
-	//bat->AddBehaviour(fall);
 	bat->AddTexture("batafire-spritesheet.png");
 	bat->LastTexture()->Clip(0, 0, 70, 75);
 	bat->AddClip(75 , 0, 75, 75);
@@ -37,6 +36,7 @@ void MainGame::Init()
 	bat->AddClip(370, 110, 75, 75);
 	bat->AddClip(440, 110, 75, 75);
 	bat->transform->scale.x = -1;
+	bat->AddBehaviour(fall);
 
 	Sprite* background = new Sprite;
 	background->name = "background";

@@ -3,6 +3,7 @@
 #include "Timer.h"
 #include <string>
 #include "Debug.h"
+#include "Keyboard.h"
 
 
 Application::Application(void)
@@ -89,6 +90,7 @@ void Application::CheckInputs()
 	while (SDL_PollEvent(&e)){
 		if (e.type == SDL_QUIT)
 			isRunning = false;
+		Keyboard::SetKeyDown(&e);
 	}
 	
 }

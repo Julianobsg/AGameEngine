@@ -74,10 +74,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
-    <ClInclude Include="BasicMath.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="Debug.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="PlatformConfig.h" />
     <ClInclude Include="resource.h" />
@@ -87,11 +90,16 @@
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Vector3D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Behaviour.cpp" />
+    <ClCompile Include="Debug.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="PlatformConfig.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -100,6 +108,7 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="Vector3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="AGameEngineCore.rc" />

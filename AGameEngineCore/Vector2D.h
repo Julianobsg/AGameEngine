@@ -10,6 +10,6 @@ public:
 
 	Vector2D (int x, int y);
 
-	Vector2D static Zero();
+	static Vector2D Zero();
 	static Vector2D One();
 };

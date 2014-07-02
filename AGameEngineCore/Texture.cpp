@@ -1,8 +1,11 @@
 #include "Texture.h"
+#include "Transform.h"
+#include "Debug.h"
 
 
 Texture::Texture(void)
 {
+	clip = NULL;
 }
 
 
@@ -16,22 +19,95 @@ void Texture::LoadTexture(string texturePath, SDL_Renderer* renderer)
 	
 	const char * c = texturePath.c_str();
 
-	texture = IMG_LoadTexture(renderer,c);
+	SDL_Texture* texture = IMG_LoadTexture(renderer,c);
 	if (!texture) {
 		fprintf(stderr, "Couldn't load %s: %s\n", c, SDL_GetError());
 	}
+
+	LoadTexture(texture);
 }
 
-void Texture::Draw(Vector2D position)
+void Texture::LoadTexture(SDL_Renderer* renderer)
 {
+	LoadTexture(this->texturePath, renderer);
+}
+
+void Texture::LoadTexture(SDL_Texture* texture)
+{
+	this->texture = texture;
+
+	SDL_QueryTexture(texture, NULL, NULL, &size.x, &size.y);
+}
+
+void Texture::LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer)
+{
+	this->renderer = renderer;
+
+}
+
+void Texture::Draw(Transform* transform)
+{
+	Vector2D* position = &transform->position;
 	int w, h;
-	SDL_QueryTexture(texture, NULL, NULL, &w, &h);
+	SDL_QueryTexture(texture, NULL, NULL , &w, &h);
 
 	SDL_Rect dst;
-	dst.x = position.x;
-	dst.y = position.y;
+	dst.x = position->x;
+	dst.y = position->y;
+
+	SDL_RendererFlip isFlipping = CheckImageScale(transform);
+
 	//TODO then maybe put a scale factor here, for resizing image
-	dst.w = w;
-	dst.h = h;
-	SDL_RenderCopy(renderer, texture, NULL, &dst);
+	if (clip != nullptr){
+		dst.w = clip->w;
+		dst.h = clip->h;
+	}
+	else
+	{
+		dst.w = size.x;
+		dst.h = size.y;
+	}
+
+	SDL_RenderCopyEx(renderer, texture, clip, &dst, 0, NULL, isFlipping);
+}
+
+
+void Texture::Clip (int x, int y, int w, int h)
+{
+	SDL_Rect rect = {x, y, w, h};
+	clip = new SDL_Rect(rect);
+
+	size.x = w - x;
+	size.y = h - y;
+}
+
+void Texture::Destroy()
+{
+	SDL_DestroyTexture(texture);
+}
+
+SDL_RendererFlip Texture::CheckImageScale(Transform* transform)
+{
+	SDL_RendererFlip isFlipping = SDL_FLIP_NONE;
+
+	Vector2D* scale = &transform->scale;
+	if (scale->x < 0 && scale->y < 0)
+	{
+		isFlipping = ((SDL_RendererFlip) (SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL));
+	} else if (scale->x < 0)
+	{
+		isFlipping = SDL_FLIP_HORIZONTAL;
+	} else if (scale->y < 0)
+	{
+		isFlipping = SDL_FLIP_VERTICAL;
+	}		
+
+	return isFlipping;
+}
+
+void Texture::Copy(Texture* originalTexture)
+{
+	this->texture = originalTexture->texture;
+	this->texturePath = originalTexture->texturePath;
+	this->renderer = originalTexture->renderer;
 }

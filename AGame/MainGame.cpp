@@ -1,7 +1,8 @@
 #include "stdafx.h"
 
 #include "MainGame.h"
-#include "Fall.h"
+#include "Bat.h"
+#include "InfinityBackground.h"
 
 
 MainGame::MainGame(void)
@@ -19,12 +20,40 @@ void MainGame::Init()
 	//this->application = application;
 	Scene scene1;
 	scene1.name = "Scene 1 ";
-	Sprite* helloWorld = new Sprite;
-	helloWorld->name = "Hello World";
-	Fall* fall = new Fall();
-	helloWorld->AddBehaviour(fall);
-	helloWorld->SetTexture("helloworld.jpg");
-	scene1.AddGameObject(helloWorld);
+	Sprite* bat = new Sprite;
+	bat->name = "batafire";
+	Bat* fall = new Bat();
+	//bat->AddBehaviour(fall);
+	bat->AddTexture("batafire-spritesheet.png");
+	bat->LastTexture()->Clip(0, 0, 70, 75);
+	bat->AddClip(75 , 0, 75, 75);
+	bat->AddClip(180, 0, 75, 75);
+	bat->AddClip(280, 0, 75, 75);
+	bat->AddClip(370, 0, 75, 75);
+	bat->AddClip(440, 0, 75, 75);
+	bat->AddClip(75 , 110, 75, 75);	
+	bat->AddClip(180, 110, 75, 75);
+	bat->AddClip(280, 110, 75, 75);
+	bat->AddClip(370, 110, 75, 75);
+	bat->AddClip(440, 110, 75, 75);
+	bat->transform->scale.x = -1;
+
+	Sprite* background = new Sprite;
+	background->name = "background";
+	background->AddTexture("background.png");
+	background->LastTexture()->Clip(10, 220, 510, 180);
+	background->AddBehaviour(new InfinityBackground);
+
+	Sprite* background2 = new Sprite;
+	background2->name = "background";
+	background2->AddTexture("background.png");
+	background2->LastTexture()->Clip(10, 220, 510, 180);
+	background2->transform->position = Vector2D(500, 0);
+	background2->AddBehaviour(new InfinityBackground);
+
+	scene1.AddGameObject(background);
+	scene1.AddGameObject(background2);
+	scene1.AddGameObject(bat);
 
 	GameObject* go = new Sprite;
 	

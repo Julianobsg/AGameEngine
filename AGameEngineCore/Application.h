@@ -5,7 +5,6 @@
 #include <vector>
 #include "Scene.h"
 
-#include <iostream>
 #include "Sprite.h"
 
 using namespace std;
@@ -34,7 +33,7 @@ private:
 	void Update();
 	void Draw();
 	void LoadScene(int loadedScene);
-
+	void UnloadScene();
 protected:
 	vector<Scene> scenes;	
 	int currentScene;

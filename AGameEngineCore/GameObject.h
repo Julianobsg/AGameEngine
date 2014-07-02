@@ -17,7 +17,7 @@ public:
 	GameObject(void);
 	virtual ~GameObject(void);
 	void Update();
-	void AddBehaviour(Behaviour* behaviour);
+	virtual void AddBehaviour(Behaviour* behaviour);
 	void Init();
 
 protected:

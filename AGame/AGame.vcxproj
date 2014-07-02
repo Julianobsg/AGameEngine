@@ -84,14 +84,16 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Fall.h" />
+    <ClInclude Include="Bat.h" />
+    <ClInclude Include="InifinityBackground.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AGame.cpp" />
-    <ClCompile Include="Fall.cpp" />
+    <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="InfinityBackground.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -1,5 +1,8 @@
 #include "Application.h"
 #include <thread>         // std::thread
+#include "Timer.h"
+#include <string>
+#include "Debug.h"
 
 
 Application::Application(void)
@@ -16,14 +19,14 @@ Application::~Application(void)
 int Application::Init()
 {
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
-		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+		Debug::Log("SDL_Init Error: " + string(SDL_GetError()) + + "\n");
 		return 1;
 	}
 	
 	SDL_Window *win = SDL_CreateWindow("Hello World!", 100, 100, 640, 480,
 									   SDL_WINDOW_SHOWN);
 	if (win == nullptr){
-		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
+		Debug::Log("SDL_CreateWindow Error: " + string(SDL_GetError()) + + "\n");
 		return 1;
 	}
 	renderer = SDL_CreateRenderer(win, -1,
@@ -33,15 +36,16 @@ int Application::Init()
 	}
 	
 	if (renderer == nullptr){
-		std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
+		Debug::Log("SDL_CreateRenderer Error: " + string(SDL_GetError()) + "\n");
 		return 1;
 	}
 
-	//if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
-	//	std::cout << "IMG_Init"  << SDL_GetError() << std::endl;
-	//	return 1;
-	//}
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
+		Debug::Log("IMG_Init"  + string(SDL_GetError()) + + "\n");
+		return 1;
+	}
 
+	Timer::Init();
 	return 0;
 }
 
@@ -55,6 +59,8 @@ int Application::Run()
 	LoadScene(0);
 
 	while (isRunning){
+		Timer::CalcFPS();
+
 		CheckInputs();
 		//Render the scene
 		Draw();
@@ -62,8 +68,11 @@ int Application::Run()
 		Update();
 	}
 
+	UnloadScene();
+
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(win);
+	IMG_Quit();
 	SDL_Quit();
 	return 0;
 }
@@ -79,10 +88,6 @@ void Application::CheckInputs()
 
 	while (SDL_PollEvent(&e)){
 		if (e.type == SDL_QUIT)
-			isRunning = false;
-		if (e.type == SDL_KEYDOWN)
-			isRunning = false;
-		if (e.type == SDL_MOUSEBUTTONDOWN)
 			isRunning = false;
 	}
 	
@@ -136,6 +141,21 @@ void Application::LoadScene(int loadedScene)
 		} else
 		{
 			go->Init();
+		}
+	}
+}
+
+void Application::UnloadScene()
+{
+	GameObject* go;
+
+	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
+	{
+		go = *it;
+		Sprite* sprite = dynamic_cast<Sprite*>(go);
+		if (sprite != NULL)
+		{
+			sprite->Destroy();
 		}
 	}
 }

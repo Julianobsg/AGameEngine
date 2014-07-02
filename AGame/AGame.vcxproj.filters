@@ -27,7 +27,10 @@
     <ClInclude Include="MainGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fall.h">
+    <ClInclude Include="InifinityBackground.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +44,10 @@
     <ClCompile Include="MainGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fall.cpp">
+    <ClCompile Include="InfinityBackground.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

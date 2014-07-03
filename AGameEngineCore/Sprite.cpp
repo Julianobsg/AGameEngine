@@ -1,5 +1,10 @@
 #include "Sprite.h"
 
+Sprite::Sprite()
+{
+    animations = new Animation;
+}
+
 void Sprite::AddTexture(string textureFile)
 {
 	if (animations == nullptr)
@@ -7,7 +12,12 @@ void Sprite::AddTexture(string textureFile)
 		animations = new Animation;
 	}
 	Texture* texture = new Texture();
-	texture->texturePath = "Media/" + textureFile;
+	
+#ifdef __APPLE__
+    texture->texturePath = textureFile;
+#else
+    texture->texturePath = "Media/" + textureFile;
+#endif
 
 	animations->AddTexture(texture);
 }

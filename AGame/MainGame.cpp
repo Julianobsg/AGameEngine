@@ -23,18 +23,18 @@ void MainGame::Init()
 	Sprite* bat = new Sprite;
 	bat->name = "batafire";
 	Bat* fall = new Bat();
-	bat->AddTexture("batafire-spritesheet.png");
+    bat->AddTexture("batafire-spritesheet.png");
 	bat->LastTexture()->Clip(0, 0, 70, 75);
 	bat->AddClip(75 , 0, 75, 75);
 	bat->AddClip(180, 0, 75, 75);
 	bat->AddClip(280, 0, 75, 75);
 	bat->AddClip(370, 0, 75, 75);
 	bat->AddClip(440, 0, 75, 75);
-	bat->AddClip(75 , 110, 75, 75);	
+	bat->AddClip(75 , 110, 75, 75);
 	bat->AddClip(180, 110, 75, 75);
 	bat->AddClip(280, 110, 75, 75);
 	bat->AddClip(370, 110, 75, 75);
-	bat->AddClip(440, 110, 75, 75);
+	//bat->AddClip(440, 110, 75, 75);
 	bat->transform->scale.x = -1;
 	bat->AddBehaviour(fall);
 
@@ -54,10 +54,6 @@ void MainGame::Init()
 	scene1.AddGameObject(background);
 	scene1.AddGameObject(background2);
 	scene1.AddGameObject(bat);
-
-	GameObject* go = new Sprite;
-	
-	Sprite* sprite = dynamic_cast<Sprite*>(go);
 
 	application->AddScene(scene1);
 

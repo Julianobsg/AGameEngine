@@ -1,5 +1,6 @@
 #pragma once
-#include "d:\projects\agameengine\agameenginecore\behaviour.h"
+#include "behaviour.h"
+
 class InfinityBackground :
 	public Behaviour
 {

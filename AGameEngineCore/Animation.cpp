@@ -1,13 +1,12 @@
-#include "Animation.h"
-#include "Debug.h"
-#include "Timer.h"
 
+#include "Animation.h"
 
 Animation::Animation(void)
 {
 	actualFrame = 0;
 	framesPerSecond = 12;
 	framesCounter = 0;
+
 }
 
 
@@ -17,7 +16,10 @@ Animation::~Animation(void)
 
 void Animation::AddTexture(Texture* texture)
 {
-	textures.push_back(texture);
+    if (texture != NULL)
+    {
+        textures.push_back(texture);
+    }
 }
 
 void Animation::Init(SDL_Renderer* renderer)

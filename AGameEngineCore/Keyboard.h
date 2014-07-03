@@ -1,6 +1,6 @@
 #pragma once
 #include "input.h"
-#include "SDL_events.h"
+#include "EngineGlobal.h"
 
 enum KeyCode
 {

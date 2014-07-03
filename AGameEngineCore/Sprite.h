@@ -8,7 +8,7 @@ class Sprite :
 {
 public:
 	Animation* animations;
-		
+	Sprite();
 	void AddTexture(string textureFile);
 	void AddClip (int x, int y, int w, int h);
 	void Init(SDL_Renderer* renderer);

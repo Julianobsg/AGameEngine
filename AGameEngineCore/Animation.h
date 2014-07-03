@@ -1,6 +1,8 @@
 #pragma once
 #include "Texture.h"
 #include <vector>
+#include "Debug.h"
+#include "Timer.h"
 
 using namespace std;
 

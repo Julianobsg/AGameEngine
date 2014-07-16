@@ -13,13 +13,17 @@ namespace AGameEngine {
 		~Audio(void);
 
 		void Play();
+		void PlayLooped();
+		void PlayLooped(int repeatTimes);
 		bool IsPlaying();
 
 		int Volume();
 
 		void SetVolume(int volume);
 		string audioPath;
+	private:
 		Mix_Chunk* sound;
+		int channel;
 	};
 }
 

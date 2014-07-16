@@ -45,7 +45,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_image-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_image-2.0.0\include;..\Libs\SDL2_mixer-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>EngineGlobal.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -53,10 +53,10 @@
       <AdditionalDependencies>d2d1.lib;WindowsCodecs.lib;dwrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>..\Libs\SDL2-2.0.3\lib\x86;..\Libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\Libs\SDL2-2.0.3\lib\x86;..\Libs\SDL2_image-2.0.0\lib\x86;..\Libs\SDL2_mixer-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,6 +76,8 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="AudioPool.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="GameObject.h" />
@@ -95,6 +97,8 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="AudioPool.cpp" />
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="GameObject.cpp" />

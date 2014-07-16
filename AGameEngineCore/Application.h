@@ -6,14 +6,18 @@
 #include "Scene.h"
 
 #include "Sprite.h"
+#include "AudioPool.h"
 
 using namespace std;
+using namespace AGameEngine;
 
 class Application
 {
 public:
 	bool isRunning;
-	
+	string name;
+	Vector2D screenSize;
+
 	Application(void);
 	virtual ~Application(void);
 	int Run();

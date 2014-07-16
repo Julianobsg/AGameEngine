@@ -1,16 +1,12 @@
 #include "Sprite.h"
 
-Sprite::Sprite()
+Sprite::Sprite() : GameObject ()
 {
     animations = new Animation;
 }
 
 void Sprite::AddTexture(string textureFile)
 {
-	if (animations == nullptr)
-	{
-		animations = new Animation;
-	}
 	Texture* texture = new Texture();
 	
 #ifdef __APPLE__

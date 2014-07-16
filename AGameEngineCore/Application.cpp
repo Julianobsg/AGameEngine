@@ -4,12 +4,16 @@
 #include <string>
 #include "Debug.h"
 #include "Keyboard.h"
+#include "AudioPool.h"
 
 
 Application::Application(void)
 {
 	currentScene = 0;
 	isRunning = true;
+	name = "A Game Engine - Game";
+	screenSize.x = 640;
+	screenSize.y = 480;
 }
 
 
@@ -24,7 +28,7 @@ int Application::Init()
 		return 1;
 	}
 	
-	SDL_Window *win = SDL_CreateWindow("Hello World!", 100, 100, 640, 480,
+	SDL_Window *win = SDL_CreateWindow(name.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenSize.x, screenSize.y,
 									   SDL_WINDOW_SHOWN);
 	if (win == nullptr){
 		Debug::Log("SDL_CreateWindow Error: " + string(SDL_GetError()) + + "\n");
@@ -47,6 +51,7 @@ int Application::Init()
 	}
 
 	Timer::Init();
+	AudioPool::Init();
 	return 0;
 }
 
@@ -71,6 +76,7 @@ int Application::Run()
 
 	UnloadScene();
 
+	AudioPool::Destroy();
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(win);
 	IMG_Quit();

@@ -1,7 +1,7 @@
 #include "Audio.h"
-#include "SDL_mixer.h"
 #include "Debug.h"
 #include "AudioPool.h"
+#include "EngineGlobal.h"
 
 AGameEngine::Audio::Audio(string audioPath)
 {

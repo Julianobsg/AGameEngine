@@ -22,7 +22,7 @@ void Bat::Update()
 
 void Bat::Init()
 {
-	flyingSound = AGameEngine::Audio("Media/flapping.wav");
+	flyingSound = AGameEngine::Audio("flapping.wav");
 }
 
 Bat::Bat(void)

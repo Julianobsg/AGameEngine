@@ -13,7 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -27,7 +29,11 @@ class Ui_MainWindow
 {
 public:
     QAction *actionNew_Project;
+    QAction *actionOpen_Project;
     QWidget *centralWidget;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QListView *listView;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -40,8 +46,23 @@ public:
         MainWindow->resize(781, 362);
         actionNew_Project = new QAction(MainWindow);
         actionNew_Project->setObjectName(QStringLiteral("actionNew_Project"));
+        actionOpen_Project = new QAction(MainWindow);
+        actionOpen_Project->setObjectName(QStringLiteral("actionOpen_Project"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        horizontalLayoutWidget = new QWidget(centralWidget);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(0, 0, 201, 311));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        listView = new QListView(horizontalLayoutWidget);
+        listView->setObjectName(QStringLiteral("listView"));
+
+        horizontalLayout->addWidget(listView);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -58,6 +79,7 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(actionNew_Project);
+        menuFile->addAction(actionOpen_Project);
 
         retranslateUi(MainWindow);
 
@@ -68,6 +90,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "No Project", 0));
         actionNew_Project->setText(QApplication::translate("MainWindow", "New Project...", 0));
+        actionOpen_Project->setText(QApplication::translate("MainWindow", "Open Project...", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
     } // retranslateUi
 

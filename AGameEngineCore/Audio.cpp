@@ -9,7 +9,8 @@ AGameEngine::Audio::Audio(string audioPath)
 	this->channel = -1;
 	sound = Mix_LoadWAV(audioPath.c_str());
 	if(sound == NULL) {
-		Debug::Log("Unable to load WAV file: " + string(Mix_GetError()) + "\n");
+		Debug::Log("Unable to load WAV file: " + audioPath + " Error: "
+                   + string(Mix_GetError()) + "\n");
 	}
 	AudioPool::AddSound(sound, &channel);
 }

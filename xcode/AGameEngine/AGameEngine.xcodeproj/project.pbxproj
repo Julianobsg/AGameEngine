@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0420F95219789FF200F5D138 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0420F94E19789FF200F5D138 /* Audio.cpp */; };
+		0420F95319789FF200F5D138 /* AudioPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0420F95019789FF200F5D138 /* AudioPool.cpp */; };
+		0420F9551978A07400F5D138 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0420F9541978A07400F5D138 /* SDL2_mixer.framework */; };
 		04325C86196495690033A970 /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C82196495690033A970 /* Bat.cpp */; };
 		04325C87196495690033A970 /* InfinityBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C84196495690033A970 /* InfinityBackground.cpp */; };
 		04325C92196495960033A970 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C88196495960033A970 /* Animation.cpp */; };
@@ -42,6 +45,7 @@
 		04BC270A195B0AB5000C557B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2707195B0AB5000C557B /* background.png */; };
 		04BC270B195B0AB5000C557B /* batafire-spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2708195B0AB5000C557B /* batafire-spritesheet.png */; };
 		04BC270C195B0AB5000C557B /* helloworld.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2709195B0AB5000C557B /* helloworld.jpg */; };
+		04F99FC7197D615700FA3928 /* flapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04F99FC6197D615700FA3928 /* flapping.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0420F94E19789FF200F5D138 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Audio.cpp; path = ../../../AGameEngineCore/Audio.cpp; sourceTree = "<group>"; };
+		0420F94F19789FF200F5D138 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio.h; path = ../../../AGameEngineCore/Audio.h; sourceTree = "<group>"; };
+		0420F95019789FF200F5D138 /* AudioPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioPool.cpp; path = ../../../AGameEngineCore/AudioPool.cpp; sourceTree = "<group>"; };
+		0420F95119789FF200F5D138 /* AudioPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPool.h; path = ../../../AGameEngineCore/AudioPool.h; sourceTree = "<group>"; };
+		0420F9541978A07400F5D138 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../Libs/Mac/SDL2_mixer.framework; sourceTree = "<group>"; };
 		04325C82196495690033A970 /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bat.cpp; path = ../../../AGame/Bat.cpp; sourceTree = "<group>"; };
 		04325C83196495690033A970 /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bat.h; path = ../../../AGame/Bat.h; sourceTree = "<group>"; };
 		04325C84196495690033A970 /* InfinityBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InfinityBackground.cpp; path = ../../../AGame/InfinityBackground.cpp; sourceTree = "<group>"; };
@@ -119,6 +128,7 @@
 		04BC2707195B0AB5000C557B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		04BC2708195B0AB5000C557B /* batafire-spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "batafire-spritesheet.png"; sourceTree = "<group>"; };
 		04BC2709195B0AB5000C557B /* helloworld.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = helloworld.jpg; sourceTree = "<group>"; };
+		04F99FC6197D615700FA3928 /* flapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flapping.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +136,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BC26F1195B05B3000C557B /* SDL2_image.framework in Frameworks */,
 				047829B7193E324C005D6323 /* SDL2.framework in Frameworks */,
 				04A110E0192E5542005DB424 /* Cocoa.framework in Frameworks */,
+				0420F9551978A07400F5D138 /* SDL2_mixer.framework in Frameworks */,
+				04BC26F1195B05B3000C557B /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +179,7 @@
 		04A110DE192E5542005DB424 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0420F9541978A07400F5D138 /* SDL2_mixer.framework */,
 				04BC26F0195B05B3000C557B /* SDL2_image.framework */,
 				047829B6193E324C005D6323 /* SDL2.framework */,
 				04A110DF192E5542005DB424 /* Cocoa.framework */,
@@ -231,6 +243,10 @@
 		04A11113192E5565005DB424 /* AGameEngineCore */ = {
 			isa = PBXGroup;
 			children = (
+				0420F94E19789FF200F5D138 /* Audio.cpp */,
+				0420F94F19789FF200F5D138 /* Audio.h */,
+				0420F95019789FF200F5D138 /* AudioPool.cpp */,
+				0420F95119789FF200F5D138 /* AudioPool.h */,
 				04325C88196495960033A970 /* Animation.cpp */,
 				04325C89196495960033A970 /* Animation.h */,
 				04325C8A196495960033A970 /* Debug.cpp */,
@@ -288,6 +304,7 @@
 		04BC2706195B0AB5000C557B /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				04F99FC6197D615700FA3928 /* flapping.wav */,
 				04BC2709195B0AB5000C557B /* helloworld.jpg */,
 				04BC2707195B0AB5000C557B /* background.png */,
 				04BC2708195B0AB5000C557B /* batafire-spritesheet.png */,
@@ -374,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A110EA192E5542005DB424 /* InfoPlist.strings in Resources */,
+				04F99FC7197D615700FA3928 /* flapping.wav in Resources */,
 				04BC270A195B0AB5000C557B /* background.png in Resources */,
 				04BC270B195B0AB5000C557B /* batafire-spritesheet.png in Resources */,
 				04A110F8192E5542005DB424 /* Images.xcassets in Resources */,
@@ -400,8 +418,10 @@
 			files = (
 				04BC26FF195B08CB000C557B /* Transform.cpp in Sources */,
 				04325C87196495690033A970 /* InfinityBackground.cpp in Sources */,
+				0420F95219789FF200F5D138 /* Audio.cpp in Sources */,
 				04325C94196495960033A970 /* Input.cpp in Sources */,
 				04A11139192E55F7005DB424 /* MainGame.cpp in Sources */,
+				0420F95319789FF200F5D138 /* AudioPool.cpp in Sources */,
 				04BC26FC195B08CB000C557B /* Behaviour.cpp in Sources */,
 				04A11129192E55A1005DB424 /* EngineGlobal.cpp in Sources */,
 				04325C93196495960033A970 /* Debug.cpp in Sources */,

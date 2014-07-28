@@ -12,4 +12,7 @@ public:
 
 	static Vector2D Zero();
 	static Vector2D One();
+    
+    //Return this vector absolute value copy
+    Vector2D Abs();
 };

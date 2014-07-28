@@ -57,6 +57,9 @@ void Texture::Draw(Transform* transform)
 
 	SDL_RendererFlip isFlipping = CheckImageScale(transform);
 
+    
+	Vector2D scale = transform->scale;
+    
 	//TODO then maybe put a scale factor here, for resizing image
 	if (clip != nullptr){
 		dst.w = clip->w;
@@ -64,8 +67,8 @@ void Texture::Draw(Transform* transform)
 	}
 	else
 	{
-		dst.w = size.x;
-		dst.h = size.y;
+		dst.w = size.x * scale.x;
+		dst.h = size.y * scale.y;
 	}
 
 	SDL_RenderCopyEx(renderer, texture, clip, &dst, 0, NULL, isFlipping);

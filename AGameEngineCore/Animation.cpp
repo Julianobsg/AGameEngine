@@ -14,6 +14,13 @@ Animation::~Animation(void)
 {
 }
 
+void Animation::AddTexture(string texturePath)
+{
+    Texture* texture = new Texture;
+    texture->texturePath = texturePath;
+    AddTexture(texture);
+}
+
 void Animation::AddTexture(Texture* texture)
 {
     if (texture != NULL)

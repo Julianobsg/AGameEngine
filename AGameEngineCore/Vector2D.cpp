@@ -21,3 +21,19 @@ Vector2D Vector2D::One()
 {
 	return Vector2D(1 , 1);
 }
+
+Vector2D Vector2D::Abs()
+{
+    Vector2D newVector = *this;
+    
+    
+    if (newVector.x < 0) {
+        newVector.x *= -1;
+    }
+    
+    if (newVector.y < 0) {
+        newVector.y *= -1;
+    }
+    
+    return newVector;
+}

@@ -2,37 +2,42 @@
 
 Sprite::Sprite() : GameObject ()
 {
-    animations = new Animation;
+    animationPlaying = 0;
 }
 
-void Sprite::AddTexture(string textureFile)
+void Sprite::AddAnimantion(Animation* animation)
 {
-	Texture* texture = new Texture();
-	
-#ifdef __APPLE__
-    texture->texturePath = textureFile;
-#else
-    texture->texturePath = "Media/" + textureFile;
-#endif
+    animations.push_back(animation);
+}
 
-	animations->AddTexture(texture);
+void Sprite::AddTexture(string texturePath)
+{
+    if (animations.size() == 0) {
+        animations.push_back(new Animation);
+    }
+    
+    animations[animations.size() - 1]->AddTexture(texturePath);
 }
 
 void Sprite::Init(SDL_Renderer* renderer)
 {
-	animations->Init(renderer);
+    for (int i = 0; i < animations.size(); i++) {
+        animations[i]->Init(renderer);
+    }
 	
 	GameObject::Init();
 }
 
 void Sprite::Draw()
 {
-	animations->Draw(transform);
+	animations[animationPlaying]->Draw(transform);
 }
 
 void Sprite::Destroy()
 {
-	animations->Destroy();
+    for (int i = 0; i < animations.size(); i++) {
+        animations[i]->Destroy();
+    }
 }
 
 void Sprite::AddBehaviour(Behaviour* behaviour)
@@ -43,7 +48,7 @@ void Sprite::AddBehaviour(Behaviour* behaviour)
 
 Texture* Sprite::LastTexture()
 {
-	return animations->textures.back();
+	return animations[animations.size() - 1]->textures.back();
 }
 
 void Sprite::AddClip(int x, int y, int w, int h)
@@ -55,7 +60,12 @@ void Sprite::AddClip(int x, int y, int w, int h)
 		texture->Copy(lastTexture);
 		texture->Clip(x, y, w, h);
 
-		animations->AddTexture(texture);
+		animations[animations.size() - 1]->AddTexture(texture);
 	}
+}
+
+void Sprite::Play (int animationID)
+{
+    this->animationPlaying = animationID;
 }
 

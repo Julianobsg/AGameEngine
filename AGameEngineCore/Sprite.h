@@ -2,20 +2,28 @@
 #include "GameObject.h"
 #include "Texture.h"
 #include "Animation.h"
+#include <vector>
 
 class Sprite :
 	public GameObject
 {
 public:
-	Animation* animations;
+    std::vector<Animation*> animations;
+    
 	Sprite();
-	void AddTexture(string textureFile);
+	void AddAnimantion(Animation* animation);
+    void AddTexture(string texturePath);
 	void AddClip (int x, int y, int w, int h);
-	void Init(SDL_Renderer* renderer);
+	void Play (int playAnimation);
+    
+    void Init(SDL_Renderer* renderer);
 	void Draw();
 	void Destroy();
 
 	virtual void AddBehaviour(Behaviour* behaviour);
 	Texture* LastTexture();
+    
+private:
+    int animationPlaying;
 };
 

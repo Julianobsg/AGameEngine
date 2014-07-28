@@ -23,7 +23,10 @@ void MainGame::Init()
 	Sprite* bat = new Sprite;
 	bat->name = "batafire";
 	Bat* fall = new Bat();
-    bat->AddTexture("batafire-spritesheet.png");
+    Animation* newAnimation = new Animation;
+    newAnimation->AddTexture("batafire-spritesheet.png");
+    
+    bat->AddAnimantion(newAnimation);
 	bat->LastTexture()->Clip(0, 0, 70, 75);
 	bat->AddClip(75 , 0, 75, 75);
 	bat->AddClip(180, 0, 75, 75);

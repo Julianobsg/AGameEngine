@@ -24,7 +24,7 @@ void MainGame::Init()
 	bat->name = "batafire";
 	Bat* fall = new Bat();
     Animation* newAnimation = new Animation;
-    newAnimation->AddTexture("batafire-spritesheet.png");
+    newAnimation->AddTexture("Media/batafire-spritesheet.png");
     
     bat->AddAnimantion(newAnimation);
 	bat->LastTexture()->Clip(0, 0, 70, 75);
@@ -43,13 +43,13 @@ void MainGame::Init()
 
 	Sprite* background = new Sprite;
 	background->name = "background";
-	background->AddTexture("background.png");
+	background->AddTexture("Media/background.png");
 	background->LastTexture()->Clip(10, 220, 510, 180);
 	background->AddBehaviour(new InfinityBackground);
 
 	Sprite* background2 = new Sprite;
 	background2->name = "background";
-	background2->AddTexture("background.png");
+	background2->AddTexture("Media/background.png");
 	background2->LastTexture()->Clip(10, 220, 510, 180);
 	background2->transform->position = Vector2D(500, 0);
 	background2->AddBehaviour(new InfinityBackground);

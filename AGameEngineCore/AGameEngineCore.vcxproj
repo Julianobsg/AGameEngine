@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -79,6 +79,7 @@
     <ClInclude Include="Audio.h" />
     <ClInclude Include="AudioPool.h" />
     <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="EngineGlobal.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Touch.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vector3D.h" />
@@ -100,6 +102,7 @@
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="AudioPool.cpp" />
     <ClCompile Include="Behaviour.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -110,6 +113,7 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="EngineGlobal.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Touch.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Vector3D.cpp" />

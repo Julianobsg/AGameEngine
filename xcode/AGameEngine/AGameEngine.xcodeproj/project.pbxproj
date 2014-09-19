@@ -45,6 +45,8 @@
 		04BC270A195B0AB5000C557B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2707195B0AB5000C557B /* background.png */; };
 		04BC270B195B0AB5000C557B /* batafire-spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2708195B0AB5000C557B /* batafire-spritesheet.png */; };
 		04BC270C195B0AB5000C557B /* helloworld.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2709195B0AB5000C557B /* helloworld.jpg */; };
+		04F25CDA19CBABC6009A84D1 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CD819CBABC6009A84D1 /* Menu.cpp */; };
+		04F25CFC19CBC7B0009A84D1 /* GamePlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */; };
 		04F99FC7197D615700FA3928 /* flapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04F99FC6197D615700FA3928 /* flapping.wav */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,10 @@
 		04BC2707195B0AB5000C557B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		04BC2708195B0AB5000C557B /* batafire-spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "batafire-spritesheet.png"; sourceTree = "<group>"; };
 		04BC2709195B0AB5000C557B /* helloworld.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = helloworld.jpg; sourceTree = "<group>"; };
+		04F25CD819CBABC6009A84D1 /* Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		04F25CD919CBABC6009A84D1 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamePlayScene.cpp; path = ../../../AGame/GamePlayScene.cpp; sourceTree = "<group>"; };
+		04F25CFB19CBC7B0009A84D1 /* GamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlayScene.h; path = ../../../AGame/GamePlayScene.h; sourceTree = "<group>"; };
 		04F99FC6197D615700FA3928 /* flapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flapping.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +302,10 @@
 				04A11135192E55F7005DB424 /* stdafx.cpp */,
 				04A11136192E55F7005DB424 /* stdafx.h */,
 				04A11137192E55F7005DB424 /* targetver.h */,
+				04F25CD819CBABC6009A84D1 /* Menu.cpp */,
+				04F25CD919CBABC6009A84D1 /* Menu.h */,
+				04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */,
+				04F25CFB19CBC7B0009A84D1 /* GamePlayScene.h */,
 			);
 			name = AGame;
 			path = AGameEngine;
@@ -421,7 +431,9 @@
 				0420F95219789FF200F5D138 /* Audio.cpp in Sources */,
 				04325C94196495960033A970 /* Input.cpp in Sources */,
 				04A11139192E55F7005DB424 /* MainGame.cpp in Sources */,
+				04F25CFC19CBC7B0009A84D1 /* GamePlayScene.cpp in Sources */,
 				0420F95319789FF200F5D138 /* AudioPool.cpp in Sources */,
+				04F25CDA19CBABC6009A84D1 /* Menu.cpp in Sources */,
 				04BC26FC195B08CB000C557B /* Behaviour.cpp in Sources */,
 				04A11129192E55A1005DB424 /* EngineGlobal.cpp in Sources */,
 				04325C93196495960033A970 /* Debug.cpp in Sources */,

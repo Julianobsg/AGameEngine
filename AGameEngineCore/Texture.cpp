@@ -60,10 +60,11 @@ void Texture::Draw(Transform* transform)
     
 	Vector2D scale = transform->scale;
     
+    scale = scale.Abs();
 	//TODO then maybe put a scale factor here, for resizing image
 	if (clip != nullptr){
-		dst.w = clip->w;
-		dst.h = clip->h;
+		dst.w = clip->w * scale.x;
+		dst.h = clip->h * scale.y;
 	}
 	else
 	{

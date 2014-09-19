@@ -5,6 +5,7 @@
 #include "Scene.h"
 #include "Sprite.h"
 
+#include "GamePlayScene.h"
 class MainGame
 {
 public:

@@ -15,14 +15,14 @@ void Bat::Update()
 		transform->position.y +=1;
 	} else if (Keyboard::KeyDown(KeyCode::up))
 	{
-		flyingSound.Play();
+		//  flyingSound.Play();
 		transform->position.y -=1;
 	}
 }
 
 void Bat::Init()
 {
-	flyingSound = AGameEngine::Audio("flapping.wav");
+	//flyingSound = AGameEngine::Audio("flapping.wav");
 }
 
 Bat::Bat(void)

@@ -13,30 +13,14 @@
   <property name="windowTitle">
    <string>No Project</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>201</width>
-      <height>311</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QListView" name="listView"/>
-     </item>
-    </layout>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>781</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -48,14 +32,7 @@
     <addaction name="separator"/>
     <addaction name="actionSave"/>
    </widget>
-   <widget class="QMenu" name="menuGameObject">
-    <property name="title">
-     <string>GameObject</string>
-    </property>
-    <addaction name="actionNew"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuGameObject"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -70,21 +47,8 @@
    <property name="text">
     <string>New Project...</string>
    </property>
-  </action>
-  <action name="actionOpen_Project">
-   <property name="text">
-    <string>Open Project...</string>
-   </property>
-  </action>
-  <action name="actionNew">
-   <property name="text">
-    <string>New</string>
-   </property>
-   <property name="toolTip">
-    <string>New Game Object</string>
-   </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+N</string>
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="actionSave">
@@ -93,6 +57,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="text">
+    <string>Open Project...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
  </widget>

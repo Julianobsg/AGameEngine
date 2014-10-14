@@ -90,21 +90,4 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>jni/src/AGame</name>
-			<type>2</type>
-			<location>D:/Projects/AGameEngine/AGame</location>
-		</link>
-		<link>
-			<name>jni/src/AGameEngineCore</name>
-			<type>2</type>
-			<location>D:/Projects/AGameEngine/AGameEngineCore</location>
-		</link>
-		<link>
-			<name>jni/src/SDL2-2.0.3</name>
-			<type>2</type>
-			<location>D:/Projects/SDL2-2.0.3</location>
-		</link>
-	</linkedResources>
 </projectDescription>

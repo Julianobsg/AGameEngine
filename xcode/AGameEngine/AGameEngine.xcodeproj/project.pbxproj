@@ -10,6 +10,7 @@
 		0420F95219789FF200F5D138 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0420F94E19789FF200F5D138 /* Audio.cpp */; };
 		0420F95319789FF200F5D138 /* AudioPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0420F95019789FF200F5D138 /* AudioPool.cpp */; };
 		0420F9551978A07400F5D138 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0420F9541978A07400F5D138 /* SDL2_mixer.framework */; };
+		0426FA0919D0C7D700F1F6D3 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0426FA0819D0C7D700F1F6D3 /* SDL2_ttf.framework */; };
 		04325C86196495690033A970 /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C82196495690033A970 /* Bat.cpp */; };
 		04325C87196495690033A970 /* InfinityBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C84196495690033A970 /* InfinityBackground.cpp */; };
 		04325C92196495960033A970 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C88196495960033A970 /* Animation.cpp */; };
@@ -22,7 +23,6 @@
 		04A110EA192E5542005DB424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A110E8192E5542005DB424 /* InfoPlist.strings */; };
 		04A110EC192E5542005DB424 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A110EB192E5542005DB424 /* main.cpp */; };
 		04A110F0192E5542005DB424 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 04A110EE192E5542005DB424 /* Credits.rtf */; };
-		04A110F6192E5542005DB424 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A110F4192E5542005DB424 /* MainMenu.xib */; };
 		04A110F8192E5542005DB424 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A110F7192E5542005DB424 /* Images.xcassets */; };
 		04A110FF192E5542005DB424 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110FE192E5542005DB424 /* XCTest.framework */; };
 		04A11100192E5542005DB424 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110DF192E5542005DB424 /* Cocoa.framework */; };
@@ -47,6 +47,7 @@
 		04BC270C195B0AB5000C557B /* helloworld.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2709195B0AB5000C557B /* helloworld.jpg */; };
 		04F25CDA19CBABC6009A84D1 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CD819CBABC6009A84D1 /* Menu.cpp */; };
 		04F25CFC19CBC7B0009A84D1 /* GamePlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */; };
+		04F25CFF19CF3119009A84D1 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CFD19CF3119009A84D1 /* Text.cpp */; };
 		04F99FC7197D615700FA3928 /* flapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04F99FC6197D615700FA3928 /* flapping.wav */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +61,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		04F25D0919D05F42009A84D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0420F94E19789FF200F5D138 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Audio.cpp; path = ../../../AGameEngineCore/Audio.cpp; sourceTree = "<group>"; };
 		0420F94F19789FF200F5D138 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio.h; path = ../../../AGameEngineCore/Audio.h; sourceTree = "<group>"; };
 		0420F95019789FF200F5D138 /* AudioPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioPool.cpp; path = ../../../AGameEngineCore/AudioPool.cpp; sourceTree = "<group>"; };
 		0420F95119789FF200F5D138 /* AudioPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPool.h; path = ../../../AGameEngineCore/AudioPool.h; sourceTree = "<group>"; };
 		0420F9541978A07400F5D138 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../Libs/Mac/SDL2_mixer.framework; sourceTree = "<group>"; };
+		0426FA0819D0C7D700F1F6D3 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../Libs/Mac/SDL2_ttf.framework; sourceTree = "<group>"; };
 		04325C82196495690033A970 /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bat.cpp; path = ../../../AGame/Bat.cpp; sourceTree = "<group>"; };
 		04325C83196495690033A970 /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bat.h; path = ../../../AGame/Bat.h; sourceTree = "<group>"; };
 		04325C84196495690033A970 /* InfinityBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InfinityBackground.cpp; path = ../../../AGame/InfinityBackground.cpp; sourceTree = "<group>"; };
@@ -134,6 +148,8 @@
 		04F25CD919CBABC6009A84D1 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamePlayScene.cpp; path = ../../../AGame/GamePlayScene.cpp; sourceTree = "<group>"; };
 		04F25CFB19CBC7B0009A84D1 /* GamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePlayScene.h; path = ../../../AGame/GamePlayScene.h; sourceTree = "<group>"; };
+		04F25CFD19CF3119009A84D1 /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Text.cpp; path = ../../../AGameEngineCore/Text.cpp; sourceTree = "<group>"; };
+		04F25CFE19CF3119009A84D1 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text.h; path = ../../../AGameEngineCore/Text.h; sourceTree = "<group>"; };
 		04F99FC6197D615700FA3928 /* flapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flapping.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,10 +158,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0426FA0919D0C7D700F1F6D3 /* SDL2_ttf.framework in Frameworks */,
 				047829B7193E324C005D6323 /* SDL2.framework in Frameworks */,
 				04A110E0192E5542005DB424 /* Cocoa.framework in Frameworks */,
-				0420F9551978A07400F5D138 /* SDL2_mixer.framework in Frameworks */,
 				04BC26F1195B05B3000C557B /* SDL2_image.framework in Frameworks */,
+				0420F9551978A07400F5D138 /* SDL2_mixer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +202,7 @@
 		04A110DE192E5542005DB424 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0426FA0819D0C7D700F1F6D3 /* SDL2_ttf.framework */,
 				0420F9541978A07400F5D138 /* SDL2_mixer.framework */,
 				04BC26F0195B05B3000C557B /* SDL2_image.framework */,
 				047829B6193E324C005D6323 /* SDL2.framework */,
@@ -286,6 +304,8 @@
 				04A11125192E55A1005DB424 /* Sprite.h */,
 				04A11126192E55A1005DB424 /* Timer.cpp */,
 				04A11127192E55A1005DB424 /* Timer.h */,
+				04F25CFD19CF3119009A84D1 /* Text.cpp */,
+				04F25CFE19CF3119009A84D1 /* Text.h */,
 			);
 			name = AGameEngineCore;
 			sourceTree = "<group>";
@@ -333,6 +353,7 @@
 				04A110D8192E5542005DB424 /* Sources */,
 				04A110D9192E5542005DB424 /* Frameworks */,
 				04A110DA192E5542005DB424 /* Resources */,
+				04F25D0919D05F42009A84D1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -406,7 +427,6 @@
 				04BC270B195B0AB5000C557B /* batafire-spritesheet.png in Resources */,
 				04A110F8192E5542005DB424 /* Images.xcassets in Resources */,
 				04A110F0192E5542005DB424 /* Credits.rtf in Resources */,
-				04A110F6192E5542005DB424 /* MainMenu.xib in Resources */,
 				04BC270C195B0AB5000C557B /* helloworld.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +452,7 @@
 				04325C94196495960033A970 /* Input.cpp in Sources */,
 				04A11139192E55F7005DB424 /* MainGame.cpp in Sources */,
 				04F25CFC19CBC7B0009A84D1 /* GamePlayScene.cpp in Sources */,
+				04F25CFF19CF3119009A84D1 /* Text.cpp in Sources */,
 				0420F95319789FF200F5D138 /* AudioPool.cpp in Sources */,
 				04F25CDA19CBABC6009A84D1 /* Menu.cpp in Sources */,
 				04BC26FC195B08CB000C557B /* Behaviour.cpp in Sources */,
@@ -587,9 +608,11 @@
 					"$(inherited)",
 					/Users/mac/Documents/AGameEngine/lib,
 					/Users/mac/Documents/AGameEngine/Libs/Mac,
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGameEngine/AGameEngine-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "AGameEngine/AGameEngine-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -605,9 +628,11 @@
 					"$(inherited)",
 					/Users/mac/Documents/AGameEngine/lib,
 					/Users/mac/Documents/AGameEngine/Libs/Mac,
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGameEngine/AGameEngine-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "AGameEngine/AGameEngine-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

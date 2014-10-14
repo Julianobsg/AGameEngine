@@ -3,6 +3,9 @@
 #include <time.h>
 
 #include "SDL.h"
+#include "SDL_image.h"
+
+#include "SDL_mixer.h"
 
 typedef struct Sprite
 {
@@ -25,7 +28,7 @@ Sprite LoadSprite(const char* file, SDL_Renderer* renderer)
     temp = SDL_LoadBMP(file);
     if (temp == NULL)
 	{
-        //fprintf(stderr, "Couldn't load %s: %s\n", file, SDL_GetError());
+        fprintf(stderr, "Couldn't load %s: %s\n", file, SDL_GetError());
         return result;
     }
     result.w = temp->w;
@@ -34,7 +37,7 @@ Sprite LoadSprite(const char* file, SDL_Renderer* renderer)
     /* Create texture from the image */
     result.texture = SDL_CreateTextureFromSurface(renderer, temp);
     if (!result.texture) {
-        //fprintf(stderr, "Couldn't create texture: %s\n", SDL_GetError());
+        fprintf(stderr, "Couldn't create texture: %s\n", SDL_GetError());
         SDL_FreeSurface(temp);
         return result;
     }
@@ -63,6 +66,21 @@ int main(int argc, char *argv[])
 	Sprite sprite = LoadSprite("image.bmp", renderer);
     if(sprite.texture == NULL)
         exit(2);
+
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
+		fprintf(stderr, "IMG_Init" , SDL_GetError());
+		return 1;
+	}
+
+	int audio_rate = 22050;
+	Uint16 audio_format = AUDIO_S16SYS;
+	int audio_channels = 2;
+	int audio_buffers = 4096;
+
+	if(Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers) != 0) {
+		fprintf(stderr, "Unable to initialize audio:" , SDL_GetError());
+		exit(1);
+	}
 
     /* Main render loop */
     Uint8 done = 0;

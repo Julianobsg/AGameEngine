@@ -1,5 +1,5 @@
 #pragma once
-#include "behaviour.h"
+#include "Behaviour.h"
 
 class InfinityBackground :
 	public Behaviour

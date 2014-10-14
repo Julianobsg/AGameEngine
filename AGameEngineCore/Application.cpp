@@ -49,6 +49,10 @@ int Application::Init()
 		Debug::Log("IMG_Init"  + string(SDL_GetError()) + + "\n");
 		return 1;
 	}
+    if (TTF_Init() != 0){
+        Debug::Log("TTF_Init" + string(SDL_GetError()) + + "\n");
+        return 1;
+    }
 
 	Timer::Init();
 	AudioPool::Init();

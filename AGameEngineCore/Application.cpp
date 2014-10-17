@@ -1,5 +1,4 @@
 #include "Application.h"
-#include <thread>         // std::thread
 #include "Timer.h"
 #include <string>
 #include "Debug.h"
@@ -30,17 +29,17 @@ int Application::Init()
 	
 	win = SDL_CreateWindow(name.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenSize.x, screenSize.y,
 									   SDL_WINDOW_SHOWN);
-	if (win == nullptr){
+	if (win == NULL){
 		Debug::Log("SDL_CreateWindow Error: " + string(SDL_GetError()) + + "\n");
 		return 1;
 	}
 	renderer = SDL_CreateRenderer(win, -1,
 								  SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-	if (renderer == nullptr){
+	if (renderer == NULL){
 		renderer = SDL_GetRenderer(win);
 	}
 	
-	if (renderer == nullptr){
+	if (renderer == NULL){
 		Debug::Log("SDL_CreateRenderer Error: " + string(SDL_GetError()) + "\n");
 		return 1;
 	}

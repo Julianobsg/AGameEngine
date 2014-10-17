@@ -62,7 +62,7 @@ void Texture::Draw(Transform* transform)
     
     scale = scale.Abs();
 	//TODO then maybe put a scale factor here, for resizing image
-	if (clip != nullptr){
+	if (clip != NULL){
 		dst.w = clip->w * scale.x;
 		dst.h = clip->h * scale.y;
 	}

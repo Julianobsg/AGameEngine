@@ -4,6 +4,7 @@
 #include "Debug.h"
 #include "Keyboard.h"
 #include "AudioPool.h"
+#include "Touch.h"
 
 
 Application::Application(void)
@@ -101,6 +102,7 @@ void Application::CheckInputs()
 		if (e.type == SDL_QUIT)
 			isRunning = false;
 		Keyboard::SetKeyDown(&e);
+		Touch::SetTouch(&e);
 	}
 	
 }

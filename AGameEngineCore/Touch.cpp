@@ -1,9 +1,10 @@
 #include "Touch.h"
 
+bool Touch::isTouching = false;
 
 Touch::Touch()
 {
-	isTouching = false;
+
 }
 
 

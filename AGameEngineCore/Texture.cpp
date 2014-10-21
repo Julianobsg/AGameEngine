@@ -72,7 +72,7 @@ void Texture::Draw(Transform* transform)
 		dst.h = size.y * scale.y;
 	}
 
-	SDL_RenderCopyEx(renderer, texture, clip, &dst, 0, NULL, isFlipping);
+	SDL_RenderCopyEx(renderer, texture, clip, &dst, transform->angle, NULL, isFlipping);
 }
 
 

@@ -20,6 +20,7 @@ void MainGame::Init()
 	scene1.name = "Scene 1 ";
     scene1.Init();
     
+    application->screenSize = Vector2D(300, 240);
 	application->AddScene(scene1);
 
 }

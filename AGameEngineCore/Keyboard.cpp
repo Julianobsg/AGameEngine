@@ -23,4 +23,8 @@ void Keyboard::SetKeyDown(SDL_Event* e)
 	{
         selectedKeyCode = static_cast<KeyCode>(e->key.keysym.sym);
 	}
+    if (e->type == SDL_KEYUP) 
+    {
+        selectedKeyCode = KeyCode::none;
+    }
 }

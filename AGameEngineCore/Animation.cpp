@@ -38,10 +38,9 @@ void Animation::Init(SDL_Renderer* renderer)
 	gamefps = Timer::framesPerSecond;
 }
 
-void Animation::Draw(Transform* transform)
+Texture* Animation::ActualTexture()
 {
 	Texture* texture = textures[actualFrame];
-	texture->Draw(transform);
 
 	framesCounter++;
 
@@ -56,6 +55,8 @@ void Animation::Draw(Transform* transform)
 	{
 		actualFrame = 0;
 	}
+
+	return texture;
 }
 
 void Animation::Destroy()

@@ -54,6 +54,7 @@ int Application::Init()
         return 1;
     }
 
+	mainCamera = new Camera(screenSize);
 	Timer::Init();
 	AudioPool::Init();
 	return 0;
@@ -80,6 +81,7 @@ int Application::Run()
 
 	UnloadScene();
 
+	free(mainCamera);
 	AudioPool::Destroy();
 	SDL_DestroyRenderer(renderer);
     
@@ -131,7 +133,7 @@ void Application::Draw()
 		Sprite* sprite = dynamic_cast<Sprite*>(go);
 		if (sprite != NULL)
 		{
-			sprite->Draw();
+			mainCamera->Draw(sprite);
 		}
 	}
 	SDL_RenderPresent(renderer);

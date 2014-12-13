@@ -30,7 +30,8 @@ void Sprite::Init(SDL_Renderer* renderer)
 
 void Sprite::Draw()
 {
-	animations[animationPlaying]->Draw(transform);
+	Texture* texture = animations[animationPlaying]->ActualTexture();
+	texture->Draw(this->transform);
 }
 
 void Sprite::Destroy()

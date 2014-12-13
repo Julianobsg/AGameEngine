@@ -19,7 +19,7 @@ public:
 	void AddTexture(string texturePath);
     void AddTexture(Texture* texture);
 	void Init(SDL_Renderer* renderer);
-	void Draw(Transform* transform);
+	Texture* ActualTexture();
 	void Destroy();
 private:
 	int framesCounter;

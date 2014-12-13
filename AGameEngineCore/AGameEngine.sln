@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGameEngineCore", "AGameEngineCore.vcxproj", "{0281953C-F290-4793-98EE-04CFA6C6CD54}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGame", "..\AGame\AGame.vcxproj", "{83E47368-7689-41E5-B226-779480B77DDC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AGameEngineUnitTest", "..\AGameEngineUnitTest\AGameEngineUnitTest.vcxproj", "{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +70,45 @@ Global
 		{83E47368-7689-41E5-B226-779480B77DDC}.Release|Win32.ActiveCfg = Release|Win32
 		{83E47368-7689-41E5-B226-779480B77DDC}.Release|Win32.Build.0 = Release|Win32
 		{83E47368-7689-41E5-B226-779480B77DDC}.Release|x64.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|ARM.Build.0 = Debug|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|ARM.Deploy.0 = Debug|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Mixed Platforms.Deploy.0 = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Win32.Build.0 = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|Win32.Deploy.0 = Debug|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|x64.ActiveCfg = Debug|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|x64.Build.0 = Debug|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Debug|x64.Deploy.0 = Debug|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Any CPU.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|ARM.ActiveCfg = Release|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|ARM.Build.0 = Release|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|ARM.Deploy.0 = Release|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Mixed Platforms.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Mixed Platforms.Build.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Mixed Platforms.Deploy.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Win32.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Win32.Build.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|Win32.Deploy.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|x64.ActiveCfg = Release|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|x64.Build.0 = Release|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Profile|x64.Deploy.0 = Release|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Any CPU.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|ARM.ActiveCfg = Release|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|ARM.Build.0 = Release|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|ARM.Deploy.0 = Release|ARM
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Mixed Platforms.Deploy.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Win32.ActiveCfg = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Win32.Build.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|Win32.Deploy.0 = Release|Win32
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|x64.ActiveCfg = Release|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|x64.Build.0 = Release|x64
+		{7DDAF698-D28D-4083-A0F1-8C353BB9F45B}.Release|x64.Deploy.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

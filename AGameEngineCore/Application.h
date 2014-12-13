@@ -7,6 +7,7 @@
 
 #include "Sprite.h"
 #include "AudioPool.h"
+#include "Camera.h"
 
 using namespace std;
 using namespace AGameEngine;
@@ -19,6 +20,7 @@ public:
 	Vector2D screenSize;
 
 	Application(void);
+	Camera* mainCamera;
 	virtual ~Application(void);
 	int Run();
 	void AddScene(Scene);

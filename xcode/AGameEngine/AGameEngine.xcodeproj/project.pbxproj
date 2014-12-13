@@ -45,6 +45,7 @@
 		04BC270A195B0AB5000C557B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2707195B0AB5000C557B /* background.png */; };
 		04BC270B195B0AB5000C557B /* batafire-spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2708195B0AB5000C557B /* batafire-spritesheet.png */; };
 		04BC270C195B0AB5000C557B /* helloworld.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BC2709195B0AB5000C557B /* helloworld.jpg */; };
+		04D4F6D519F6CA6A00B54340 /* BatController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D4F6D319F6CA6A00B54340 /* BatController.cpp */; };
 		04F25CDA19CBABC6009A84D1 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CD819CBABC6009A84D1 /* Menu.cpp */; };
 		04F25CFC19CBC7B0009A84D1 /* GamePlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */; };
 		04F25CFF19CF3119009A84D1 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F25CFD19CF3119009A84D1 /* Text.cpp */; };
@@ -144,6 +145,8 @@
 		04BC2707195B0AB5000C557B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		04BC2708195B0AB5000C557B /* batafire-spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "batafire-spritesheet.png"; sourceTree = "<group>"; };
 		04BC2709195B0AB5000C557B /* helloworld.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = helloworld.jpg; sourceTree = "<group>"; };
+		04D4F6D319F6CA6A00B54340 /* BatController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BatController.cpp; path = ../../../AGame/BatController.cpp; sourceTree = "<group>"; };
+		04D4F6D419F6CA6A00B54340 /* BatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatController.h; path = ../../../AGame/BatController.h; sourceTree = "<group>"; };
 		04F25CD819CBABC6009A84D1 /* Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
 		04F25CD919CBABC6009A84D1 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamePlayScene.cpp; path = ../../../AGame/GamePlayScene.cpp; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				04F25CD919CBABC6009A84D1 /* Menu.h */,
 				04F25CFA19CBC7B0009A84D1 /* GamePlayScene.cpp */,
 				04F25CFB19CBC7B0009A84D1 /* GamePlayScene.h */,
+				04D4F6D319F6CA6A00B54340 /* BatController.cpp */,
+				04D4F6D419F6CA6A00B54340 /* BatController.h */,
 			);
 			name = AGame;
 			path = AGameEngine;
@@ -459,6 +464,7 @@
 				04A11129192E55A1005DB424 /* EngineGlobal.cpp in Sources */,
 				04325C93196495960033A970 /* Debug.cpp in Sources */,
 				04A1112F192E55A1005DB424 /* Sprite.cpp in Sources */,
+				04D4F6D519F6CA6A00B54340 /* BatController.cpp in Sources */,
 				04325C96196495960033A970 /* Vector3D.cpp in Sources */,
 				04BC26FE195B08CB000C557B /* Texture.cpp in Sources */,
 				04325C86196495690033A970 /* Bat.cpp in Sources */,

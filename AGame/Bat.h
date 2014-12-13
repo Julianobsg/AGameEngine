@@ -1,16 +1,11 @@
 #pragma once
-#include "Behaviour.h"
+#include "Sprite.h"
 #include "Audio.h"
+#include "BatController.h"
 
-class Bat : public Behaviour
+class Bat : public Sprite
 {
 public:
-	AGameEngine::Audio flyingSound;
-	
-	Bat(void);
-	~Bat(void);
-
-	void Update();
 
 	void Init();
 

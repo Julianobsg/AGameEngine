@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "InfinityBackground.h"
-
+#include "Debug.h"
+#include "Timer.h"
+#include <string>
 
 InfinityBackground::InfinityBackground(void)
 {
@@ -18,4 +20,6 @@ void InfinityBackground::Update()
 	{
 		transform->position.x = texture->size.x;
 	}
+    
+    Debug::Log("FPS: " + to_string(Timer::framesPerSecond) + "\n");
 }

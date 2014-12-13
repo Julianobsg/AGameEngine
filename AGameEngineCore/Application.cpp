@@ -4,6 +4,7 @@
 #include "Debug.h"
 #include "Keyboard.h"
 #include "AudioPool.h"
+#include "Touch.h"
 
 
 Application::Application(void)
@@ -53,6 +54,7 @@ int Application::Init()
         return 1;
     }
 
+	mainCamera = new Camera(screenSize);
 	Timer::Init();
 	AudioPool::Init();
 	return 0;
@@ -79,6 +81,7 @@ int Application::Run()
 
 	UnloadScene();
 
+	free(mainCamera);
 	AudioPool::Destroy();
 	SDL_DestroyRenderer(renderer);
     
@@ -101,6 +104,7 @@ void Application::CheckInputs()
 		if (e.type == SDL_QUIT)
 			isRunning = false;
 		Keyboard::SetKeyDown(&e);
+		Touch::SetTouch(&e);
 	}
 	
 }
@@ -129,7 +133,7 @@ void Application::Draw()
 		Sprite* sprite = dynamic_cast<Sprite*>(go);
 		if (sprite != NULL)
 		{
-			sprite->Draw();
+			mainCamera->Draw(sprite);
 		}
 	}
 	SDL_RenderPresent(renderer);

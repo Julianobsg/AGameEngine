@@ -12,6 +12,7 @@ class Texture
 public:
 	Vector2D size;
 	string texturePath;
+	float pixelsPerMeter;
 
 	Texture(void);
 	~Texture(void);

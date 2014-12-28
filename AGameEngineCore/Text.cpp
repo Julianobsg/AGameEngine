@@ -7,3 +7,8 @@
 //
 
 #include "Text.h"
+
+void Text::Draw()
+{
+    
+}

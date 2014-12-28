@@ -28,15 +28,13 @@ void GamePlayScene::Init()
 	AddGameObject(background);
 	AddGameObject(background2);
     
+
+    Bat* bat = new Bat;
     
-    for (int i = 0; i < 100; i++)
-    {
-        Bat* bat = new Bat;
-        
-        bat->Init();
-        bat->transform->position.x = i;
-        
-        AddGameObject(bat);
-   
-    }
+    bat->Init();
+    bat->transform->position.x = i;
+    
+    AddGameObject(bat);
+
+    
 }

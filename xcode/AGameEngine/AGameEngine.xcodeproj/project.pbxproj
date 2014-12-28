@@ -18,6 +18,8 @@
 		04325C94196495960033A970 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C8C196495960033A970 /* Input.cpp */; };
 		04325C95196495960033A970 /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C8E196495960033A970 /* Keyboard.cpp */; };
 		04325C96196495960033A970 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C90196495960033A970 /* Vector3D.cpp */; };
+		046B876B1A3BF00C0034EC13 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046B87671A3BF00C0034EC13 /* Camera.cpp */; };
+		046B876C1A3BF00C0034EC13 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046B87691A3BF00C0034EC13 /* Touch.cpp */; };
 		047829B7193E324C005D6323 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829B6193E324C005D6323 /* SDL2.framework */; };
 		04A110E0192E5542005DB424 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110DF192E5542005DB424 /* Cocoa.framework */; };
 		04A110EA192E5542005DB424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A110E8192E5542005DB424 /* InfoPlist.strings */; };
@@ -95,6 +97,10 @@
 		04325C8F196495960033A970 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Keyboard.h; path = ../../../AGameEngineCore/Keyboard.h; sourceTree = "<group>"; };
 		04325C90196495960033A970 /* Vector3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector3D.cpp; path = ../../../AGameEngineCore/Vector3D.cpp; sourceTree = "<group>"; };
 		04325C91196495960033A970 /* Vector3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector3D.h; path = ../../../AGameEngineCore/Vector3D.h; sourceTree = "<group>"; };
+		046B87671A3BF00C0034EC13 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = ../../../AGameEngineCore/Camera.cpp; sourceTree = "<group>"; };
+		046B87681A3BF00C0034EC13 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = ../../../AGameEngineCore/Camera.h; sourceTree = "<group>"; };
+		046B87691A3BF00C0034EC13 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Touch.cpp; path = ../../../AGameEngineCore/Touch.cpp; sourceTree = "<group>"; };
+		046B876A1A3BF00C0034EC13 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Touch.h; path = ../../../AGameEngineCore/Touch.h; sourceTree = "<group>"; };
 		047829B6193E324C005D6323 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Libs/Mac/SDL2.framework; sourceTree = "<group>"; };
 		04A110DC192E5542005DB424 /* AGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A110DF192E5542005DB424 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -270,6 +276,10 @@
 		04A11113192E5565005DB424 /* AGameEngineCore */ = {
 			isa = PBXGroup;
 			children = (
+				046B87671A3BF00C0034EC13 /* Camera.cpp */,
+				046B87681A3BF00C0034EC13 /* Camera.h */,
+				046B87691A3BF00C0034EC13 /* Touch.cpp */,
+				046B876A1A3BF00C0034EC13 /* Touch.h */,
 				0420F94E19789FF200F5D138 /* Audio.cpp */,
 				0420F94F19789FF200F5D138 /* Audio.h */,
 				0420F95019789FF200F5D138 /* AudioPool.cpp */,
@@ -455,6 +465,7 @@
 				04325C87196495690033A970 /* InfinityBackground.cpp in Sources */,
 				0420F95219789FF200F5D138 /* Audio.cpp in Sources */,
 				04325C94196495960033A970 /* Input.cpp in Sources */,
+				046B876C1A3BF00C0034EC13 /* Touch.cpp in Sources */,
 				04A11139192E55F7005DB424 /* MainGame.cpp in Sources */,
 				04F25CFC19CBC7B0009A84D1 /* GamePlayScene.cpp in Sources */,
 				04F25CFF19CF3119009A84D1 /* Text.cpp in Sources */,
@@ -467,6 +478,7 @@
 				04D4F6D519F6CA6A00B54340 /* BatController.cpp in Sources */,
 				04325C96196495960033A970 /* Vector3D.cpp in Sources */,
 				04BC26FE195B08CB000C557B /* Texture.cpp in Sources */,
+				046B876B1A3BF00C0034EC13 /* Camera.cpp in Sources */,
 				04325C86196495690033A970 /* Bat.cpp in Sources */,
 				04325C95196495960033A970 /* Keyboard.cpp in Sources */,
 				04A110EC192E5542005DB424 /* main.cpp in Sources */,

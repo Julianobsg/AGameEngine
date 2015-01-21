@@ -13,7 +13,7 @@
 #include "Scene.h"
 #include "Animation.h"
 #include "Sprite.h"
-
+#include "Text.h"
 #include "Bat.h"
 #include "InfinityBackground.h"
 #endif /* defined(__AGameEngine__GamePlayer__) */

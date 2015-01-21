@@ -6,6 +6,7 @@
 #include "Scene.h"
 
 #include "Sprite.h"
+#include "Text.h"
 #include "AudioPool.h"
 #include "Camera.h"
 

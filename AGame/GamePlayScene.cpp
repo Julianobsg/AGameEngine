@@ -25,6 +25,9 @@ void GamePlayScene::Init()
 	background2->transform->position = Vector2D(500, 0);
 	background2->AddBehaviour(new InfinityBackground);
     
+    Text* text = new Text("CaviarDreams.ttf");
+    text->content = "Hello World";
+    AddGameObject(text);
 	AddGameObject(background);
 	AddGameObject(background2);
     

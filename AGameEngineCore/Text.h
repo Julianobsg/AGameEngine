@@ -1,4 +1,4 @@
-//
+ //
 //  Text.h
 //  AGameEngine
 //
@@ -14,5 +14,17 @@ class Text : public GameObject
 {
 public:
     string content;
+    Text(string fontPath);
+    ~Text();
     void Draw();
+    void Init(SDL_Renderer* renderer);
+private:
+    TTF_Font* font;
+    SDL_Surface* textSurface;
+    SDL_Renderer* renderer;
+    SDL_Color* color;
+    SDL_Texture* textTexture;
+    string fontPath;
+    void OpenFont();
+    void MakeTexture();
 };

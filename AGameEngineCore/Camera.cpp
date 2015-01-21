@@ -19,7 +19,9 @@ void Camera::Draw(Sprite* sprite)
 {
 	if (OnView(sprite))
 	{
-		sprite->Draw();
+        Transform* cameraTransform = WorldToCameraTransform(sprite->transform);
+        
+		sprite->Draw(cameraTransform);
 	}
 }
 
@@ -30,6 +32,25 @@ bool Camera::OnView(Sprite* sprite)
 
 Vector2D* Camera::WorldToCameraPosition(Vector2D* position)
 {
-	return position;
+    Vector2D* inCameraPosition = new Vector2D(transform->position.x - position->x,
+                                              transform->position.y - position->y);
+	return inCameraPosition;
 }
 
+Vector2D* Camera::WorldToCameraScale(Vector2D *scale)
+{
+    return scale;
+}
+
+Transform* Camera::WorldToCameraTransform(Transform *transform)
+{
+    Transform* cameraTransform = new Transform;
+    
+    cameraTransform->angle = transform->angle;
+    
+    cameraTransform->position = *WorldToCameraPosition(&(transform->position));
+    
+    cameraTransform->scale = *WorldToCameraScale(&(transform->scale));
+    
+    return cameraTransform;
+}

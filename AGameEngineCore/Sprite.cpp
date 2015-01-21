@@ -1,8 +1,10 @@
 #include "Sprite.h"
+#define DEFAULT_PIXELS_PER_METER 50
 
 Sprite::Sprite() : GameObject ()
 {
     animationPlaying = 0;
+    pixelsPerMeter = DEFAULT_PIXELS_PER_METER;
 }
 
 void Sprite::AddAnimantion(Animation* animation)
@@ -28,10 +30,10 @@ void Sprite::Init(SDL_Renderer* renderer)
 	GameObject::Init();
 }
 
-void Sprite::Draw()
+void Sprite::Draw(Transform* cameraTransform)
 {
 	Texture* texture = animations[animationPlaying]->ActualTexture();
-	texture->Draw(this->transform);
+	texture->Draw(cameraTransform);
 }
 
 void Sprite::Destroy()

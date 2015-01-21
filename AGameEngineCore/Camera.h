@@ -14,7 +14,10 @@ public:
 	~Camera();
 	void Draw(Sprite* sprite);
 	bool OnView(Sprite* sprite);
-	Vector2D* WorldToCameraPosition(Vector2D* position);
+    Vector2D* WorldToCameraPosition(Vector2D* position);
+    Vector2D* WorldToCameraScale(Vector2D* scale);
+private:
+    Transform* WorldToCameraTransform(Transform* transform);
 
 };
 

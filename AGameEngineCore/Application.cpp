@@ -86,6 +86,7 @@ int Application::Run()
 	SDL_DestroyRenderer(renderer);
     
 	SDL_DestroyWindow(win);
+    TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
 	return 0;
@@ -135,6 +136,11 @@ void Application::Draw()
 		{
 			mainCamera->Draw(sprite);
 		}
+        Text* text = dynamic_cast<Text*>(go);
+        if (text != NULL) {
+            text->Draw();
+        }
+        
 	}
 	SDL_RenderPresent(renderer);
 }
@@ -151,11 +157,17 @@ void Application::LoadScene(int loadedScene)
 	{
 		go = *it;
 		Sprite* sprite = dynamic_cast<Sprite*>(go);
+        Text* text = dynamic_cast<Text*>(go);
+
 		if (sprite != NULL)
 		{
 			sprite->Init(renderer);
-		} else
-		{
+		} else if (text != NULL)
+        {
+            text->Init(renderer);
+        }
+		 else
+        {
 			go->Init();
 		}
 	}

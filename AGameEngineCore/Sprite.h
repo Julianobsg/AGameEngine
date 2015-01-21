@@ -8,6 +8,8 @@ class Sprite :
 	public GameObject
 {
 public:
+    int pixelsPerMeter;
+    Texture* LastTexture();
     std::vector<Animation*> animations;
     
 	Sprite();
@@ -17,12 +19,11 @@ public:
 	void Play (int playAnimation);
     
     void Init(SDL_Renderer* renderer);
-	void Draw();
+	void Draw(Transform* cameraTransform);
 	void Destroy();
 
 	virtual void AddBehaviour(Behaviour* behaviour);
-	Texture* LastTexture();
-    
+	
 private:
     int animationPlaying;
 };

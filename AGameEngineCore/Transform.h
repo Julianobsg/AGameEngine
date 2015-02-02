@@ -4,9 +4,9 @@
 class Transform
 {
 public:
-	Vector2D position;
+	Vector2D<float> position;
 	float angle;
-	Vector2D scale;
+	Vector2D<float> scale;
 
 	Transform(void);
 	~Transform(void);

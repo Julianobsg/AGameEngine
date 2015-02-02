@@ -33,6 +33,10 @@ void Sprite::Init(SDL_Renderer* renderer)
 void Sprite::Draw(Transform* cameraTransform)
 {
 	Texture* texture = animations[animationPlaying]->ActualTexture();
+
+	Vector2D<float> scale = Vector2D<float>(cameraTransform->scale.x / pixelsPerMeter,
+		cameraTransform->scale.y / pixelsPerMeter);
+	cameraTransform->scale = scale;
 	texture->Draw(cameraTransform);
 }
 

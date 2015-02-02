@@ -18,16 +18,16 @@ class Application
 public:
 	bool isRunning;
 	string name;
-	Vector2D screenSize;
 
 	Application(void);
 	Camera* mainCamera;
 	virtual ~Application(void);
 	int Run();
 	void AddScene(Scene);
-
+	void SetScreenSize(Vector2D<int> size);
 
 private:
+	Vector2D<int> screenSize;
 
 	SDL_Renderer *renderer;
 	SDL_Window *win;

@@ -17,8 +17,10 @@ void Texture::LoadTexture(string texturePath, SDL_Renderer* renderer)
 {
 	this->renderer = renderer;
 	
+#ifdef _WIN32
+	texturePath = "Media/" + texturePath;
+#endif
 	const char * c = texturePath.c_str();
-
 	SDL_Texture* texture = IMG_LoadTexture(renderer,c);
 	if (!texture) {
 		fprintf(stderr, "Couldn't load %s: %s\n", c, SDL_GetError());
@@ -47,7 +49,7 @@ void Texture::LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer)
 
 void Texture::Draw(Transform* transform)
 {
-	Vector2D* position = &transform->position;
+	Vector2D<float>* position = &transform->position;
 	int w, h;
 	SDL_QueryTexture(texture, NULL, NULL , &w, &h);
 
@@ -57,8 +59,8 @@ void Texture::Draw(Transform* transform)
 
 	SDL_RendererFlip isFlipping = CheckImageScale(transform);
 
-    
-	Vector2D scale = transform->scale;
+
+	Vector2D<float> scale = transform->scale;
     
     scale = scale.Abs();
 	//TODO then maybe put a scale factor here, for resizing image
@@ -94,7 +96,7 @@ SDL_RendererFlip Texture::CheckImageScale(Transform* transform)
 {
 	SDL_RendererFlip isFlipping = SDL_FLIP_NONE;
 
-	Vector2D* scale = &transform->scale;
+	Vector2D<float>* scale = &transform->scale;
 	if (scale->x < 0 && scale->y < 0)
 	{
 		isFlipping = ((SDL_RendererFlip) (SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL));

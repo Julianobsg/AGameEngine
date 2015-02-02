@@ -10,7 +10,7 @@ using namespace std;
 class Texture
 {
 public:
-	Vector2D size;
+	Vector2D<int> size;
 	string texturePath;
 	float pixelsPerMeter;
 

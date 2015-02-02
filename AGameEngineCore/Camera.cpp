@@ -6,40 +6,42 @@ Camera::Camera()
 	size = DEFAULT_CAMERA_SIZE;
 }
 
-Camera::Camera(Vector2D screenSize) : Camera()
+Camera::Camera(Vector2D<int> screenSize) : Camera()
 {
 	this->screenSize = screenSize;
 }
 
 Camera::~Camera()
 {
+	free(cameraTransform);
 }
 
-void Camera::Draw(Sprite* sprite)
+void Camera::Draw(GameObject* gameObject)
 {
-	if (OnView(sprite))
+	if (OnView(gameObject))
 	{
-        Transform* cameraTransform = WorldToCameraTransform(sprite->transform);
-        
-		sprite->Draw(cameraTransform);
+        cameraTransform = WorldToCameraTransform(gameObject->transform);
+
+		gameObject->Draw(cameraTransform);
 	}
 }
 
-bool Camera::OnView(Sprite* sprite)
+bool Camera::OnView(GameObject* sprite)
 {
 	return true;
 }
 
-Vector2D* Camera::WorldToCameraPosition(Vector2D* position)
+Vector2D<float>* Camera::WorldToCameraPosition(Vector2D<float>* position)
 {
-    Vector2D* inCameraPosition = new Vector2D(transform->position.x - position->x,
-                                              transform->position.y - position->y);
+	Vector2D<float>* inCameraPosition = new Vector2D<float>(position->x - transform->position.x,
+									          position->y - transform->position.y);
 	return inCameraPosition;
 }
 
-Vector2D* Camera::WorldToCameraScale(Vector2D *scale)
+Vector2D<float>* Camera::WorldToCameraScale(Vector2D<float> *scale)
 {
-    return scale;
+	float scaleModifier = screenSize.y / size;
+	return new Vector2D<float>(scale->x * scaleModifier, scale->y * scaleModifier);
 }
 
 Transform* Camera::WorldToCameraTransform(Transform *transform)

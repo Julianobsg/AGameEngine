@@ -19,7 +19,7 @@ public:
 	void Play (int playAnimation);
     
     void Init(SDL_Renderer* renderer);
-	void Draw(Transform* cameraTransform);
+	void Draw(Transform* cameraTransform) override;
 	void Destroy();
 
 	virtual void AddBehaviour(Behaviour* behaviour);

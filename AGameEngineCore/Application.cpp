@@ -14,6 +14,7 @@ Application::Application(void)
 	name = "A Game Engine - Game";
 	screenSize.x = 640;
 	screenSize.y = 480;
+	mainCamera = new Camera(screenSize);
 }
 
 
@@ -54,7 +55,6 @@ int Application::Init()
         return 1;
     }
 
-	mainCamera = new Camera(screenSize);
 	Timer::Init();
 	AudioPool::Init();
 	return 0;
@@ -131,15 +131,10 @@ void Application::Draw()
 	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
 	{
 		go = *it;
-		Sprite* sprite = dynamic_cast<Sprite*>(go);
-		if (sprite != NULL)
+		if (go != NULL)
 		{
-			mainCamera->Draw(sprite);
+			mainCamera->Draw(go);
 		}
-        Text* text = dynamic_cast<Text*>(go);
-        if (text != NULL) {
-            text->Draw();
-        }
         
 	}
 	SDL_RenderPresent(renderer);
@@ -187,3 +182,9 @@ void Application::UnloadScene()
 		}
 	}
 }
+
+void Application::SetScreenSize(Vector2D<int> size)
+{
+	this->screenSize = size;
+	mainCamera->screenSize = this->screenSize;
+ }

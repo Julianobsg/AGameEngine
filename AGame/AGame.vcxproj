@@ -52,12 +52,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\Libs\SDL2_ttf-2.0.12;..\Libs\SDL2_image-2.0.0;..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_mixer-2.0.0;$(SolutionPath)/..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_mixer-2.0.0;..\Libs\SDL2_image-2.0.0;..\Libs\SDL2_ttf-2.0.12;$(SolutionPath)/..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\Libs\SDL2-2.0.3\lib\x86;..\Libs\SDL2_image-2.0.0\lib\x86;..\Libs\SDL2_mixer-2.0.0\lib\x86;..\Libs\SDL2_ttf-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -70,6 +70,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_mixer-2.0.0;..\Libs\SDL2_image-2.0.0;..\Libs\SDL2_ttf-2.0.12;$(SolutionPath)/..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -77,16 +78,13 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>..\Libs\SDL2-2.0.3\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Bat.h" />
+    <ClInclude Include="BatController.h" />
     <ClInclude Include="GamePlayScene.h" />
-    <ClInclude Include="InifinityBackground.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -95,6 +93,7 @@
   <ItemGroup>
     <ClCompile Include="AGame.cpp" />
     <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="BatController.cpp" />
     <ClCompile Include="GamePlayScene.cpp" />
     <ClCompile Include="InfinityBackground.cpp" />
     <ClCompile Include="MainGame.cpp" />

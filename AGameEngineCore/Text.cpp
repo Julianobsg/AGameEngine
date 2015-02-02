@@ -11,6 +11,9 @@
 
 Text::Text(string fontPath) : GameObject()
 {
+#ifdef _WIN32
+	fontPath = "Media/" + fontPath;
+#endif
     this->fontPath = fontPath;
 
     color = new SDL_Color {255,255,255,255};
@@ -29,23 +32,22 @@ void Text::Init(SDL_Renderer *renderer)
     
     OpenFont();
     
+	if (!font) {
+		Debug::Log("Could not open file given the error: " + string(TTF_GetError()) + "\n");
+		return;
+	}
+
     MakeTexture();
 }
 
-void Text::Draw()
+void Text::Draw(Transform* cameraTransform)
 {
     SDL_RenderCopy(renderer, textTexture, NULL, NULL);
-
 }
 
 void Text::OpenFont()
 {
     font = TTF_OpenFont(fontPath.c_str(), 20);
-    
-    if(!font) {
-        Debug::Log("Could not open file given the error: " + string(TTF_GetError()));
-        // handle error
-    }
 }
 
 void Text::MakeTexture()

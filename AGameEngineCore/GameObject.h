@@ -19,7 +19,7 @@ public:
 	void Update();
 	virtual void AddBehaviour(Behaviour* behaviour);
 	void Init();
-
+	virtual void Draw(Transform* cameraTransform); 
 protected:
 	list<Behaviour*> behaviours;
 };

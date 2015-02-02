@@ -1,12 +1,14 @@
 #include "Transform.h"
 
 
-Transform::Transform(void)
+Transform::Transform()
 {
-	scale = Vector2D::One();
+	scale = Vector2D<float>::One();
+	angle = 0.0f;
+	position = Vector2D<float>::Zero();
 }
 
 
-Transform::~Transform(void)
+Transform::~Transform()
 {
 }

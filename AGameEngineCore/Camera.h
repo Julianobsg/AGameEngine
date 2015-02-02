@@ -6,18 +6,18 @@ class Camera :
 	public GameObject
 {
 public:
-	Vector2D screenSize;
-	//Size - Meters needed to reach each side of the smallest Size of screen
+	Vector2D<int> screenSize;
+	//Size - Units needed to reach each side of the height of screen
 	float size;
-	Camera(Vector2D screenSize);
+	Camera(Vector2D<int> screenSize);
 	Camera();
 	~Camera();
-	void Draw(Sprite* sprite);
-	bool OnView(Sprite* sprite);
-    Vector2D* WorldToCameraPosition(Vector2D* position);
-    Vector2D* WorldToCameraScale(Vector2D* scale);
+	void Draw(GameObject* sprite);
+	bool OnView(GameObject* sprite);
+	Vector2D<float>* WorldToCameraPosition(Vector2D<float>* position);
+	Vector2D<float>* WorldToCameraScale(Vector2D<float>* scale);
 private:
     Transform* WorldToCameraTransform(Transform* transform);
-
+	Transform* cameraTransform;
 };
 

@@ -35,3 +35,8 @@ void GameObject::Init()
 		behaviour->Init();
 	}
 }
+
+void GameObject::Draw(Transform* cameraTransform)
+{
+
+}

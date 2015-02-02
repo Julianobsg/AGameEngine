@@ -1,5 +1,5 @@
 //
-//  GamePlayer.cpp
+//  GamePlayScene.cpp
 //  AGameEngine
 //
 //  Created by Juliano-Mac on 18/09/14.
@@ -17,27 +17,26 @@ void GamePlayScene::Init()
 	background->AddTexture("background.png");
 	background->LastTexture()->Clip(10, 220, 510, 180);
 	background->AddBehaviour(new InfinityBackground);
-	
-    Sprite* background2 = new Sprite;
+
+	Sprite* background2 = new Sprite;
 	background2->name = "background";
 	background2->AddTexture("background.png");
 	background2->LastTexture()->Clip(10, 220, 510, 180);
-	background2->transform->position = Vector2D(500, 0);
+	background2->transform->position = Vector2D<float>(500.0f, 0.0f);
 	background2->AddBehaviour(new InfinityBackground);
-    
-    Text* text = new Text("CaviarDreams.ttf");
-    text->content = "Hello World";
-    AddGameObject(text);
+
+	Text* text = new Text("CaviarDreams.ttf");
+	text->content = "Hello World";
+	AddGameObject(text);
 	AddGameObject(background);
 	AddGameObject(background2);
-    
 
-    Bat* bat = new Bat;
-    
-    bat->Init();
-    bat->transform->position.x = i;
-    
-    AddGameObject(bat);
+
+	Bat* bat = new Bat;
+
+	bat->Init();
+
+	AddGameObject(bat);
 
     
 }

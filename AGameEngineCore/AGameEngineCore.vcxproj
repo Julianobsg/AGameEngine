@@ -45,7 +45,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\Libs\SDL2_ttf-2.0.12;..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_image-2.0.0;..\Libs\SDL2_mixer-2.0.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_image-2.0.0;..\Libs\SDL2_ttf-2.0.12;..\Libs\SDL2_mixer-2.0.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>EngineGlobal.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -66,6 +66,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Libs\SDL2-2.0.3\include;..\Libs\SDL2_image-2.0.0;..\Libs\SDL2_ttf-2.0.12;..\Libs\SDL2_mixer-2.0.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -84,6 +85,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="PlatformConfig.h" />
     <ClInclude Include="resource.h" />
@@ -107,6 +109,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="PlatformConfig.cpp" />
     <ClCompile Include="Scene.cpp" />

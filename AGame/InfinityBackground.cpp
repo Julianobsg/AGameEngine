@@ -21,5 +21,5 @@ void InfinityBackground::Update()
 		transform->position.x = texture->size.x;
 	}
     
-    Debug::Log("FPS: " + to_string(Timer::framesPerSecond) + "\n");
+    //Debug::Log("FPS: " + to_string(Timer::framesPerSecond) + "\n");
 }

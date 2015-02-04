@@ -9,7 +9,7 @@
 
 #include "GameObject.h"
 #include "EngineGlobal.h"
-
+#include "Vector3D.h"
 
 class Text : public GameObject
 {
@@ -17,6 +17,7 @@ public:
     string content;
     Text(string fontPath);
     ~Text();
+	void ChangeColor(int r, int g, int b);
 	void Draw(Transform* cameraTransform) override;
     void Init(SDL_Renderer* renderer);
 private:

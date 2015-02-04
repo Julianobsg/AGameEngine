@@ -59,3 +59,12 @@ void Text::MakeTexture()
         SDL_FreeSurface(textSurface);
     }
 }
+
+void Text::ChangeColor(int r, int g, int b)
+{
+	this->color->r = r;
+	this->color->g = g;
+	this->color->b = b;
+	MakeTexture();
+}
+

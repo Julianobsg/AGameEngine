@@ -9,6 +9,7 @@ Camera::Camera()
 Camera::Camera(Vector2D<int> screenSize) : Camera()
 {
 	this->screenSize = screenSize;
+	scaleModifier = screenSize.y / size;
 }
 
 Camera::~Camera()
@@ -33,14 +34,15 @@ bool Camera::OnView(GameObject* sprite)
 
 Vector2D<float>* Camera::WorldToCameraPosition(Vector2D<float>* position)
 {
-	Vector2D<float>* inCameraPosition = new Vector2D<float>(position->x - transform->position.x,
-									          position->y - transform->position.y);
+	float cameraPositionX = (position->x - transform->position.x) * scaleModifier;
+	float cameraPositionY = (position->y - transform->position.y) * scaleModifier;
+	Vector2D<float>* inCameraPosition = new Vector2D<float>(cameraPositionX,
+									          cameraPositionY);
 	return inCameraPosition;
 }
 
 Vector2D<float>* Camera::WorldToCameraScale(Vector2D<float> *scale)
 {
-	float scaleModifier = screenSize.y / size;
 	return new Vector2D<float>(scale->x * scaleModifier, scale->y * scaleModifier);
 }
 

@@ -19,5 +19,6 @@ public:
 private:
     Transform* WorldToCameraTransform(Transform* transform);
 	Transform* cameraTransform;
+	float scaleModifier;
 };
 

@@ -17,6 +17,7 @@ public:
 	Texture(void);
 	~Texture(void);
 
+    //Put all load textures in private and use friend classes for hiding sdl usage
 	void LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer);
 	void LoadTexture(SDL_Texture* texture);
 	void LoadTexture(SDL_Renderer* renderer);

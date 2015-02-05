@@ -104,8 +104,8 @@ void Application::CheckInputs()
 	while (SDL_PollEvent(&e)){
 		if (e.type == SDL_QUIT)
 			isRunning = false;
-		Keyboard::SetKeyDown(&e);
-		Touch::SetTouch(&e);
+		Keyboard::SetEvent(&e);
+		Touch::SetEvent(&e);
 	}
 	
 }
@@ -186,5 +186,5 @@ void Application::UnloadScene()
 void Application::SetScreenSize(Vector2D<int> size)
 {
 	this->screenSize = size;
-	mainCamera->screenSize = this->screenSize;
+	mainCamera->SetScreenSize(this->screenSize);
  }

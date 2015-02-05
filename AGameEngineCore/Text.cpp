@@ -19,6 +19,8 @@ Text::Text(string fontPath) : GameObject()
     color = new SDL_Color {255,255,255,255};
     
     content = "";
+    pixelsPerMeter = 48;
+    fontSize = 20;
 }
 
 Text::~Text()
@@ -29,7 +31,9 @@ Text::~Text()
 void Text::Init(SDL_Renderer *renderer)
 {
     this->renderer = renderer;
+    texture = new Texture;
     
+    texture->LoadTexture(renderer);
     OpenFont();
     
 	if (!font) {
@@ -42,12 +46,15 @@ void Text::Init(SDL_Renderer *renderer)
 
 void Text::Draw(Transform* cameraTransform)
 {
-    SDL_RenderCopy(renderer, textTexture, NULL, NULL);
+//    SDL_RenderCopy(renderer, textTexture, NULL, NULL);
+    cameraTransform->scale.x = cameraTransform->scale.x / pixelsPerMeter;
+    cameraTransform->scale.y = cameraTransform->scale.y / pixelsPerMeter;
+    texture->Draw(cameraTransform);
 }
 
 void Text::OpenFont()
 {
-    font = TTF_OpenFont(fontPath.c_str(), 20);
+    font = TTF_OpenFont(fontPath.c_str(), fontSize);
 }
 
 void Text::MakeTexture()
@@ -57,6 +64,7 @@ void Text::MakeTexture()
     } else {
         textTexture = SDL_CreateTextureFromSurface(this->renderer, textSurface);
         SDL_FreeSurface(textSurface);
+        texture->LoadTexture(textTexture);
     }
 }
 
@@ -66,5 +74,12 @@ void Text::ChangeColor(int r, int g, int b)
 	this->color->g = g;
 	this->color->b = b;
 	MakeTexture();
+}
+
+void Text::FontSize(int fontSize)
+{
+    this->fontSize = fontSize;
+    OpenFont();
+    MakeTexture();
 }
 

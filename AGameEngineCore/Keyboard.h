@@ -86,7 +86,7 @@ public:
 	~Keyboard(void);
 
 	static bool KeyDown(KeyCode keyCode);
-	static void SetKeyDown(SDL_Event* e);
+	static void SetEvent(SDL_Event* e);
 
 private:
 	static KeyCode selectedKeyCode;

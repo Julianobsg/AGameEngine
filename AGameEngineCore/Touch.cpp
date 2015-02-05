@@ -12,7 +12,7 @@ Touch::~Touch()
 {
 }
 
-void Touch::SetTouch(SDL_Event* e)
+void Touch::SetEvent(SDL_Event* e)
 {
 	if (e->type == SDL_FINGERDOWN)
 	{

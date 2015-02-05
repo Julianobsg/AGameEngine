@@ -50,8 +50,6 @@ void Texture::LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer)
 void Texture::Draw(Transform* transform)
 {
 	Vector2D<float>* position = &transform->position;
-	int w, h;
-	SDL_QueryTexture(texture, NULL, NULL , &w, &h);
 
 	SDL_Rect dst;
 	dst.x = position->x;

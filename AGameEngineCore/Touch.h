@@ -8,6 +8,6 @@ public:
 	static bool isTouching;
 	Touch();
 	~Touch();
-	static void SetTouch(SDL_Event* e);
+	static void SetEvent(SDL_Event* e);
 };
 

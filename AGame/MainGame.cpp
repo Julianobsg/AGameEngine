@@ -24,7 +24,7 @@ void MainGame::Init()
 	scene1.name = "Scene 1";
     scene1.Init();
     
-    application->SetScreenSize(Vector2D<int>(720, 540));
+    application->SetScreenSize(Vector2D<int>(720, 640));
 	application->AddScene(menu);
 	application->AddScene(scene1);
 

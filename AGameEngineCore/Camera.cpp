@@ -8,8 +8,7 @@ Camera::Camera()
 
 Camera::Camera(Vector2D<int> screenSize) : Camera()
 {
-	this->screenSize = screenSize;
-	scaleModifier = screenSize.y / size;
+    SetScreenSize(screenSize);
 }
 
 Camera::~Camera()
@@ -57,4 +56,10 @@ Transform* Camera::WorldToCameraTransform(Transform *transform)
     cameraTransform->scale = *WorldToCameraScale(&(transform->scale));
     
     return cameraTransform;
+}
+
+void Camera::SetScreenSize(Vector2D<int> screenSize)
+{
+    this->screenSize = screenSize;
+    scaleModifier = screenSize.y / size;
 }

@@ -17,7 +17,7 @@ bool Keyboard::KeyDown(KeyCode keyCode)
 	return keyCode == selectedKeyCode;
 }
 
-void Keyboard::SetKeyDown(SDL_Event* e)
+void Keyboard::SetEvent(SDL_Event* e)
 {
 	if (e->type == SDL_KEYDOWN)
 	{

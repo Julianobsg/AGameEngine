@@ -6,7 +6,6 @@ class Camera :
 	public GameObject
 {
 public:
-	Vector2D<int> screenSize;
 	//Size - Units needed to reach each side of the height of screen
 	float size;
 	Camera(Vector2D<int> screenSize);
@@ -16,7 +15,9 @@ public:
 	bool OnView(GameObject* sprite);
 	Vector2D<float>* WorldToCameraPosition(Vector2D<float>* position);
 	Vector2D<float>* WorldToCameraScale(Vector2D<float>* scale);
+    void SetScreenSize(Vector2D<int> screenSize);
 private:
+    Vector2D<int> screenSize;
     Transform* WorldToCameraTransform(Transform* transform);
 	Transform* cameraTransform;
 	float scaleModifier;

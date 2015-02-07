@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 #include "AudioPool.h"
 #include "Touch.h"
+#include "Mouse.h"
 
 
 Application::Application(void)
@@ -106,6 +107,7 @@ void Application::CheckInputs()
 			isRunning = false;
 		Keyboard::SetEvent(&e);
 		Touch::SetEvent(&e);
+		Mouse::SetEvent(&e);
 	}
 	
 }

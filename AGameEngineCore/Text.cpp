@@ -42,6 +42,7 @@ void Text::Init(SDL_Renderer *renderer)
 	}
 
     MakeTexture();
+	GameObject::Init();
 }
 
 void Text::Draw(Transform* cameraTransform)

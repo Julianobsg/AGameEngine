@@ -24,6 +24,7 @@ void GameObject::Update()
 void GameObject::AddBehaviour(Behaviour* behaviour)
 {
 	behaviour->transform = transform;
+	behaviour->gameObject = this;
 	behaviours.push_front(behaviour);
 }
 

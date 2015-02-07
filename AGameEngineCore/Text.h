@@ -14,25 +14,26 @@
 
 class Text : public GameObject
 {
+	friend class Application;
 public:
     int pixelsPerMeter;
 
+    Texture *texture;
     string content;
     Text(string fontPath);
     ~Text();
 	void ChangeColor(int r, int g, int b);
     void FontSize(int fontSize);
 	void Draw(Transform* cameraTransform) override;
-    void Init(SDL_Renderer* renderer);
 private:
     int fontSize;
     TTF_Font* font;
     SDL_Surface* textSurface;
     SDL_Renderer* renderer;
     SDL_Color* color;
-    Texture *texture;
     SDL_Texture* textTexture;
     string fontPath;
+    void Init(SDL_Renderer* renderer);
     void OpenFont();
     void MakeTexture();
 };

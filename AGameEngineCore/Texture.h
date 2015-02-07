@@ -9,6 +9,9 @@ using namespace std;
 
 class Texture
 {
+	friend class Text;
+	friend class Sprite;
+	friend class Animation;
 public:
 	Vector2D<int> size;
 	string texturePath;
@@ -17,19 +20,18 @@ public:
 	Texture(void);
 	~Texture(void);
 
-    //Put all load textures in private and use friend classes for hiding sdl usage
-	void LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer);
-	void LoadTexture(SDL_Texture* texture);
-	void LoadTexture(SDL_Renderer* renderer);
-	void LoadTexture(string texturePath, SDL_Renderer* renderer);
 	void Draw(Transform* transform);	
 
-	SDL_RendererFlip CheckImageScale(Transform* transform);
 
 	void Clip (int x, int y, int w, int h);
 	void Destroy();
 	void Copy(Texture* lastTexture);
 private:
+	void LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer);
+	void LoadTexture(SDL_Texture* texture);
+	void LoadTexture(SDL_Renderer* renderer);
+	void LoadTexture(string texturePath, SDL_Renderer* renderer);
+	SDL_RendererFlip CheckImageScale(Transform* transform);
 	SDL_Texture* texture;
 	SDL_Renderer* renderer;
 	SDL_Rect* clip;

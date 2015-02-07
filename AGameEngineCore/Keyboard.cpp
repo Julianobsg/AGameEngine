@@ -1,7 +1,7 @@
 #include "Keyboard.h"
 #include "Debug.h"
 
-KeyCode Keyboard::selectedKeyCode = none;
+KeyCode Keyboard::selectedKeyCode = KeyCode::none;
 
 Keyboard::Keyboard(void)
 {

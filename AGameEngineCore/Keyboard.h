@@ -2,7 +2,7 @@
 #include "input.h"
 #include "EngineGlobal.h"
 
-enum KeyCode
+enum class KeyCode
 {
 	none = 0, up = SDLK_UP, down = SDLK_DOWN, left = SDLK_LEFT, right = SDLK_RIGHT,
     returnKey = SDLK_RETURN,

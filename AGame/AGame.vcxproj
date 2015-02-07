@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClInclude Include="Bat.h" />
     <ClInclude Include="BatController.h" />
+    <ClInclude Include="ButtonBehaviour.h" />
     <ClInclude Include="GamePlayScene.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MainMenu.h" />
@@ -95,6 +96,7 @@
     <ClCompile Include="AGame.cpp" />
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="BatController.cpp" />
+    <ClCompile Include="ButtonBehaviour.cpp" />
     <ClCompile Include="GamePlayScene.cpp" />
     <ClCompile Include="InfinityBackground.cpp" />
     <ClCompile Include="MainGame.cpp" />

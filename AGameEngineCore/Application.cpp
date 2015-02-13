@@ -16,6 +16,7 @@ Application::Application(void)
 	screenSize.x = 640;
 	screenSize.y = 480;
 	mainCamera = new Camera(screenSize);
+	this->application = this;
 }
 
 
@@ -68,7 +69,7 @@ int Application::Run()
 		return 1;
 	}
 	
-	LoadScene(0);
+	_LoadScene(0);
 
 	while (isRunning){
 		Timer::CalcFPS();
@@ -114,75 +115,47 @@ void Application::CheckInputs()
 
 void Application::Update()
 {
-	GameObject* go;
-
-	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
-	{
-		go = *it;
-		go->Update();
-	}
+	scenes[currentScene].Update();
 }
 
 void Application::Draw()
 {
 
 	SDL_RenderClear(renderer);
-	
-	GameObject* go;
+	scenes[currentScene].Draw(mainCamera);
 
-	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
-	{
-		go = *it;
-		if (go != NULL)
-		{
-			mainCamera->Draw(go);
-		}
-        
-	}
 	SDL_RenderPresent(renderer);
 }
 
-void Application::LoadScene(int loadedScene)
+void Application::_LoadScene(int loadedScene)
 {
 	this->currentScene = loadedScene;
 
-	currentSceneObjects = scenes[currentScene].gameObjects;
+	this->scenes[currentScene].Load(renderer);
+}
 
-	GameObject* go;
-
-	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
+void Application::LoadScene(string loadSceneName)
+{
+	
+	for (int i = 0; i < application->scenes.size(); i++)
 	{
-		go = *it;
-		Sprite* sprite = dynamic_cast<Sprite*>(go);
-        Text* text = dynamic_cast<Text*>(go);
-
-		if (sprite != NULL)
+		if (application->scenes[i].name == loadSceneName)
 		{
-			sprite->Init(renderer);
-		} else if (text != NULL)
-        {
-            text->Init(renderer);
-        }
-		 else
-        {
-			go->Init();
+			application->_LoadScene(i);
+			return;
 		}
 	}
 }
 
+void Application::LoadScene(int loadSceneId)
+{
+	application->_LoadScene(loadSceneId);
+}
+
+//TODO check memory freeing here
 void Application::UnloadScene()
 {
-	GameObject* go;
-
-	for (std::list<GameObject*>::iterator it = currentSceneObjects.begin(); it != currentSceneObjects.end(); it++)
-	{
-		go = *it;
-		Sprite* sprite = dynamic_cast<Sprite*>(go);
-		if (sprite != NULL)
-		{
-			sprite->Destroy();
-		}
-	}
+	this->scenes[currentScene].Unload();
 }
 
 void Application::SetScreenSize(Vector2D<int> size)
@@ -190,3 +163,5 @@ void Application::SetScreenSize(Vector2D<int> size)
 	this->screenSize = size;
 	mainCamera->SetScreenSize(this->screenSize);
  }
+
+Application* Application::application;

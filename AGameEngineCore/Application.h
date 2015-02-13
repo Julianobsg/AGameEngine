@@ -25,13 +25,15 @@ public:
 	int Run();
 	void AddScene(Scene);
 	void SetScreenSize(Vector2D<int> size);
-
+	static void LoadScene(string loadSceneName);
+	static void LoadScene(int loadSceneId);
 private:
+	static Application* application;
+
 	Vector2D<int> screenSize;
 
 	SDL_Renderer *renderer;
 	SDL_Window *win;
-	list<GameObject*> currentSceneObjects;
 
 	int Init();
 	
@@ -39,7 +41,7 @@ private:
 	
 	void Update();
 	void Draw();
-	void LoadScene(int loadedScene);
+	void _LoadScene(int loadedScene);
 	void UnloadScene();
 protected:
 	vector<Scene> scenes;	

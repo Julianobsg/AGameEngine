@@ -14,7 +14,7 @@
 
 class Text : public GameObject
 {
-	friend class Application;
+	friend class Scene;
 public:
     int pixelsPerMeter;
 
@@ -33,7 +33,7 @@ private:
     SDL_Color* color;
     SDL_Texture* textTexture;
     string fontPath;
-    void Init(SDL_Renderer* renderer);
+    void Load(SDL_Renderer* renderer);
     void OpenFont();
     void MakeTexture();
 };

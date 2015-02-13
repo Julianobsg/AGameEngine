@@ -7,6 +7,7 @@
 class Sprite :
 	public GameObject
 {
+	friend class Scene;
 public:
     int pixelsPerMeter;
     Texture* LastTexture();
@@ -18,13 +19,13 @@ public:
 	void AddClip (int x, int y, int w, int h);
 	void Play (int playAnimation);
     
-    void Init(SDL_Renderer* renderer);
 	void Draw(Transform* cameraTransform) override;
 	void Destroy();
 
 	virtual void AddBehaviour(Behaviour* behaviour);
 	
 private:
+    void Load(SDL_Renderer* renderer);
     int animationPlaying;
 };
 

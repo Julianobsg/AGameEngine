@@ -3,6 +3,7 @@
 #include "Debug.h"
 #include "Mouse.h"
 #include <string>
+#include "Application.h"
 
 
 ButtonBehaviour::ButtonBehaviour()
@@ -29,7 +30,7 @@ void ButtonBehaviour::Update()
 		button->ChangeColor(255, 255, 0);
 		if (Mouse::MouseButtonDown(MouseCode::left))
 		{
-			Debug::Log("Clicked");
+			Application::LoadScene(1);
 		}
 	} else
 	{

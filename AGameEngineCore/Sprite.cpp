@@ -21,13 +21,11 @@ void Sprite::AddTexture(string texturePath)
     animations[animations.size() - 1]->AddTexture(texturePath);
 }
 
-void Sprite::Init(SDL_Renderer* renderer)
+void Sprite::Load(SDL_Renderer* renderer)
 {
     for (int i = 0; i < animations.size(); i++) {
         animations[i]->Init(renderer);
     }
-	
-	GameObject::Init();
 }
 
 void Sprite::Draw(Transform* cameraTransform)

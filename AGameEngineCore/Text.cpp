@@ -28,7 +28,7 @@ Text::~Text()
     TTF_CloseFont(font);
 }
 
-void Text::Init(SDL_Renderer *renderer)
+void Text::Load(SDL_Renderer *renderer)
 {
     this->renderer = renderer;
     texture = new Texture;
@@ -42,7 +42,6 @@ void Text::Init(SDL_Renderer *renderer)
 	}
 
     MakeTexture();
-	GameObject::Init();
 }
 
 void Text::Draw(Transform* cameraTransform)

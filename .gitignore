@@ -4,3 +4,6 @@ AGameEngineCore/ipch/
 AGameEngineWindows-Shell/Debug/
 AGameEngineCore/Debug/
 AGameEngineCore/AGameEngine.opensdf
+android-project/obj/local/armeabi/objs/SDL2/src/video/SDL_fillrect.o.d
+android-project/obj/
+android-project/bin/

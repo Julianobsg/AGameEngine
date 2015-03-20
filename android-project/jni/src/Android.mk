@@ -4,10 +4,10 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := main
 
-SDL_PATH := ../SDL2
-SDL_IMAGE_PATH := ../SDL2_image
-SDL_MIXER_PATH := ../SDL2_mixer
-SDL_TTF_PATH := ../SDL2_ttf
+SDL_PATH := ../../../Libs/SDL2-2.0.3
+SDL_IMAGE_PATH := ../../../Libs/SDL2_image-2.0.0
+SDL_MIXER_PATH := ../../../Libs/SDL2_mixer-2.0.0
+SDL_TTF_PATH := ../../../Libs/SDL2_ttf-2.0.12
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(SDL_IMAGE_PATH)

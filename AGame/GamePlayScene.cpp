@@ -8,6 +8,7 @@
 
 #include "GamePlayScene.h"
 #include "Bat.h"
+#include "Runner.h"
 
 void GamePlayScene::Init()
 {
@@ -38,5 +39,6 @@ void GamePlayScene::Init()
 
 	AddGameObject(bat);
 
-    
+	Runner* runner = new Runner;
+	AddGameObject(runner);
 }

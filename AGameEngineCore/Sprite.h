@@ -25,6 +25,7 @@ public:
 	virtual void AddBehaviour(Behaviour* behaviour);
 	
 private:
+	bool clipped;
     void Load(SDL_Renderer* renderer);
     int animationPlaying;
 };

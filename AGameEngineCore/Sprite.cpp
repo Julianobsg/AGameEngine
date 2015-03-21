@@ -5,6 +5,7 @@ Sprite::Sprite() : GameObject ()
 {
     animationPlaying = 0;
     pixelsPerMeter = DEFAULT_PIXELS_PER_METER;
+	clipped = false;
 }
 
 void Sprite::AddAnimantion(Animation* animation)
@@ -61,11 +62,19 @@ void Sprite::AddClip(int x, int y, int w, int h)
 	Texture* lastTexture = LastTexture();
 	if (lastTexture != NULL)
 	{
-		Texture* texture = new Texture;
-		texture->Copy(lastTexture);
-		texture->Clip(x, y, w, h);
+		if (clipped)
+		{
+			Texture* texture = new Texture;
+			texture->Copy(lastTexture);
+			texture->Clip(x, y, w, h);
+			animations[animations.size() - 1]->AddTexture(texture);
+		}
+		else
+		{
+			lastTexture->Clip(x, y, w, h);
+			clipped = true;
+		}
 
-		animations[animations.size() - 1]->AddTexture(texture);
 	}
 }
 

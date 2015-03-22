@@ -13,8 +13,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(SDL_IMAGE_PATH)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(SDL_MIXER_PATH)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(SDL_TTF_PATH)
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/AGameEngineCore
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/AGame
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../AGameEngineCore
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../AGame
 LOCAL_C_INCLUDES += ${ANDROID_NDK_ROOT}\sources\cxx-stl\stlport\stlport
 
 # Add your application source files here...

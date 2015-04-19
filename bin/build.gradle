@@ -3,6 +3,7 @@ def newProjectDir = ""
 File configFile = file('../')
 
 task setupCreateFolder () {
+	println "AGameEngine setuping project..."
 	def newPath = System.getProperty("user.dir") + "/" + param
 	newProjectDir = new File(newPath)
 	newProjectDir.mkdirs()
@@ -26,13 +27,9 @@ task copyFolders (type: Copy) {
 
 task create (dependsOn: [setupCreateFolder, copyFolders]) {
 
-
-	println "Config file: " + configFile
-	// Using an absolute path
-	configFile = file(configFile.absolutePath)	
-
-	println "Config file: " + configFile
-
-	println "ProjectDir: " + newProjectDir
+	println "Generating files."
+	doLast {
+		println "Project created."
+	}
 }
 

@@ -1,4 +1,3 @@
-echo "Executing a game engine"
 #echo `pwd `
 #echo `type -a newagameengine.sh`
 dirname=`perl -e 'use Cwd "abs_path";print abs_path(shift)' $0`

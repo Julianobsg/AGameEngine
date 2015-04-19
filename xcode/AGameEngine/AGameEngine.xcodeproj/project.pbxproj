@@ -21,6 +21,8 @@
 		04325C95196495960033A970 /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C8E196495960033A970 /* Keyboard.cpp */; };
 		04325C96196495960033A970 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04325C90196495960033A970 /* Vector3D.cpp */; };
 		043EE8FB1A533BF4001A7EF9 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043EE8FA1A533BF4001A7EF9 /* CaviarDreams.ttf */; };
+		045A92721AC1E2EE00352DF1 /* Finger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 045A92701AC1E2EE00352DF1 /* Finger.cpp */; };
+		045A92751AC1E30E00352DF1 /* Runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 045A92731AC1E30E00352DF1 /* Runner.cpp */; };
 		046B876B1A3BF00C0034EC13 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046B87671A3BF00C0034EC13 /* Camera.cpp */; };
 		046B876C1A3BF00C0034EC13 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046B87691A3BF00C0034EC13 /* Touch.cpp */; };
 		047829B7193E324C005D6323 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829B6193E324C005D6323 /* SDL2.framework */; };
@@ -106,6 +108,10 @@
 		04325C90196495960033A970 /* Vector3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector3D.cpp; path = ../../../AGameEngineCore/Vector3D.cpp; sourceTree = "<group>"; };
 		04325C91196495960033A970 /* Vector3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector3D.h; path = ../../../AGameEngineCore/Vector3D.h; sourceTree = "<group>"; };
 		043EE8FA1A533BF4001A7EF9 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		045A92701AC1E2EE00352DF1 /* Finger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Finger.cpp; path = ../../../AGameEngineCore/Finger.cpp; sourceTree = "<group>"; };
+		045A92711AC1E2EE00352DF1 /* Finger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Finger.h; path = ../../../AGameEngineCore/Finger.h; sourceTree = "<group>"; };
+		045A92731AC1E30E00352DF1 /* Runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Runner.cpp; path = ../../../AGame/Runner.cpp; sourceTree = "<group>"; };
+		045A92741AC1E30E00352DF1 /* Runner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Runner.h; path = ../../../AGame/Runner.h; sourceTree = "<group>"; };
 		046B87671A3BF00C0034EC13 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = ../../../AGameEngineCore/Camera.cpp; sourceTree = "<group>"; };
 		046B87681A3BF00C0034EC13 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = ../../../AGameEngineCore/Camera.h; sourceTree = "<group>"; };
 		046B87691A3BF00C0034EC13 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Touch.cpp; path = ../../../AGameEngineCore/Touch.cpp; sourceTree = "<group>"; };
@@ -287,6 +293,8 @@
 		04A11113192E5565005DB424 /* AGameEngineCore */ = {
 			isa = PBXGroup;
 			children = (
+				045A92701AC1E2EE00352DF1 /* Finger.cpp */,
+				045A92711AC1E2EE00352DF1 /* Finger.h */,
 				0419FB8B1A95631F00033131 /* Observer.cpp */,
 				0419FB8C1A95631F00033131 /* Observer.h */,
 				046B87671A3BF00C0034EC13 /* Camera.cpp */,
@@ -341,6 +349,8 @@
 		04A11131192E55E0005DB424 /* AGame */ = {
 			isa = PBXGroup;
 			children = (
+				045A92731AC1E30E00352DF1 /* Runner.cpp */,
+				045A92741AC1E30E00352DF1 /* Runner.h */,
 				0419FB8E1A95633700033131 /* ButtonBehaviour.cpp */,
 				0419FB8F1A95633700033131 /* ButtonBehaviour.h */,
 				04A274181A82C76600148824 /* MainMenu.cpp */,
@@ -499,6 +509,7 @@
 				04BC26FE195B08CB000C557B /* Texture.cpp in Sources */,
 				046B876B1A3BF00C0034EC13 /* Camera.cpp in Sources */,
 				04325C86196495690033A970 /* Bat.cpp in Sources */,
+				045A92751AC1E30E00352DF1 /* Runner.cpp in Sources */,
 				04A2741A1A82C76600148824 /* MainMenu.cpp in Sources */,
 				04325C95196495960033A970 /* Keyboard.cpp in Sources */,
 				04A110EC192E5542005DB424 /* main.cpp in Sources */,
@@ -511,6 +522,7 @@
 				04A1113A192E55F7005DB424 /* stdafx.cpp in Sources */,
 				04A1112D192E55A1005DB424 /* PlatformConfig.cpp in Sources */,
 				04A1112A192E55A1005DB424 /* GameObject.cpp in Sources */,
+				045A92721AC1E2EE00352DF1 /* Finger.cpp in Sources */,
 				04325C92196495960033A970 /* Animation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

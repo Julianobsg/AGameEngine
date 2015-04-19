@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+pathToBin=`pwd`
+
+pathToBin="$pathToBin/bin"
+
+export PATH=$PATH:$pathToBin
+
+echo "Please execute command: \"source /Users/mac/.bash_profile\" to make added system variables take effect"

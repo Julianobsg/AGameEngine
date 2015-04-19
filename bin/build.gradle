@@ -1,0 +1,38 @@
+def newProjectDir = ""
+
+File configFile = file('../')
+
+task setupCreateFolder () {
+	def newPath = System.getProperty("user.dir") + "/" + param
+	newProjectDir = new File(newPath)
+	newProjectDir.mkdirs()
+}
+
+task copyFolders (type: Copy) {
+	def corePath = "AGameEngineCore/**"
+	def libPath = "Libs/**"
+	def agamePath = "AGame/**"
+	def xCodePath = "xcode/**"
+	def androidPath = "android-project/**"
+
+	from configFile.absolutePath
+    into newProjectDir.absolutePath
+    include agamePath
+    include corePath
+    include libPath	
+	include xCodePath
+	include androidPath
+}
+
+task create (dependsOn: [setupCreateFolder, copyFolders]) {
+
+
+	println "Config file: " + configFile
+	// Using an absolute path
+	configFile = file(configFile.absolutePath)	
+
+	println "Config file: " + configFile
+
+	println "ProjectDir: " + newProjectDir
+}
+

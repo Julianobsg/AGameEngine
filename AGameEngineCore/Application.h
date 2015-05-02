@@ -16,18 +16,28 @@ using namespace AGameEngine;
 class Application
 {
 public:
+	static void SetMainCamera(Camera* mainCamera);
+	static void SetGameName(string name);
+	static void CloseGame();
+	static int Run();
+	static void AddScene(Scene);
+	static void SetScreenSize(Vector2D<int> size);
+
+	static void LoadScene(string loadSceneName);
+	static void LoadScene(int loadSceneId);
+	static Vector2D<int> GetScreenSize();
+private:
+	static Application* Instance();
 	bool isRunning;
 	string name;
 
 	Application(void);
 	Camera* mainCamera;
 	virtual ~Application(void);
-	int Run();
-	void AddScene(Scene);
-	void SetScreenSize(Vector2D<int> size);
-	static void LoadScene(string loadSceneName);
-	static void LoadScene(int loadSceneId);
-private:
+	int _Run();
+	void _AddScene(Scene);
+	void _SetScreenSize(Vector2D<int> size);
+
 	static Application* application;
 
 	Vector2D<int> screenSize;

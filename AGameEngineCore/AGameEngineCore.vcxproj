@@ -131,6 +131,7 @@
     <ResourceCompile Include="AGameEngineCore.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Architecture.cd" />
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -184,5 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="Architecture.cd" />
   </ItemGroup>
 </Project>

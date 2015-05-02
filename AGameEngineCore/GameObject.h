@@ -12,15 +12,18 @@ using namespace std;
 class GameObject
 {
 public:
+	friend class Camera;
+	friend class Scene;
+
 	string name;
 	Transform* transform;
 	GameObject(void);
 	virtual ~GameObject(void);
-	void Update();
 	virtual void AddBehaviour(Behaviour* behaviour);
 	void Init();
-	virtual void Draw(Transform* cameraTransform); 
 protected:
+	void Update();
+	virtual void Draw(Transform* cameraTransform); 
 	list<Behaviour*> behaviours;
 };
 

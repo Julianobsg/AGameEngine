@@ -64,37 +64,15 @@ int Application::Init()
 
 int Application::Run()
 {
-	
-	if (Init()) {
-		return 1;
-	}
-	
-	_LoadScene(0);
-
-	while (isRunning){
-		Timer::CalcFPS();
-
-		CheckInputs();
-		//Render the scene
-		Draw();
-		
-		Update();
-	}
-
-	UnloadScene();
-
-	free(mainCamera);
-	AudioPool::Destroy();
-	SDL_DestroyRenderer(renderer);
-    
-	SDL_DestroyWindow(win);
-    TTF_Quit();
-	IMG_Quit();
-	SDL_Quit();
-	return 0;
+	return Instance()->_Run();
 }
 
 void Application::AddScene(Scene scene)
+{
+	Instance()->_AddScene(scene);
+}
+
+void Application::_AddScene(Scene scene)
 {
 	scenes.push_back(scene);
 }
@@ -160,8 +138,70 @@ void Application::UnloadScene()
 
 void Application::SetScreenSize(Vector2D<int> size)
 {
+	Instance()->_SetScreenSize(size);
+}
+
+void Application::_SetScreenSize(Vector2D<int> size)
+{
 	this->screenSize = size;
 	mainCamera->SetScreenSize(this->screenSize);
- }
+}
+
+Application* Application::Instance()
+{
+	if (application == NULL)
+	{
+		application = new Application();
+	}
+	return application;
+}
+
+int Application::_Run()
+{
+
+	if (Init()) {
+		return 1;
+	}
+
+	_LoadScene(0);
+
+	while (isRunning){
+		Timer::CalcFPS();
+
+		CheckInputs();
+		//Render the scene
+		Draw();
+
+		Update();
+	}
+
+	UnloadScene();
+
+	free(mainCamera);
+	AudioPool::Destroy();
+	SDL_DestroyRenderer(renderer);
+
+	SDL_DestroyWindow(win);
+	TTF_Quit();
+	IMG_Quit();
+	SDL_Quit();
+	return 0;
+}
+
+
+void Application::SetMainCamera(Camera* mainCamera)
+{
+	Instance()->mainCamera = mainCamera;
+}
+
+void Application::SetGameName(string name)
+{
+	Instance()->name = name;
+}
+
+Vector2D<int> Application::GetScreenSize()
+{
+	return Instance()->screenSize;
+}
 
 Application* Application::application;

@@ -6,12 +6,10 @@
 
 MainGame::MainGame(void)
 {
-	this->application = new Application();
 }
 
 MainGame::~MainGame(void)
 {
-	delete(application);
 }
 
 void MainGame::Init()
@@ -24,14 +22,14 @@ void MainGame::Init()
 	scene1.name = "Scene 1";
     scene1.Init();
     
-    application->SetScreenSize(Vector2D<int>(720, 640));
-	application->AddScene(menu);
-	application->AddScene(scene1);
+    Application::SetScreenSize(Vector2D<int>(720, 640));
+	Application::AddScene(menu);
+	Application::AddScene(scene1);
 
 }
 
 
 int MainGame::Run()
 {
-	return application->Run();
+	return Application::Run();
 }

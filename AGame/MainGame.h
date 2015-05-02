@@ -14,7 +14,5 @@ public:
 
 	void Init();
 	int Run();
-private:
-	Application* application;
 };
 

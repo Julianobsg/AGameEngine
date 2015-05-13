@@ -204,4 +204,14 @@ Vector2D<int> Application::GetScreenSize()
 	return Instance()->screenSize;
 }
 
+void Application::CloseGame()
+{
+	Instance()->isRunning = false;
+}
+
+Camera* Application::GetMainCamera()
+{
+	return Instance()->mainCamera;
+}
+
 Application* Application::application;

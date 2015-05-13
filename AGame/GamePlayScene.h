@@ -14,12 +14,12 @@
 #include "Animation.h"
 #include "Sprite.h"
 #include "Text.h"
-#include "Bat.h"
-#include "InfinityBackground.h"
 #endif /* defined(__AGameEngine__GamePlayer__) */
 
 class GamePlayScene : public Scene
 {
 public:
     void Init();
+private:
+	void InitializeUI();
 };

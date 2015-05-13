@@ -17,6 +17,7 @@ class Application
 {
 public:
 	static void SetMainCamera(Camera* mainCamera);
+	static Camera* GetMainCamera();
 	static void SetGameName(string name);
 	static void CloseGame();
 	static int Run();

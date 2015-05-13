@@ -7,38 +7,22 @@
 //
 
 #include "GamePlayScene.h"
-#include "Bat.h"
-#include "Runner.h"
+#include "Ship.h"
 
 void GamePlayScene::Init()
 {
 
-	Sprite* background = new Sprite;
-	background->name = "background";
-	background->AddTexture("background.png");
-	background->LastTexture()->Clip(10, 220, 510, 180);
-	background->AddBehaviour(new InfinityBackground);
-
-	Sprite* background2 = new Sprite;
-	background2->name = "background";
-	background2->AddTexture("background.png");
-	background2->LastTexture()->Clip(10, 220, 510, 180);
-	background2->transform->position = Vector2D<float>(500.0f, 0.0f);
-	background2->AddBehaviour(new InfinityBackground);
-
 	Text* text = new Text("CaviarDreams.ttf");
 	text->content = "Hello World";
 	AddGameObject(text);
-	AddGameObject(background);
-	AddGameObject(background2);
 
 
-	Bat* bat = new Bat;
+	InitializeUI();
 
-	bat->Init();
+	AddGameObject(new Ship);
+}
 
-	AddGameObject(bat);
+void GamePlayScene::InitializeUI()
+{
 
-	Runner* runner = new Runner;
-	AddGameObject(runner);
 }

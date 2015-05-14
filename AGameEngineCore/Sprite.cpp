@@ -19,7 +19,7 @@ void Sprite::AddTexture(string texturePath)
         animations.push_back(new Animation);
     }
     
-    animations[animations.size() - 1]->AddTexture(texturePath);
+    animations.back()->AddTexture(texturePath);
 }
 
 void Sprite::Load(SDL_Renderer* renderer)
@@ -31,7 +31,7 @@ void Sprite::Load(SDL_Renderer* renderer)
 
 void Sprite::Draw(Transform* cameraTransform)
 {
-	Texture* texture = animations[animationPlaying]->ActualTexture();
+	Texture* texture = animations[animationPlaying]->ActualFrame();
 
 	Vector2D<float> scale = Vector2D<float>(cameraTransform->scale.x / pixelsPerMeter,
 		cameraTransform->scale.y / pixelsPerMeter);
@@ -59,23 +59,10 @@ Texture* Sprite::LastTexture()
 
 void Sprite::AddClip(int x, int y, int w, int h)
 {
-	Texture* lastTexture = LastTexture();
-	if (lastTexture != NULL)
-	{
-		if (clipped)
-		{
-			Texture* texture = new Texture;
-			texture->Copy(lastTexture);
-			texture->Clip(x, y, w, h);
-			animations[animations.size() - 1]->AddTexture(texture);
-		}
-		else
-		{
-			lastTexture->Clip(x, y, w, h);
-			clipped = true;
-		}
 
-	}
+	Animation* actualAnimation = animations.back();
+	actualAnimation->AddClip(x, y, w, h);
+		
 }
 
 void Sprite::Play (int animationID)

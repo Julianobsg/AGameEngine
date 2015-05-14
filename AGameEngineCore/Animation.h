@@ -19,10 +19,14 @@ public:
 	void AddTexture(string texturePath);
     void AddTexture(Texture* texture);
 	void Init(SDL_Renderer* renderer);
-	Texture* ActualTexture();
+	Texture* ActualFrame();
 	void Destroy();
+	void AddClip(int x, int y, int w, int h);
+	void Clip(int x, int y, int w, int h);
+	Texture* LastTexture();
 private:
 	int framesCounter;
 	int gamefps;
+	bool clipped;
 };
 

@@ -38,7 +38,7 @@ void Animation::Init(SDL_Renderer* renderer)
 	gamefps = Timer::framesPerSecond;
 }
 
-Texture* Animation::ActualTexture()
+Texture* Animation::ActualFrame()
 {
 	Texture* texture = textures[actualFrame];
 
@@ -65,4 +65,33 @@ void Animation::Destroy()
 	{
 		(*it)->Destroy();
 	}
+}
+
+void Animation::AddClip(int x, int y, int w, int h)
+{
+	if (clipped)
+	{
+		Texture* texture = new Texture;
+		texture->Copy(textures.back());
+		texture->Clip(x, y, w, h);
+		textures.push_back(texture);
+	}
+	else
+	{
+		this->Clip(x, y, w, h);
+		this->clipped = true;
+	}
+}
+
+void Animation::Clip(int x, int y, int w, int h)
+{
+	Texture* texture = textures.back();
+	texture->Clip(x, y, w, h);
+}
+
+Texture* Animation::LastTexture()
+{
+	Texture* texture = new Texture;
+	texture->Copy(textures.back());
+	return texture;
 }

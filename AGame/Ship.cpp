@@ -8,6 +8,8 @@ Ship::Ship()
 	this->name = "main_ship";
 	this->SetupAnimations();
 	this->AddBehaviour(new ShipBehaviour);
+	this->transform->position.x = 5;
+	this->transform->position.y = 8;
 }
 
 

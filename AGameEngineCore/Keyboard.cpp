@@ -1,7 +1,6 @@
 #include "Keyboard.h"
 #include "Debug.h"
 
-KeyCode Keyboard::selectedKeyCode = KeyCode::none;
 
 Keyboard::Keyboard(void)
 {
@@ -14,17 +13,23 @@ Keyboard::~Keyboard(void)
 
 bool Keyboard::KeyDown(KeyCode keyCode)
 {
-	return keyCode == selectedKeyCode;
+	if (keyStatus[keyCode] != 0)
+	{
+		return keyStatus[keyCode] == STATUS_PRESSED;
+	}
+	return false;
 }
 
 void Keyboard::SetEvent(SDL_Event* e)
 {
 	if (e->type == SDL_KEYDOWN)
 	{
-        selectedKeyCode = static_cast<KeyCode>(e->key.keysym.sym);
+        keyStatus[static_cast<KeyCode>(e->key.keysym.sym)] = STATUS_PRESSED;
 	}
     if (e->type == SDL_KEYUP) 
     {
-        selectedKeyCode = KeyCode::none;
+		keyStatus[static_cast<KeyCode>(e->key.keysym.sym)] = STATUS_RELEASED;
     }
 }
+
+std::map<KeyCode, int> Keyboard::keyStatus;

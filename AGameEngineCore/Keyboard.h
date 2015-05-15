@@ -1,6 +1,7 @@
 #pragma once
 #include "input.h"
 #include "EngineGlobal.h"
+#include <map>
 
 enum class KeyCode
 {
@@ -89,5 +90,7 @@ public:
 	static void SetEvent(SDL_Event* e);
 
 private:
-	static KeyCode selectedKeyCode;
+	static const int STATUS_PRESSED = 2;
+	static const int STATUS_RELEASED = 1;
+	static std::map<KeyCode, int> keyStatus;
 };

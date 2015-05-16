@@ -8,18 +8,21 @@
 
 #include "GamePlayScene.h"
 #include "Ship.h"
+#include "Shot.h"
 
 void GamePlayScene::Init()
 {
 
-	Text* text = new Text("CaviarDreams.ttf");
-	text->content = "Hello World";
-	AddGameObject(text);
+	//Text* text = new Text("CaviarDreams.ttf");
+	//text->content = "Hello World";
+	//AddGameObject(text);
 
 
 	InitializeUI();
 
-	AddGameObject(new Ship);
+	Ship* player = new Ship;
+	AddGameObject(player);
+	AddGameObject(new Shot(Vector2D<float>(5, 5)));
 }
 
 void GamePlayScene::InitializeUI()

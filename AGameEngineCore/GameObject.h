@@ -15,15 +15,21 @@ public:
 	friend class Camera;
 	friend class Scene;
 
+	Scene* currentScene;
 	string name;
 	Transform* transform;
 	GameObject(void);
 	virtual ~GameObject(void);
 	virtual void AddBehaviour(Behaviour* behaviour);
 	void Init();
+	void Destroy();
+
 protected:
 	void Update();
 	virtual void Draw(Transform* cameraTransform); 
 	list<Behaviour*> behaviours;
+	virtual void Load(SDL_Renderer* renderer);
+private:
+	bool destroy;
 };
 

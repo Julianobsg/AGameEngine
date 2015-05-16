@@ -1,6 +1,6 @@
 #pragma once
 #include "Behaviour.h"
-#include "Sprite.h"
+#include "Ship.h"
 
 class ShipBehaviour : public Behaviour
 {
@@ -16,9 +16,9 @@ public:
 
 
 private:
-	float VerticalCheck(float vertical);
-	float HorizontalCheck(float horizontal);
-	Sprite* mySprite;
+	float VerticalCheck();
+	float HorizontalCheck();
+	Ship* myShip;
 	void Move(int vertical, int horizontal);
 };
 

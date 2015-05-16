@@ -14,6 +14,7 @@ public:
     std::vector<Animation*> animations;
     
 	Sprite();
+	virtual ~Sprite();
 	void AddAnimantion(Animation* animation);
     void AddTexture(string texturePath);
 	void AddClip (int x, int y, int w, int h);

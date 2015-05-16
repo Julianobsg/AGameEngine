@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Ship.h"
 #include "ShipBehaviour.h"
+#include "Shot.h"
 
 
 Ship::Ship()
@@ -45,4 +46,11 @@ void Ship::SetupAnimations()
 	this->AddAnimantion(frontAnimation);
 	this->AddAnimantion(leftAnimation);
 	this->AddAnimantion(rightAnimation);
+}
+
+void Ship::Shoot()
+{
+	Vector2D<float> shootingPosition = Vector2D<float>(this->transform->position.x, 
+		this->transform->position.y - 0.2);
+	currentScene->AddGameObject(new Shot(shootingPosition));
 }

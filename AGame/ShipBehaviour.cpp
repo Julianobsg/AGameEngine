@@ -15,21 +15,21 @@ ShipBehaviour::~ShipBehaviour()
 
 void ShipBehaviour::Init()
 {
-	mySprite = (Sprite*) this->gameObject;
+	myShip = (Ship*) this->gameObject;
 }
 
 void ShipBehaviour::Update()
 {
-	float horizontal = HorizontalCheck(horizontal);
+	float horizontal = HorizontalCheck();
 
-	float vertical = VerticalCheck(vertical);
+	float vertical = VerticalCheck();
 
 	Move(horizontal, vertical);
 
-	/*if (Keyboard::KeyDown(KeyCode::space))
+	if (Keyboard::KeyDown(KeyCode::space))
 	{
-
-	}*/
+		myShip->Shoot();
+	}
 }
 
 void ShipBehaviour::Move(int horizontal, int vertical)
@@ -40,28 +40,29 @@ void ShipBehaviour::Move(int horizontal, int vertical)
 	this->transform->position.y += speedModifier * vertical;
 }
 
-float ShipBehaviour::HorizontalCheck(float horizontal)
+float ShipBehaviour::HorizontalCheck()
 {
-
+	float horizontal = 0;
 	if (Keyboard::KeyDown(KeyCode::left) && this->transform->position.x > 0)
 	{
-		mySprite->Play(2);
+		myShip->Play(2);
 		horizontal = -1;
 	}
 	else if (Keyboard::KeyDown(KeyCode::right) && this->transform->position.x < 9)
 	{
-		mySprite->Play(1);
+		myShip->Play(1);
 		horizontal = 1;
 	}
 	else
 	{
-		mySprite->Play(0);
+		myShip->Play(0);
 	}
 	return horizontal;
 }
 
-float ShipBehaviour::VerticalCheck(float vertical)
+float ShipBehaviour::VerticalCheck()
 {
+	float vertical = 0;
 	if (Keyboard::KeyDown(KeyCode::down) && this->transform->position.y < 8.5)
 	{
 		vertical = 1;

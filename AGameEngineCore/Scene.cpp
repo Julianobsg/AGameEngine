@@ -3,7 +3,6 @@
 #include "Text.h"
 #include "Sprite.h"
 
-
 Scene::Scene(void)
 {
 }
@@ -15,7 +14,13 @@ Scene::~Scene(void)
 
 void Scene::AddGameObject(GameObject* go)
 {
-	gameObjects.push_back(go);
+	gameObjects.emplace_back(go);
+	if (renderer != NULL)
+	{
+		go->Load(renderer);
+		go->Init();
+		go->currentScene = this;
+	}
 }
 
 void Scene::AddObserver(Observer* observer)
@@ -25,31 +30,23 @@ void Scene::AddObserver(Observer* observer)
 
 void Scene::Load(SDL_Renderer* renderer)
 {
-	GameObject* go;
+	this->renderer = renderer;
 
 	for (std::list<Observer*>::iterator it = observers.begin(); it != observers.end(); it++)
 	{
-		Observer ob = **it;
-		ob.Init();
+		Observer* ob = *it;
+		ob->Init();
 	}
 
 	for (std::list<GameObject*>::iterator it = gameObjects.begin(); it != gameObjects.end(); it++)
 	{
+		GameObject* go;
 		go = *it;
-
-		Sprite* sprite = dynamic_cast<Sprite*>(go);
-		Text* text = dynamic_cast<Text*>(go);
-
-		if (sprite != NULL)
-		{
-			sprite->Load(renderer);
-		}
-		else if (text != NULL)
-		{
-			text->Load(renderer);
-		}
-
+		go->Load(renderer);
+		
 		go->Init();
+		go->currentScene = this;
+
 	}
 }
 
@@ -61,18 +58,25 @@ void Scene::Update()
 		ob.Update();
 	}
 
-	GameObject* go;
+	GameObject* go = NULL;
 
-	for (std::list<GameObject*>::iterator it = gameObjects.begin(); it != gameObjects.end(); it++)
+	list<GameObject*> tempList = gameObjects;
+	//Temp to avoid invalidation in list of gameobjects in resiging it
+	for (std::list<GameObject*>::iterator it = tempList.begin(); it != tempList.end(); it++)
 	{
-		go = *it;
-		go->Update();
+		(*it)->Update();
+		if ((*it)->destroy) 
+		{
+			gameObjects.remove((*it));
+			delete(*it);
+		}
 	}
 }
 
 
 void Scene::Draw(Camera* mainCamera)
 {
+
 	GameObject* go;
 
 	for (std::list<GameObject*>::iterator it = gameObjects.begin(); it != gameObjects.end(); it++)

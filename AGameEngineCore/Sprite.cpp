@@ -41,9 +41,7 @@ void Sprite::Draw(Transform* cameraTransform)
 
 void Sprite::Destroy()
 {
-    for (int i = 0; i < animations.size(); i++) {
-        animations[i]->Destroy();
-    }
+	GameObject::Destroy();
 }
 
 void Sprite::AddBehaviour(Behaviour* behaviour)
@@ -68,5 +66,12 @@ void Sprite::AddClip(int x, int y, int w, int h)
 void Sprite::Play (int animationID)
 {
     this->animationPlaying = animationID;
+}
+
+Sprite::~Sprite()
+{
+	for (int i = 0; i < animations.size(); i++) {
+		animations[i]->Destroy();
+	}
 }
 

@@ -12,6 +12,7 @@ class Scene
 {
 	friend class Application;
 public:
+	//TODO change list to vector, check if really is better for processing;
 	list<GameObject*> gameObjects;
 	list<Observer*> observers;
 
@@ -24,6 +25,8 @@ private:
 	void Load(SDL_Renderer* renderer);
 	void Unload();
 	void Update();
+
 	void Draw(Camera* mainCamera);
+	SDL_Renderer* renderer;
 };
 

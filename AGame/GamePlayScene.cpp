@@ -8,7 +8,7 @@
 
 #include "GamePlayScene.h"
 #include "Ship.h"
-#include "Shot.h"
+#include "Enemy.h"
 
 void GamePlayScene::Init()
 {
@@ -22,7 +22,7 @@ void GamePlayScene::Init()
 
 	Ship* player = new Ship;
 	AddGameObject(player);
-	AddGameObject(new Shot(Vector2D<float>(5, 5)));
+	AddGameObject(new Enemy);
 }
 
 void GamePlayScene::InitializeUI()

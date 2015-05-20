@@ -50,7 +50,7 @@ void Ship::SetupAnimations()
 
 void Ship::Shoot()
 {
-	Vector2D<float> shootingPosition = Vector2D<float>(this->transform->position.x, 
-		this->transform->position.y - 0.2);
+	Vector2D<float> shootingPosition = Vector2D<float>(this->transform->position.x + 1, 
+		this->transform->position.y - 0.1);
 	currentScene->AddGameObject(new Shot(shootingPosition));
 }

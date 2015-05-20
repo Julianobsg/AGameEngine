@@ -6,6 +6,8 @@
 ShipBehaviour::ShipBehaviour()
 {
 	speed = 2;
+	fireRate = 0.3f;
+	actualRating = 0.0f;
 }
 
 
@@ -26,9 +28,14 @@ void ShipBehaviour::Update()
 
 	Move(horizontal, vertical);
 
-	if (Keyboard::KeyDown(KeyCode::space))
+	if (Keyboard::KeyDown(KeyCode::space) && actualRating <= 0.0f)
 	{
 		myShip->Shoot();
+		actualRating = fireRate;
+	}
+	if (actualRating > 0)
+	{
+		actualRating -= (1 / Timer::framesPerSecond);
 	}
 }
 
@@ -43,12 +50,12 @@ void ShipBehaviour::Move(int horizontal, int vertical)
 float ShipBehaviour::HorizontalCheck()
 {
 	float horizontal = 0;
-	if (Keyboard::KeyDown(KeyCode::left) && this->transform->position.x > 0)
+	if (Keyboard::KeyDown(KeyCode::left) && this->transform->position.x > -1)
 	{
 		myShip->Play(2);
 		horizontal = -1;
 	}
-	else if (Keyboard::KeyDown(KeyCode::right) && this->transform->position.x < 9)
+	else if (Keyboard::KeyDown(KeyCode::right) && this->transform->position.x < 10)
 	{
 		myShip->Play(1);
 		horizontal = 1;

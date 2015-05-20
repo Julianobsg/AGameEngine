@@ -5,6 +5,7 @@
 class ShipBehaviour : public Behaviour
 {
 public:
+	float fireRate;
 	int speed;
 	ShipBehaviour();
 	~ShipBehaviour();
@@ -16,6 +17,7 @@ public:
 
 
 private:
+	float actualRating;
 	float VerticalCheck();
 	float HorizontalCheck();
 	Ship* myShip;

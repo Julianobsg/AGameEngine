@@ -23,11 +23,10 @@ public:
 	virtual void AddBehaviour(Behaviour* behaviour);
 	void Init();
 	void Destroy();
-
+	list<Behaviour*> behaviours;
 protected:
 	void Update();
 	virtual void Draw(Transform* cameraTransform); 
-	list<Behaviour*> behaviours;
 	virtual void Load(SDL_Renderer* renderer);
 private:
 	bool destroy;

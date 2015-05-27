@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+#include "EnemyCollision.h"
 
 class Enemy : public Sprite
 {

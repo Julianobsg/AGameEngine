@@ -6,7 +6,8 @@ class Timer
 #define FRAMES_STORED 10
 public:
 	static float framesPerSecond;
-	
+	static float deltaTime;
+
 	static Uint32 frameCount;
 	static Uint32 gameTicks;
 	static Uint32 frameStored[FRAMES_STORED];

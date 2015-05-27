@@ -9,6 +9,7 @@
 #include "GamePlayScene.h"
 #include "Ship.h"
 #include "Enemy.h"
+#include "CollisionDetection.h"
 
 void GamePlayScene::Init()
 {
@@ -23,6 +24,7 @@ void GamePlayScene::Init()
 	Ship* player = new Ship;
 	AddGameObject(player);
 	AddGameObject(new Enemy);
+	AddObserver(new CollisionDetection);
 }
 
 void GamePlayScene::InitializeUI()

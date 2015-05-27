@@ -31,12 +31,12 @@ void Sprite::Load(SDL_Renderer* renderer)
 
 void Sprite::Draw(Transform* cameraTransform)
 {
-	Texture* texture = animations[animationPlaying]->ActualFrame();
+	actualTexture = animations[animationPlaying]->SetActualFrame();
 
 	Vector2D<float> scale = Vector2D<float>(cameraTransform->scale.x / pixelsPerMeter,
 		cameraTransform->scale.y / pixelsPerMeter);
 	cameraTransform->scale = scale;
-	texture->Draw(cameraTransform);
+	actualTexture->Draw(cameraTransform);
 }
 
 void Sprite::Destroy()
@@ -73,5 +73,10 @@ Sprite::~Sprite()
 	for (int i = 0; i < animations.size(); i++) {
 		animations[i]->Destroy();
 	}
+}
+
+Texture* Sprite::ActualTexture()
+{
+	return  actualTexture;
 }
 

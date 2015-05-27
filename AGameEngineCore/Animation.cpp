@@ -38,7 +38,7 @@ void Animation::Init(SDL_Renderer* renderer)
 	gamefps = Timer::framesPerSecond;
 }
 
-Texture* Animation::ActualFrame()
+Texture* Animation::SetActualFrame()
 {
 	Texture* texture = textures[actualFrame];
 

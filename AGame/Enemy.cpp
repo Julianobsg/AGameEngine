@@ -14,6 +14,8 @@ Enemy::Enemy()
 	{
 		this->AddClip(ENEMY_SIZE_X * i, ENEMY_SIZE_Y, ENEMY_SIZE_X, ENEMY_SIZE_Y);
 	}
+
+	AddBehaviour(new EnemyCollision);
 }
 
 

@@ -19,7 +19,7 @@ public:
 	void AddTexture(string texturePath);
     void AddTexture(Texture* texture);
 	void Init(SDL_Renderer* renderer);
-	Texture* ActualFrame();
+	Texture* SetActualFrame();
 	void Destroy();
 	void AddClip(int x, int y, int w, int h);
 	void Clip(int x, int y, int w, int h);

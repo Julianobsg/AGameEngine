@@ -83,6 +83,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ButtonBehaviour.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionDetection.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyCollision.h" />
     <ClInclude Include="GameActionObserver.h" />
@@ -101,6 +103,8 @@
   <ItemGroup>
     <ClCompile Include="AGame.cpp" />
     <ClCompile Include="ButtonBehaviour.cpp" />
+    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionDetection.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyCollision.cpp" />
     <ClCompile Include="GameActionObserver.cpp" />

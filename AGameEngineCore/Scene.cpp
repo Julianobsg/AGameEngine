@@ -35,6 +35,7 @@ void Scene::Load(SDL_Renderer* renderer)
 	for (std::list<Observer*>::iterator it = observers.begin(); it != observers.end(); it++)
 	{
 		Observer* ob = *it;
+		ob->gameObjects = gameObjects;
 		ob->Init();
 	}
 
@@ -54,8 +55,8 @@ void Scene::Update()
 {
 	for (std::list<Observer*>::iterator it = observers.begin(); it != observers.end(); it++)
 	{
-		Observer ob = **it;
-		ob.Update();
+		Observer* ob = *it;
+		ob->Update();
 	}
 
 	GameObject* go = NULL;

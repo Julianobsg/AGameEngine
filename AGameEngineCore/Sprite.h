@@ -11,6 +11,8 @@ class Sprite :
 public:
     int pixelsPerMeter;
     Texture* LastTexture();
+	Texture* ActualTexture();
+
     std::vector<Animation*> animations;
     
 	Sprite();
@@ -29,5 +31,6 @@ private:
 	bool clipped;
     void Load(SDL_Renderer* renderer);
     int animationPlaying;
+	Texture* actualTexture;
 };
 

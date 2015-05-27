@@ -1,7 +1,9 @@
 #pragma once
 #include "Behaviour.h"
+#include "Collision.h"
+
 class EnemyCollision :
-	public Behaviour
+	public Collision
 {
 public:
 	EnemyCollision();
@@ -10,6 +12,8 @@ public:
 	virtual void Init();
 
 	virtual void Update();
+
+	virtual void CollisionEnter();
 
 };
 

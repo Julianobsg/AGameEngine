@@ -16,8 +16,8 @@ public:
 	virtual void Update();
 private:
 	float detectionDelay = 0.0f;
+	int goSize;
 	void DetetectCollision();
-
 	
 	std::list<Collision*> collidingObjects;
 	struct Boundaries

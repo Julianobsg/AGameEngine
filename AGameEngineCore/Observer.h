@@ -5,7 +5,7 @@
 class Observer
 {
 public:
-	list<GameObject*> gameObjects;
+	Scene* currentScene;
 	Observer();
 	~Observer();
 	virtual void Init();

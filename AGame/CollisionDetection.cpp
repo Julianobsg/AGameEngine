@@ -16,6 +16,9 @@ CollisionDetection::~CollisionDetection()
 
 void CollisionDetection::Init()
 {
+	std::list<GameObject*> gameObjects = currentScene->gameObjects;
+	goSize = gameObjects.size();
+	collidingObjects = std::list < Collision* >();
 	for (std::list<GameObject*>::iterator it = gameObjects.begin(); it != gameObjects.end(); it++)
 	{
 		Sprite* go = dynamic_cast<Sprite *>(*it);
@@ -39,6 +42,10 @@ void CollisionDetection::Update()
 	detectionDelay += Timer::deltaTime;
 	if (detectionDelay > DETECTION_TIMER)
 	{
+		if (goSize != currentScene->gameObjects.size())
+		{
+			this->Init();
+		}
 		detectionDelay = 0.0f;
 		DetetectCollision();
 	}

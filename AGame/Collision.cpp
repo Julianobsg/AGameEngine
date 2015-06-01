@@ -4,6 +4,7 @@
 
 Collision::Collision()
 {
+	tag = "Default";
 }
 
 
@@ -11,7 +12,8 @@ Collision::~Collision()
 {
 }
 
-void Collision::CollisionEnter()
+void Collision::CollisionEnter(Collision* other)
 {
 
 }
+

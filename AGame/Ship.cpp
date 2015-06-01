@@ -10,7 +10,9 @@ Ship::Ship()
 	this->name = "main_ship";
 	this->SetupAnimations();
 	this->AddBehaviour(new ShipBehaviour);
-	this->AddBehaviour(new Collision);
+	Collision* coll = new Collision;
+	coll->tag = "Player";
+	this->AddBehaviour(coll);
 	this->transform->position.x = 5;
 	this->transform->position.y = 8;
 }

@@ -5,8 +5,9 @@ class Collision
 	: public Behaviour
 {
 public:
+	string tag;
 	Collision();
 	~Collision();
-	virtual void CollisionEnter();
+	virtual void CollisionEnter(Collision* other);
 };
 

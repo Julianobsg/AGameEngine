@@ -33,9 +33,9 @@ void Sprite::Draw(Transform* cameraTransform)
 {
 	actualTexture = animations[animationPlaying]->SetActualFrame();
 
-	Vector2D<float> scale = Vector2D<float>(cameraTransform->scale.x / pixelsPerMeter,
+	relativeScale = Vector2D<float>(cameraTransform->scale.x / pixelsPerMeter,
 		cameraTransform->scale.y / pixelsPerMeter);
-	cameraTransform->scale = scale;
+	cameraTransform->scale = relativeScale;
 	actualTexture->Draw(cameraTransform);
 }
 

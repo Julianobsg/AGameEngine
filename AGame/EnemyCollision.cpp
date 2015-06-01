@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "EnemyCollision.h"
 #include "Debug.h"
+#include "Shot.h"
+#include "Application.h"
+#include "Ship.h"
 
 
 EnemyCollision::EnemyCollision()
@@ -21,7 +24,16 @@ void EnemyCollision::Update()
 
 }
 
-void EnemyCollision::CollisionEnter()
+void EnemyCollision::CollisionEnter(Collision* other)
 {
-	Debug::Log("Collision");
+	if (other->tag == "Shot")
+	{
+		Shot* thisShot = (Shot*) other->gameObject;
+		thisShot->Destroy();
+		((Enemy*) gameObject)->Destroy();
+	}
+	else if (other->tag == "Player")
+	{
+		((Ship*)other->gameObject)->Destroy();
+	}
 }

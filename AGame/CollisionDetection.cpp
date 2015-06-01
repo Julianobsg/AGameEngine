@@ -55,20 +55,24 @@ void CollisionDetection::DetetectCollision()
 {
 	if (collidingObjects.size() > 1)
 	{
-		std::list<Collision*> tempObjects = collidingObjects;
-		for (std::list<Collision*>::iterator i = collidingObjects.begin(); i != collidingObjects.end(); i++)
+		std::list<Collision*>::iterator beforeLast = collidingObjects.end();
+		beforeLast--;
+		for (std::list<Collision*>::iterator i = collidingObjects.begin(); i != beforeLast; i++)
 		{
-			for (std::list<Collision*>::iterator j = i++; j != collidingObjects.end(); j++)
+			std::list<Collision*>::iterator j = i;
+			for (j++; j != collidingObjects.end(); j++)
 			{
 				Collision* firstCollision = (*i);
 				Collision* secondCollision = (*j);
 				Boundaries firstBoundary = GetBoundaries(static_cast<Sprite *>(firstCollision->gameObject));
 				Boundaries secondBoundary = GetBoundaries(static_cast<Sprite *>(secondCollision->gameObject));
-				if (firstBoundary.minX < secondBoundary.maxX && firstBoundary.minX > secondBoundary.minX &&
-					firstBoundary.minY < secondBoundary.maxY && firstBoundary.minY > secondBoundary.minY)
+		
+
+				if (!(firstBoundary.maxY < secondBoundary.minY) && !(firstBoundary.minY > secondBoundary.maxY) &&
+					!(firstBoundary.maxX < secondBoundary.minX) && !(firstBoundary.minX > secondBoundary.maxX))
 				{
-					firstCollision->CollisionEnter();
-					secondCollision->CollisionEnter();
+					firstCollision->CollisionEnter(secondCollision);
+					secondCollision->CollisionEnter(firstCollision);
 				}
 			}
 		}
@@ -82,7 +86,7 @@ CollisionDetection::Boundaries CollisionDetection::GetBoundaries(Sprite* sprite)
 	Boundaries boundaries; 
 	boundaries.minY = worldPosition.y;
 	boundaries.minX = worldPosition.x;
-	boundaries.maxX = worldPosition.x + (sprite->ActualTexture()->size.x * sprite->transform->scale.x);
-	boundaries.maxY = worldPosition.y + (sprite->ActualTexture()->size.y * sprite->transform->scale.y);
+	boundaries.maxX = worldPosition.x + (sprite->ActualTexture()->size.x * sprite->relativeScale.x);
+	boundaries.maxY = worldPosition.y + (sprite->ActualTexture()->size.y * sprite->relativeScale.y);
 	return boundaries;
 }

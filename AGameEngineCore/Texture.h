@@ -14,6 +14,7 @@ class Texture
 	friend class Animation;
 public:
 	Vector2D<int> size;
+	Vector2D<int> imageSize;
 	string texturePath;
 	float pixelsPerMeter;
 

@@ -4,6 +4,8 @@
 
 Enemy::Enemy()
 {
+	this->name = "Enemy";
+	this->transform->position = Vector2D<float>(5, 5);
 	this->AddTexture("tomatoes01.png");
 
 	for (int i = 0; i < 15; i++)
@@ -14,8 +16,9 @@ Enemy::Enemy()
 	{
 		this->AddClip(ENEMY_SIZE_X * i, ENEMY_SIZE_Y, ENEMY_SIZE_X, ENEMY_SIZE_Y);
 	}
-
-	AddBehaviour(new EnemyCollision);
+	EnemyCollision* coll = new EnemyCollision;
+	coll->tag = "Enemy";
+	AddBehaviour(coll);
 }
 
 

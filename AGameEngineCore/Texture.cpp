@@ -38,7 +38,12 @@ void Texture::LoadTexture(SDL_Texture* texture)
 {
 	this->texture = texture;
 
-	SDL_QueryTexture(texture, NULL, NULL, &size.x, &size.y);
+	SDL_QueryTexture(texture, NULL, NULL, &imageSize.x, &imageSize.y);
+	if (clip == NULL)
+	{
+		size = imageSize;
+	}
+
 }
 
 void Texture::LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer)
@@ -61,16 +66,9 @@ void Texture::Draw(Transform* transform)
 	Vector2D<float> scale = transform->scale;
     
     scale = scale.Abs();
-	//TODO then maybe put a scale factor here, for resizing image
-	if (clip != NULL){
-		dst.w = clip->w * scale.x;
-		dst.h = clip->h * scale.y;
-	}
-	else
-	{
-		dst.w = size.x * scale.x;
-		dst.h = size.y * scale.y;
-	}
+
+	dst.w = size.x * scale.x;
+	dst.h = size.y * scale.y;
 
 	SDL_RenderCopyEx(renderer, texture, clip, &dst, transform->angle, NULL, isFlipping);
 }
@@ -81,8 +79,8 @@ void Texture::Clip (int x, int y, int w, int h)
 	SDL_Rect rect = {x, y, w, h};
 	clip = new SDL_Rect(rect);
 
-	size.x = w - x;
-	size.y = h - y;
+	size.x = w;
+	size.y = h;
 }
 
 void Texture::Destroy()

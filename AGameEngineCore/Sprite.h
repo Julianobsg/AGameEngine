@@ -10,6 +10,7 @@ class Sprite :
 	friend class Scene;
 public:
     int pixelsPerMeter;
+	Vector2D<float> relativeScale;
     Texture* LastTexture();
 	Texture* ActualTexture();
 

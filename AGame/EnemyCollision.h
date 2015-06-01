@@ -1,6 +1,7 @@
 #pragma once
 #include "Behaviour.h"
 #include "Collision.h"
+#include "Enemy.h"
 
 class EnemyCollision :
 	public Collision
@@ -8,12 +9,10 @@ class EnemyCollision :
 public:
 	EnemyCollision();
 	~EnemyCollision();
-
 	virtual void Init();
 
 	virtual void Update();
 
-	virtual void CollisionEnter();
-
+	void CollisionEnter(Collision* other) override;
 };
 

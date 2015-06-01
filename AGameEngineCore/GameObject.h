@@ -9,6 +9,8 @@
 
 using namespace std;
 
+class Scene;
+
 class GameObject
 {
 public:

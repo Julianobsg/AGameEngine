@@ -19,15 +19,21 @@ void GamePlayScene::Init()
 	//AddGameObject(text);
 
 
-	InitializeUI();
-
 	Ship* player = new Ship;
+	GameActionObserver* gameAction = new GameActionObserver;
+	Text* score = new Text("CaviarDreams.ttf");
+	score->SetContent("0000");
+	score->name = "score";
+	gameAction->score = score;
+
+	AddGameObject(score);
 	AddGameObject(player);
-	AddGameObject(new Enemy);
+	AddGameObject(new Enemy(gameAction));
 	AddObserver(new CollisionDetection);
+	AddObserver(gameAction);
 }
 
 void GamePlayScene::InitializeUI()
 {
-
+	
 }

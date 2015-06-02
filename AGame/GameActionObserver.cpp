@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "GameActionObserver.h"
+#include "GamePlayScene.h"
+#include <list>
 
 
 GameActionObserver::GameActionObserver()
@@ -13,10 +15,15 @@ GameActionObserver::~GameActionObserver()
 
 void GameActionObserver::Init()
 {
-	throw std::logic_error("The method or operation is not implemented.");
+	scoreValue = 0;
 }
 
 void GameActionObserver::Update()
 {
-	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void GameActionObserver::EnemyDestroyed()
+{
+	scoreValue++;
+	score->SetContent(std::to_string(scoreValue));
 }

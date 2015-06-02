@@ -30,7 +30,7 @@ void EnemyCollision::CollisionEnter(Collision* other)
 	{
 		Shot* thisShot = (Shot*) other->gameObject;
 		thisShot->Destroy();
-		((Enemy*) gameObject)->Destroy();
+		((Enemy*) gameObject)->Die();
 	}
 	else if (other->tag == "Player")
 	{

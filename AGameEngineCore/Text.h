@@ -19,13 +19,16 @@ public:
     int pixelsPerMeter;
 
     Texture *texture;
-    string content;
     Text(string fontPath);
     ~Text();
+	void SetContent(string content);
+	string GetContent();
+
 	void ChangeColor(int r, int g, int b);
     void FontSize(int fontSize);
 	void Draw(Transform* cameraTransform) override;
 private:
+    string content;
     int fontSize;
     TTF_Font* font;
     SDL_Surface* textSurface;

@@ -83,3 +83,14 @@ void Text::FontSize(int fontSize)
     MakeTexture();
 }
 
+void Text::SetContent(string content)
+{
+	this->content = content;
+	MakeTexture();
+}
+
+std::string Text::GetContent()
+{
+	return this->content;
+}
+

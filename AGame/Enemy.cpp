@@ -2,8 +2,9 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy()
+Enemy::Enemy(GameActionObserver* action)
 {
+	this->action = action;
 	this->name = "Enemy";
 	this->transform->position = Vector2D<float>(5, 5);
 	this->AddTexture("tomatoes01.png");
@@ -24,4 +25,10 @@ Enemy::Enemy()
 
 Enemy::~Enemy()
 {
+}
+
+void Enemy::Die()
+{
+	action->EnemyDestroyed();
+	this->Destroy();
 }

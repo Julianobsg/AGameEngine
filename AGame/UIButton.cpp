@@ -5,7 +5,7 @@ UIButton::UIButton(string title, Vector2D<float> position)
 {
 	button = new Text("CaviarDreams.ttf");
 	button->transform->position = position;
-	button->content = title;
+	button->SetContent(title);
 	button->ChangeColor(0, 255, 255);
 	behaviour = new ButtonBehaviour;
 	button->AddBehaviour(behaviour);

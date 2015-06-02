@@ -10,7 +10,5 @@ public:
 	~Observer();
 	virtual void Init();
 	virtual void Update();
-private:
-	void Load(list<GameObject*> gameObjects);
 };
 

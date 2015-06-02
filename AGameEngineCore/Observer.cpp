@@ -10,11 +10,6 @@ Observer::~Observer()
 {
 }
 
-void Observer::Load(list<GameObject*> gameObjects)
-{
-
-}
-
 void Observer::Init()
 {
 

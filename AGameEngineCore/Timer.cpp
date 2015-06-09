@@ -81,9 +81,9 @@ void Timer::CalcFPS()
 
 	framesPerSecond /= count;
 
-	deltaTime = 1000.f * framesPerSecond;
 	// now to make it an actual frames per second value...
 	framesPerSecond = 1000.f / framesPerSecond;
+	deltaTime = 1 / framesPerSecond;
 }
 
 float Timer::deltaTime;

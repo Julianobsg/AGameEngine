@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Enemy.h"
+#include "IAMovement.h"
 
 
 Enemy::Enemy(GameActionObserver* action)
@@ -20,6 +21,7 @@ Enemy::Enemy(GameActionObserver* action)
 	EnemyCollision* coll = new EnemyCollision;
 	coll->tag = "Enemy";
 	AddBehaviour(coll);
+	AddBehaviour(new IAMovement);
 }
 
 

@@ -11,6 +11,7 @@ GameObject::GameObject(void)
 
 GameObject::~GameObject(void)
 {
+	delete(transform);
 	for (std::list<Behaviour*>::iterator it = behaviours.begin(); it != behaviours.end(); it++)
 	{
 		delete(*it);

@@ -89,6 +89,7 @@
     <ClInclude Include="EnemyCollision.h" />
     <ClInclude Include="GameActionObserver.h" />
     <ClInclude Include="GamePlayScene.h" />
+    <ClInclude Include="IAMovement.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="resource.h" />
@@ -109,6 +110,7 @@
     <ClCompile Include="EnemyCollision.cpp" />
     <ClCompile Include="GameActionObserver.cpp" />
     <ClCompile Include="GamePlayScene.cpp" />
+    <ClCompile Include="IAMovement.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Ship.cpp" />

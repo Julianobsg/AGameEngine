@@ -41,7 +41,7 @@ void ShipBehaviour::Update()
 
 void ShipBehaviour::Move(int horizontal, int vertical)
 {
-	float speedModifier = speed * (1 / Timer::framesPerSecond);
+	float speedModifier = speed * Timer::deltaTime;
 	
 	this->transform->position.x += speedModifier * horizontal;
 	this->transform->position.y += speedModifier * vertical;

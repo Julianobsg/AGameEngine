@@ -5,6 +5,8 @@
 
 Scene::Scene(void)
 {
+
+
 }
 
 
@@ -25,11 +27,12 @@ void Scene::AddGameObject(GameObject* go)
 
 void Scene::AddObserver(Observer* observer)
 {
-	observers.push_back(observer);
+	observers.emplace_back(observer);
 }
 
 void Scene::Load(SDL_Renderer* renderer)
 {
+	this->Init();
 	this->renderer = renderer;
 
 	for (std::list<Observer*>::iterator it = observers.begin(); it != observers.end(); it++)
@@ -69,6 +72,7 @@ void Scene::Update()
 		{
 			gameObjects.remove((*it));
 			delete(*it);
+			(*it) = NULL;
 		}
 	}
 }
@@ -92,16 +96,7 @@ void Scene::Draw(Camera* mainCamera)
 
 void Scene::Unload()
 {
-
-	GameObject* go;
-
-	for (std::list<GameObject*>::iterator it = gameObjects.begin(); it != gameObjects.end(); it++)
-	{
-		go = *it;
-		Sprite* sprite = dynamic_cast<Sprite*>(go);
-		if (sprite != NULL)
-		{
-			sprite->Destroy();
-		}
-	}
+	gameObjects.clear();
+	observers.clear();
 }
+

@@ -42,10 +42,10 @@ void CollisionDetection::Update()
 	detectionDelay += Timer::deltaTime;
 	if (detectionDelay > DETECTION_TIMER)
 	{
-		if (goSize != currentScene->gameObjects.size())
-		{
-			this->Init();
-		}
+		//Check if there is a better way to check
+		//if (goSize != currentScene->gameObjects.size())
+		//{
+		this->Init();
 		detectionDelay = 0.0f;
 		DetetectCollision();
 	}
@@ -64,8 +64,12 @@ void CollisionDetection::DetetectCollision()
 			{
 				Collision* firstCollision = (*i);
 				Collision* secondCollision = (*j);
-				Boundaries firstBoundary = GetBoundaries(static_cast<Sprite *>(firstCollision->gameObject));
-				Boundaries secondBoundary = GetBoundaries(static_cast<Sprite *>(secondCollision->gameObject));
+
+				Sprite* firstSprite = static_cast<Sprite *>(firstCollision->gameObject);
+				Sprite* secondSprite = static_cast<Sprite *>(secondCollision->gameObject);
+
+				Boundaries firstBoundary = GetBoundaries(firstSprite);
+				Boundaries secondBoundary = GetBoundaries(secondSprite);
 		
 
 				if (!(firstBoundary.maxY < secondBoundary.minY) && !(firstBoundary.minY > secondBoundary.maxY) &&
@@ -82,7 +86,7 @@ void CollisionDetection::DetetectCollision()
 CollisionDetection::Boundaries CollisionDetection::GetBoundaries(Sprite* sprite)
 {
 	Vector2D<float> worldPosition = *Application::GetMainCamera()->
-		WorldToCameraPosition(&(sprite->transform->position));
+        		WorldToCameraPosition(&(sprite->transform->position));
 	Boundaries boundaries; 
 	boundaries.minY = worldPosition.y;
 	boundaries.minX = worldPosition.x;

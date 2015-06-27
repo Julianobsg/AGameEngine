@@ -34,6 +34,6 @@ void EnemyCollision::CollisionEnter(Collision* other)
 	}
 	else if (other->tag == "Player")
 	{
-		((Ship*)other->gameObject)->Destroy();
+		((Ship*)other->gameObject)->Die();
 	}
 }

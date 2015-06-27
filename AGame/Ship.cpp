@@ -7,6 +7,7 @@
 
 Ship::Ship()
 {
+	this->alive = true;
 	this->name = "main_ship";
 	this->SetupAnimations();
 	this->AddBehaviour(new ShipBehaviour);
@@ -57,4 +58,9 @@ void Ship::Shoot()
 	Vector2D<float> shootingPosition = Vector2D<float>(this->transform->position.x + 1, 
 		this->transform->position.y - 0.1);
 	currentScene->AddGameObject(new Shot(shootingPosition));
+}
+
+void Ship::Die()
+{
+	this->alive = false;
 }

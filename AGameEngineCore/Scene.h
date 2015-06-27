@@ -15,12 +15,13 @@ public:
 	//TODO change list to vector, check if really is better for processing;
 	list<GameObject*> gameObjects;
 	list<Observer*> observers;
+	string name;
 
 	Scene(void);
 	~Scene(void);
+	virtual void Init() {}
 	void AddGameObject(GameObject* go);
 	void AddObserver(Observer* observer);
-	string name;
 private:
 	void Load(SDL_Renderer* renderer);
 	void Unload();

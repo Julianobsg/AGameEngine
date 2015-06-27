@@ -13,12 +13,6 @@
 
 void GamePlayScene::Init()
 {
-
-	//Text* text = new Text("CaviarDreams.ttf");
-	//text->content = "Hello World";
-	//AddGameObject(text);
-
-
 	Ship* player = new Ship;
 	GameActionObserver* gameAction = new GameActionObserver;
 	Text* score = new Text("CaviarDreams.ttf");
@@ -28,7 +22,6 @@ void GamePlayScene::Init()
 
 	AddGameObject(score);
 	AddGameObject(player);
-	AddGameObject(new Enemy(gameAction));
 	AddObserver(new CollisionDetection);
 	AddObserver(gameAction);
 }
@@ -36,4 +29,9 @@ void GamePlayScene::Init()
 void GamePlayScene::InitializeUI()
 {
 	
+}
+
+GamePlayScene::GamePlayScene()
+{
+
 }

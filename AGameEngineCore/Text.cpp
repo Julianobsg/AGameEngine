@@ -21,6 +21,8 @@ Text::Text(string fontPath) : GameObject()
     content = "";
     pixelsPerMeter = 48;
     fontSize = 20;
+	OpenFont();
+	texture = new Texture;
 }
 
 Text::~Text()

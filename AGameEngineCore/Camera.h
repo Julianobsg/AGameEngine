@@ -16,9 +16,9 @@ public:
 	Vector2D<float>* WorldToCameraPosition(Vector2D<float>* position);
 	Vector2D<float>* WorldToCameraScale(Vector2D<float>* scale);
     void SetScreenSize(Vector2D<int> screenSize);
+    Transform* WorldToCameraTransform(Transform* transform);
 private:
     Vector2D<int> screenSize;
-    Transform* WorldToCameraTransform(Transform* transform);
 	Transform* cameraTransform;
 	float scaleModifier;
 };

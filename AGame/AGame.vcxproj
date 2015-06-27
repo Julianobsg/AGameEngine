@@ -85,6 +85,7 @@
     <ClInclude Include="ButtonBehaviour.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionDetection.h" />
+    <ClInclude Include="EndGameScene.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyCollision.h" />
     <ClInclude Include="GameActionObserver.h" />
@@ -106,6 +107,7 @@
     <ClCompile Include="ButtonBehaviour.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionDetection.cpp" />
+    <ClCompile Include="EndGameScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyCollision.cpp" />
     <ClCompile Include="GameActionObserver.cpp" />

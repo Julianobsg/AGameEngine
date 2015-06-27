@@ -17,9 +17,10 @@
 #endif /* defined(__AGameEngine__GamePlayer__) */
 
 class GamePlayScene : public Scene
-{
+{ 
 public:
-    void Init();
+	GamePlayScene();
+    virtual void Init();
 private:
 	void InitializeUI();
 };

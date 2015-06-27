@@ -17,6 +17,7 @@ Application::Application(void)
 	screenSize.y = 480;
 	mainCamera = new Camera(screenSize);
 	this->application = this;
+	newScene = -1;
 }
 
 
@@ -67,12 +68,12 @@ int Application::Run()
 	return Instance()->_Run();
 }
 
-void Application::AddScene(Scene scene)
+void Application::AddScene(Scene* scene)
 {
 	Instance()->_AddScene(scene);
 }
 
-void Application::_AddScene(Scene scene)
+void Application::_AddScene(Scene* scene)
 {
 	scenes.push_back(scene);
 }
@@ -93,47 +94,39 @@ void Application::CheckInputs()
 
 void Application::Update()
 {
-	scenes[currentScene].Update();
+	scenes[currentScene]->Update();
 }
 
 void Application::Draw()
 {
 
 	SDL_RenderClear(renderer);
-	scenes[currentScene].Draw(mainCamera);
+	scenes[currentScene]->Draw(mainCamera);
 
 	SDL_RenderPresent(renderer);
 }
 
 void Application::_LoadScene(int loadedScene)
 {
+	UnloadScene();
 	this->currentScene = loadedScene;
-
-	this->scenes[currentScene].Load(renderer);
+	newScene = -1;
+	this->scenes[currentScene]->Load(renderer);
 }
 
 void Application::LoadScene(string loadSceneName)
 {
-	
-	for (int i = 0; i < application->scenes.size(); i++)
-	{
-		if (application->scenes[i].name == loadSceneName)
-		{
-			application->_LoadScene(i);
-			return;
-		}
-	}
+	application->newScene = GetSceneIdByName(loadSceneName);
 }
 
 void Application::LoadScene(int loadSceneId)
 {
-	application->_LoadScene(loadSceneId);
+	application->newScene = loadSceneId;
 }
 
-//TODO check memory freeing here
 void Application::UnloadScene()
 {
-	this->scenes[currentScene].Unload();
+	this->scenes[currentScene]->Unload();
 }
 
 void Application::SetScreenSize(Vector2D<int> size)
@@ -167,7 +160,10 @@ int Application::_Run()
 
 	while (isRunning){
 		Timer::CalcFPS();
-
+		if (newScene > -1)
+		{
+			_LoadScene(newScene);
+		}
 		CheckInputs();
 		//Render the scene
 		Draw();
@@ -212,6 +208,33 @@ void Application::CloseGame()
 Camera* Application::GetMainCamera()
 {
 	return Instance()->mainCamera;
+}
+
+Scene* Application::GetScene(string sceneName)
+{
+	return application->_GetScene(GetSceneIdByName(sceneName));
+}
+
+Scene* Application::GetScene(int sceneId)
+{
+	return application->_GetScene(sceneId);
+}
+
+Scene* Application::_GetScene(int sceneId)
+{
+	return this->scenes[sceneId];
+}
+
+int Application::GetSceneIdByName(string sceneName)
+{
+	for (int i = 0; i < application->scenes.size(); i++)
+	{
+		if (application->scenes[i]->name == sceneName)
+		{
+			return i;
+		}
+	}
+	return 0;
 }
 
 Application* Application::application;

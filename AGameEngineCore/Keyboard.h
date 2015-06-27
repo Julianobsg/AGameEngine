@@ -82,14 +82,15 @@ enum class KeyCode
 class Keyboard :
 	public Input
 {
+	friend class Application;
 public:
 	Keyboard(void);
 	~Keyboard(void);
 
 	static bool KeyDown(KeyCode keyCode);
-	static void SetEvent(SDL_Event* e);
 
 private:
+	static void SetEvent(SDL_Event* e);
 	static const int STATUS_PRESSED = 2;
 	static const int STATUS_RELEASED = 1;
 	static std::map<KeyCode, int> keyStatus;

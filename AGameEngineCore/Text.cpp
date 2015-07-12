@@ -34,8 +34,7 @@ void Text::Load(SDL_Renderer *renderer)
 {
     this->renderer = renderer;
     texture = new Texture;
-    
-    texture->LoadTexture(renderer);
+	texture->renderer = renderer;
     OpenFont();
     
 	if (!font) {
@@ -63,6 +62,7 @@ void Text::MakeTexture()
 {
     if(!(textSurface = TTF_RenderUTF8_Solid(font, content.c_str(), *color))) {
         //handle error here, perhaps print TTF_GetError at least
+		Debug::Log("Could not make texture given the error: " + string(TTF_GetError()) + "\n");
     } else {
         textTexture = SDL_CreateTextureFromSurface(this->renderer, textSurface);
         SDL_FreeSurface(textSurface);

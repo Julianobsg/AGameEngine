@@ -31,7 +31,6 @@ private:
 	void LoadTexture(SDL_Texture* texture, SDL_Renderer* renderer);
 	void LoadTexture(SDL_Texture* texture);
 	void LoadTexture(SDL_Renderer* renderer);
-	void LoadTexture(string texturePath, SDL_Renderer* renderer);
 	SDL_RendererFlip CheckImageScale(Transform* transform);
 	SDL_Texture* texture;
 	SDL_Renderer* renderer;

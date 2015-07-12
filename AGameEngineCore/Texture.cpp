@@ -13,7 +13,7 @@ Texture::~Texture(void)
 {
 }
 
-void Texture::LoadTexture(string texturePath, SDL_Renderer* renderer)
+void Texture::LoadTexture(SDL_Renderer* renderer)
 {
 	this->renderer = renderer;
 	
@@ -27,11 +27,6 @@ void Texture::LoadTexture(string texturePath, SDL_Renderer* renderer)
 	}
 
 	LoadTexture(texture);
-}
-
-void Texture::LoadTexture(SDL_Renderer* renderer)
-{
-	LoadTexture(this->texturePath, renderer);
 }
 
 void Texture::LoadTexture(SDL_Texture* texture)

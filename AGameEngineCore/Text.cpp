@@ -21,13 +21,13 @@ Text::Text(string fontPath) : GameObject()
     content = "";
     pixelsPerMeter = 48;
     fontSize = 20;
-	OpenFont();
-	texture = new Texture;
+    font = NULL;
 }
 
 Text::~Text()
 {
     TTF_CloseFont(font);
+    font = NULL;
 }
 
 void Text::Load(SDL_Renderer *renderer)
@@ -60,22 +60,28 @@ void Text::OpenFont()
 
 void Text::MakeTexture()
 {
-    if(!(textSurface = TTF_RenderUTF8_Solid(font, content.c_str(), *color))) {
-        //handle error here, perhaps print TTF_GetError at least
-		Debug::Log("Could not make texture given the error: " + string(TTF_GetError()) + "\n");
-    } else {
-        textTexture = SDL_CreateTextureFromSurface(this->renderer, textSurface);
-        SDL_FreeSurface(textSurface);
-        texture->LoadTexture(textTexture);
+    if (font) {
+        if(!(textSurface = TTF_RenderUTF8_Solid(font, content.c_str(), *color))) {
+            //handle error here, perhaps print TTF_GetError at least
+            Debug::Log("Could not make texture given the error: " + string(TTF_GetError()) + "\n");
+        } else {
+            textTexture = SDL_CreateTextureFromSurface(this->renderer, this->textSurface);
+            SDL_FreeSurface(textSurface);
+            texture->LoadTexture(textTexture);
+        }
     }
 }
 
 void Text::ChangeColor(int r, int g, int b)
 {
-	this->color->r = r;
-	this->color->g = g;
-	this->color->b = b;
-	MakeTexture();
+    if (this->color->r != r ||
+        this->color->g != g ||
+        this->color->b != b) {
+        this->color->r = r;
+        this->color->g = g;
+        this->color->b = b;
+        MakeTexture();
+    }
 }
 
 void Text::FontSize(int fontSize)

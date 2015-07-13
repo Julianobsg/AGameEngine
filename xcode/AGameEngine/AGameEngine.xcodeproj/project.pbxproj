@@ -42,6 +42,8 @@
 		046B876B1A3BF00C0034EC13 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046B87671A3BF00C0034EC13 /* Camera.cpp */; };
 		046B876C1A3BF00C0034EC13 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046B87691A3BF00C0034EC13 /* Touch.cpp */; };
 		047829B7193E324C005D6323 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047829B6193E324C005D6323 /* SDL2.framework */; };
+		0482C9FB1B531D2200ED0BCD /* EndGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0482C9F71B531D2200ED0BCD /* EndGameScene.cpp */; };
+		0482C9FC1B531D2200ED0BCD /* IAMovement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0482C9F91B531D2200ED0BCD /* IAMovement.cpp */; };
 		04A110E0192E5542005DB424 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A110DF192E5542005DB424 /* Cocoa.framework */; };
 		04A110EA192E5542005DB424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A110E8192E5542005DB424 /* InfoPlist.strings */; };
 		04A110EC192E5542005DB424 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04A110EB192E5542005DB424 /* main.cpp */; };
@@ -154,6 +156,10 @@
 		046B87691A3BF00C0034EC13 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Touch.cpp; path = ../../../AGameEngineCore/Touch.cpp; sourceTree = "<group>"; };
 		046B876A1A3BF00C0034EC13 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Touch.h; path = ../../../AGameEngineCore/Touch.h; sourceTree = "<group>"; };
 		047829B6193E324C005D6323 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Libs/Mac/SDL2.framework; sourceTree = "<group>"; };
+		0482C9F71B531D2200ED0BCD /* EndGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EndGameScene.cpp; path = ../../../AGame/EndGameScene.cpp; sourceTree = "<group>"; };
+		0482C9F81B531D2200ED0BCD /* EndGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndGameScene.h; path = ../../../AGame/EndGameScene.h; sourceTree = "<group>"; };
+		0482C9F91B531D2200ED0BCD /* IAMovement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IAMovement.cpp; path = ../../../AGame/IAMovement.cpp; sourceTree = "<group>"; };
+		0482C9FA1B531D2200ED0BCD /* IAMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMovement.h; path = ../../../AGame/IAMovement.h; sourceTree = "<group>"; };
 		04A110DC192E5542005DB424 /* AGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A110DF192E5542005DB424 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		04A110E2192E5542005DB424 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -382,6 +388,10 @@
 		04A11131192E55E0005DB424 /* AGame */ = {
 			isa = PBXGroup;
 			children = (
+				0482C9F71B531D2200ED0BCD /* EndGameScene.cpp */,
+				0482C9F81B531D2200ED0BCD /* EndGameScene.h */,
+				0482C9F91B531D2200ED0BCD /* IAMovement.cpp */,
+				0482C9FA1B531D2200ED0BCD /* IAMovement.h */,
 				04399A381B1B6C1A00E24648 /* Collision.cpp */,
 				04399A391B1B6C1A00E24648 /* Collision.h */,
 				04399A3A1B1B6C1A00E24648 /* CollisionDetection.cpp */,
@@ -572,9 +582,11 @@
 				0461FDAD1B0E6B740099CCDB /* Enemy.cpp in Sources */,
 				0461FDB01B0E6B740099CCDB /* Ship.cpp in Sources */,
 				0461FDB21B0E6B740099CCDB /* Shot.cpp in Sources */,
+				0482C9FC1B531D2200ED0BCD /* IAMovement.cpp in Sources */,
 				0461FDAF1B0E6B740099CCDB /* GameActionObserver.cpp in Sources */,
 				04325C86196495690033A970 /* Bat.cpp in Sources */,
 				04A2741A1A82C76600148824 /* MainMenu.cpp in Sources */,
+				0482C9FB1B531D2200ED0BCD /* EndGameScene.cpp in Sources */,
 				04325C95196495960033A970 /* Keyboard.cpp in Sources */,
 				04399A3C1B1B6C1A00E24648 /* Collision.cpp in Sources */,
 				04A110EC192E5542005DB424 /* main.cpp in Sources */,

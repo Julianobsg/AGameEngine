@@ -4,15 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>libSDL_image.xcscheme</key>
+		<key>showimage.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>13</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>BE1FA72F07AF4C45004B6283</key>
+		<key>BE1FA82A07AF9002004B6283</key>
 		<dict>
 			<key>primary</key>
 			<true/>

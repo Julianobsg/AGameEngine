@@ -8,6 +8,8 @@ Android:
 Config your ndk as in ndk instructions, put it in your path.
 In terminal go to the folder android-project, type: ndk-build
 
+# Tutorials
+https://www.youtube.com/watch?v=81tYNZfnV9k
 
 # Dependencies
 http://www.libsdl.org/download-2.0.php
